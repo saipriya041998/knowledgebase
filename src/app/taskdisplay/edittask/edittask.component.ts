@@ -8,14 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './edittask.component.html',
   styleUrls: ['./edittask.component.css']
 })
-
 export class EdittaskComponent implements OnInit {
    id:string ="";
   title: string = "";
   status: string = "";
   constructor(
     private _act: ActivatedRoute,
-    private _data: TaskdataService,
+    private _data: TaskdataService
   ) {}
 
   ngOnInit() {

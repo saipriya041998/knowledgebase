@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 <<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EdittaskComponent } from './taskdisplay/edittask/edittask.component';
 =======
 <<<<<<< HEAD
 import { UserdisplayComponent } from './userdisplay/userdisplay.component';
@@ -23,7 +24,8 @@ import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
   declarations: [
     AppComponent,
 <<<<<<< HEAD
-    LoginComponent
+    LoginComponent,
+EdittaskComponent
 =======
 <<<<<<< HEAD
     UserdisplayComponent,
