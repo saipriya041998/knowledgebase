@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserdataService } from './userdata.service';
 import { User } from './user';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-userdisplay',
@@ -8,14 +9,14 @@ import { User } from './user';
   styleUrls: ['./userdisplay.component.scss']
 })
 export class UserdisplayComponent implements OnInit {
-arr:User[]=[];
-  constructor(private _data:UserdataService) { }
-
-  ngOnInit() {
-    this._data.getAllUsers().subscribe(
-    (data:User[])=>{
-      this.arr=data;
+  arr:User[]=[];
+  userData:any;
+  errormessage:string='';
+    constructor(private _actroute:ActivatedRoute) {
+      this.userData=this._actroute.snapshot.data["udata"];
     }
-    );
-  }
+    ngOnInit() {
+      this.arr=this.userData.data;
+      this.errormessage=this.userData.errormessage;
+    }
 }

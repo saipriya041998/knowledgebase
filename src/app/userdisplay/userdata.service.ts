@@ -54,7 +54,7 @@ export class UserdataService {
     return this._http.delete(this.url+user_email,{headers:head});
   }
   currentUser;
-  redirecURL:string;
+  redirectURL:string;
 
   login(user_email:string,user_password:string){
     if(user_email=="admin"&&user_password=="1234"){
