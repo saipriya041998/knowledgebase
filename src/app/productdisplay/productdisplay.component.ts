@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from './product';
+import { ProductdataService } from './productdata.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-productdisplay',

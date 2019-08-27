@@ -25,7 +25,7 @@ redirectURL:string;
     if (this.udata.redirectURL) {
         this.router.navigateByUrl(this.udata.redirectURL);
       } else {
-        this.router.navigate('/users');
+        this.router.navigate(['/user']);
       }
   }
 
