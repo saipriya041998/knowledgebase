@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { TaskdataService } from './taskdata.service';
 import { Task } from './task';
+
 @Component({
   selector: 'app-taskdisplay',
   templateUrl: './taskdisplay.component.html',
