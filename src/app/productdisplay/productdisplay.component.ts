@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-productdisplay',
   templateUrl: './productdisplay.component.html',
-  styleUrls: ['./productdisplay.component.scss']
+  styleUrls: ['./productdisplay.component.css']
 })
 export class ProductdisplayComponent implements OnInit {
   arr: Product[] = [];
@@ -32,8 +32,8 @@ export class ProductdisplayComponent implements OnInit {
       this.arr.splice(this.arr.indexOf(item), 1);
     });
   }
-  onProductEdit(item:Product){
-    this._router.navigate(['/product/editproduct',item.pro_id]);
+  onProductEdit(item: Product){
+    this._router.navigate(['/editproduct',item.pro_id]);
   }
   onSideBarClick(value) {
     if (value != "") {

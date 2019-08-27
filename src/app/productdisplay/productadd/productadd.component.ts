@@ -5,7 +5,7 @@ import { ProductdataService } from '../productdata.service';
 @Component({
   selector: 'app-productadd',
   templateUrl: './productadd.component.html',
-  styleUrls: ['./productadd.component.scss']
+  styleUrls: ['./productadd.component.css']
 })
 
 

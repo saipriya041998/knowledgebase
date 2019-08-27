@@ -8,7 +8,7 @@ import { UserdataService } from '../userdisplay/userdata.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private _userdata:UserdataService) { }
+  constructor(private _userdata: UserdataService) { }
 
   ngOnInit() {
   }

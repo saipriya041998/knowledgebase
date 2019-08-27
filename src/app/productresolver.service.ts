@@ -15,9 +15,8 @@ export class ProductresolverService implements Resolve<productResolved> {
     return this._productdata.getAllProducts().pipe(
       map(x=>({products:x,errormsg:''})),
       catchError(error=>{
-        return of({products:null,errormsg:'Something went wrong'})
+        return of({products:null,errormsg:'Something went wrong'});
       })
     );
-
   }
 }

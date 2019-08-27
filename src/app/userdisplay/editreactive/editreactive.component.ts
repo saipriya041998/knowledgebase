@@ -19,6 +19,8 @@ export class EditreactiveComponent implements OnInit {
     this.email = this._actroute.snapshot.params["user_email"];
     this._userdata.getUserByEmail(this.email).subscribe((data: User[]) => {
       this.displayUser = data[0];
+      console.log(data);
+      console.log(this.displayUser);
       this.editSignupForm.patchValue({
         user_email: this.displayUser.user_email,
         user_name: this.displayUser.user_name,
@@ -65,7 +67,7 @@ export class EditreactiveComponent implements OnInit {
       )
       .subscribe(
         (data:any)=>{
-          this._router.navigate(['/users']);
+          this._router.navigate(['/user']);
         }
       );
   }

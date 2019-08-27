@@ -9,15 +9,24 @@ import { EditreactiveComponent } from './userdisplay/editreactive/editreactive.c
 import { UserResolverService } from './userdisplay/user-resolver.service';
 import { LoginComponent } from './login/login.component';
 import { UserGuardService } from './user-guard.service';
+import { ProductdisplayComponent } from './productdisplay/productdisplay.component';
+import { ProductaddComponent } from './productdisplay/productadd/productadd.component';
+import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
+import { productResolved } from './productdisplay/product';
+import { ResolverproductComponent } from './resolverproduct/resolverproduct.component';
+import { ProductresolverService } from './productresolver.service';
 const arr : Routes=[
   {path:'',component:HomeComponent},
-  {path:'product',data:{preload:true},loadChildren:'./productdisplay/product.module#ProductModule'},
+  {path:'product',canActivate:[UserGuardService],component:ProductdisplayComponent},
+  {path:'task',component:TaskdisplayComponent},
+  {path:'product1',resolve:{pdata:ProductresolverService},component:ResolverproductComponent},
+  {path:'addproduct',component:ProductaddComponent},
   {path:'addtask',component:AddtaskComponent},
   {path:'edittask/:Id',component:EdittaskComponent},
   {path:'user',resolve:{udata:UserResolverService},component:UserdisplayComponent},
   {path:'adduser',component:SignupreactiveComponent},
   {path:'edituser/:user_email',component:EditreactiveComponent},
-  {path:'login',canActivate:[UserGuardService],component:LoginComponent},
+  {path:'login',component:LoginComponent},
   {path:'pagenotfound',component:PagenotfoundComponent},
   {path:'**',redirectTo:'/pagenotfound'}
 ];
