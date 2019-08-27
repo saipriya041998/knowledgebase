@@ -43,6 +43,10 @@ export class UserdataService {
     let head = new HttpHeaders().set("Content-Type", "application/json");
 
     let body = JSON.stringify(newuser);
+<<<<<<< HEAD
+    return this._http.post(this.url, body,{headers:head});
+
+=======
 
     return this._http.put(this.url+newuser.user_email,body,{ headers: head });
 
@@ -77,6 +81,7 @@ export class UserdataService {
   }
   get isLoggedIn():boolean{
     return !!this.currentUser;
+>>>>>>> 13b0035bd4f5c3336d1e9f6585788abce13692ca
   }
 
   getUserByEmail(email) {
