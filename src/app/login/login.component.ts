@@ -10,6 +10,7 @@ import { UserdataService } from '../userdisplay/userdata.service';
 })
 export class LoginComponent implements OnInit {
 login: FormGroup;
+redirectURL:string;
   constructor(private fb: FormBuilder, private udata: UserdataService, private router: Router) { }
 
 

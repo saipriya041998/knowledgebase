@@ -10,6 +10,7 @@ import { SignupreactiveComponent } from './userdisplay/signupreactive/signupreac
 import { EditreactiveComponent } from './userdisplay/editreactive/editreactive.component';
 import { MenuComponent } from './menu/menu.component';
 import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
+import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ EdittaskComponent,
 UserdisplayComponent,
 SignupreactiveComponent,
 EditreactiveComponent,
-TaskdisplayComponent
+TaskdisplayComponent,
+EditproductComponent,
+MenuComponent,
+LoginComponent
 
   ],
   imports: [

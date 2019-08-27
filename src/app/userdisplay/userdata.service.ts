@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { catchError, retry } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 import { endpoints } from "../../environments/environment";
-
-
 @Injectable({
   providedIn: 'root'
 })
