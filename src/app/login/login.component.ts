@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { UserdataService } from '../userdisplay/userdata.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 login: FormGroup;
-  constructor(private fb: FormBuilder, private udata: UserDataService, private router: Router) { }
+  constructor(private fb: FormBuilder, private udata: UserdataService, private router: Router) { }
 
 
   ngOnInit() {this.login = this.fb.group({

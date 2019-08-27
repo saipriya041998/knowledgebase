@@ -80,4 +80,15 @@ export class UserdataService {
   get isLoggedIn():boolean{
     return !!this.currentUser;
   }
+
+  getUserByEmail(email) {
+    return this._http.get(this.url+email);
+  }
+
+  editUser(user) {
+    let head = new HttpHeaders().set("Content-Type", "application/json");
+    let body = JSON.stringify(user);
+    return this._http.put(this.url+user.user_email,body,{headers:head});
+  }
+
 }
