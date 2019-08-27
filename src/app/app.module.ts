@@ -1,39 +1,91 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 <<<<<<< HEAD
-import { UserdisplayComponent } from './userdisplay/userdisplay.component';
+<<<<<<< HEAD
 <<<<<<< HEAD
 import { SignupreactiveComponent } from './userdisplay/signupreactive/signupreactive.component';
 import { ResolverproductComponent } from './resolverproduct/resolverproduct.component';
 =======
-import { MenuComponent } from './menu/menu.component';
->>>>>>> c77c642347316db222eb920254ed7dc588dc5f53
+import { UserGuardComponent } from './user-guard/user-guard.component';
+
 =======
+import { ReactiveFormsModule } from '@angular/forms';
+import { EdittaskComponent } from './taskdisplay/edittask/edittask.component';
+>>>>>>> 13b0035bd4f5c3336d1e9f6585788abce13692ca
+=======
+<<<<<<< HEAD
+>>>>>>> 79cb1c18ca47d1146f0afef73504ef40953572e5
+import { UserdisplayComponent } from './userdisplay/userdisplay.component';
+import { SignupreactiveComponent } from './userdisplay/signupreactive/signupreactive.component';
+
 import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
->>>>>>> 5cc9313251bdfb2a0eb3f7685ac592ee7fe3cccf
+import { MenuComponent } from './menu/menu.component';
+=======
+import { EdittaskComponent } from './taskdisplay/edittask/edittask.component';
+import { UserdisplayComponent } from './userdisplay/userdisplay.component';
+import { SignupreactiveComponent } from './userdisplay/signupreactive/signupreactive.component';
+import { EditreactiveComponent } from './userdisplay/editreactive/editreactive.component';
+import { MenuComponent } from './menu/menu.component';
+import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
+<<<<<<< HEAD
+import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
+=======
+>>>>>>> 3ad3464a6b17d693383bfa18b40fbb2da03d2bbc
+>>>>>>> 8e256dda19f68dee24ec93fdcf22199f6f31243c
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    LoginComponent,
+<<<<<<< HEAD
 <<<<<<< HEAD
     UserdisplayComponent,
 <<<<<<< HEAD
 SignupreactiveComponent,
 ResolverproductComponent
 =======
-MenuComponent
->>>>>>> c77c642347316db222eb920254ed7dc588dc5f53
+UserGuardComponent,
+
+>>>>>>> 13b0035bd4f5c3336d1e9f6585788abce13692ca
 =======
+<<<<<<< HEAD
+    LoginComponent,
+EdittaskComponent
+=======
+<<<<<<< HEAD
+>>>>>>> 79cb1c18ca47d1146f0afef73504ef40953572e5
+    UserdisplayComponent,
+SignupreactiveComponent,
+MenuComponent,
+
     TaskdisplayComponent
->>>>>>> 5cc9313251bdfb2a0eb3f7685ac592ee7fe3cccf
+=======
+EdittaskComponent,
+UserdisplayComponent,
+SignupreactiveComponent,
+EditreactiveComponent,
+TaskdisplayComponent,
+EditproductComponent,
+MenuComponent,
+LoginComponent
+
+>>>>>>> 3ad3464a6b17d693383bfa18b40fbb2da03d2bbc
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< HEAD
+
+    ReactiveFormsModule
+=======
+    ReactiveFormsModule,
     FormsModule,ReactiveFormsModule
+>>>>>>> 3ad3464a6b17d693383bfa18b40fbb2da03d2bbc
   ],
   providers: [],
   bootstrap: [AppComponent]
