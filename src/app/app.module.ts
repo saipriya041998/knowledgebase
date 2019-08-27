@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { UserdisplayComponent } from './userdisplay/userdisplay.component';
 <<<<<<< HEAD
 import { SignupreactiveComponent } from './userdisplay/signupreactive/signupreactive.component';
+import { ResolverproductComponent } from './resolverproduct/resolverproduct.component';
 =======
 import { MenuComponent } from './menu/menu.component';
 >>>>>>> c77c642347316db222eb920254ed7dc588dc5f53
@@ -20,7 +21,8 @@ import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
 <<<<<<< HEAD
     UserdisplayComponent,
 <<<<<<< HEAD
-SignupreactiveComponent
+SignupreactiveComponent,
+ResolverproductComponent
 =======
 MenuComponent
 >>>>>>> c77c642347316db222eb920254ed7dc588dc5f53
