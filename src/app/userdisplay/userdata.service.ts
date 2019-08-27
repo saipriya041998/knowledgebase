@@ -17,4 +17,15 @@ url:"https://nodejsapidemo.herokuapp.com/users/";
     return this._http.post(this.url, body,{headers:head});
     // );
   }
+
+  getUserByEmail(email) {
+    return this._http.get(this.url+email);
+  }
+
+  editUser(user) {
+    let head = new HttpHeaders().set("Content-Type", "application/json");
+    let body = JSON.stringify(user);
+    return this._http.put(this.url+user.user_email,body,{headers:head});
+  }
+
 }
