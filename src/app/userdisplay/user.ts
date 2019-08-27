@@ -5,7 +5,8 @@ export class User {
     public user_password:string,
     public user_mobile_no:string
 
-  ){
-
-  }
+  ){}
 }
+ export class UserResolved{
+   constructor(private data:any[],private errormessage:string){}
+ }

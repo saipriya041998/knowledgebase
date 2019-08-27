@@ -13,7 +13,7 @@ export class TaskdisplayComponent implements OnInit {
   name: string = "";
 
 
-  constructor(private _data: TaskdataService,private _router:Router) {}
+  constructor(private _data: TaskdataService,private _router: Router) {}
 
   ngOnInit() {
       this._data.getAllTasks().subscribe(
