@@ -17,7 +17,6 @@ export class UserGuardService implements CanActivate,CanLoad {
     return this.isUserLoggedIn(_route.path);
   }
   isUserLoggedIn(url:string):boolean{
-
     if(this._userdata.isLoggedIn){
       return true;
     }

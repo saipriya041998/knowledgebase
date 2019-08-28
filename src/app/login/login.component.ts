@@ -14,7 +14,8 @@ redirectURL:string;
   constructor(private fb: FormBuilder, private udata: UserdataService, private router: Router) { }
 
 
-  ngOnInit() {this.login = this.fb.group({
+  ngOnInit() {
+    this.login = this.fb.group({
     user_email: new FormControl(),
     user_password: new FormControl()
   });
@@ -28,5 +29,4 @@ redirectURL:string;
         this.router.navigate(['/user']);
       }
   }
-
 }
