@@ -26,6 +26,7 @@ const arr : Routes=[
   {path:'user',resolve:{udata:UserResolverService},component:UserdisplayComponent},
   {path:'adduser',component:SignupreactiveComponent},
   {path:'edituser/:user_email',component:EditreactiveComponent},
+
   {path:'login',component:LoginComponent},
   {path:'pagenotfound',component:PagenotfoundComponent},
   {path:'**',redirectTo:'/pagenotfound'}
