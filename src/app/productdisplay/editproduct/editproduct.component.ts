@@ -37,6 +37,7 @@ export class EditproductComponent implements OnInit {
   onEditProduct(f){
       this._data.editProduct(this.id,f.value).subscribe(
         (data:any)=>{
+
           alert('updated');
           this._route.navigate(['/product']);
         }
