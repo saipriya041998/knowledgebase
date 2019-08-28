@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Task } from '../task';
 import { TaskdataService } from '../taskdata.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edittask',
@@ -14,7 +14,8 @@ export class EdittaskComponent implements OnInit {
   status: string = "";
   constructor(
     private _act: ActivatedRoute,
-    private _data: TaskdataService
+    private _data: TaskdataService,
+    private _router:Router
   ) {}
 
   ngOnInit() {
@@ -31,6 +32,7 @@ export class EdittaskComponent implements OnInit {
       this._data.editTask(f.value).subscribe(
         (data:any)=>{
           alert('updated');
+          this._router.navigate(['/task']);
         }
       );
   }
