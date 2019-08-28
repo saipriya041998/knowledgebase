@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../user';
 import { UserdataService } from '../userdata.service';
+import { CheckEmail } from '../checkemail';
 
 @Component({
   selector: 'app-editreactive',
@@ -35,7 +36,7 @@ export class EditreactiveComponent implements OnInit {
       user_email: new FormControl(null, [
         Validators.required,
         Validators.email
-      ]),
+      ],CheckEmail.emailValidator(this._userdata)),
       user_name: new FormControl(null, Validators.required),
       user_password_group: new FormGroup(
         {

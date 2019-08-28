@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
-
+import { CheckEmail } from '../checkemail';
 import {
   FormGroup,
   FormBuilder,
@@ -26,7 +26,7 @@ export class SignupreactiveComponent implements OnInit {
       user_email: new FormControl(null, [
         Validators.required,
         Validators.email
-      ]),
+      ],CheckEmail.emailValidator(this._data)),
       user_name: new FormControl(null, Validators.required),
       user_password_group: new FormGroup(
         {
