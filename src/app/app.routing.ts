@@ -15,11 +15,13 @@ import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
 import { productResolved } from './productdisplay/product';
 import { ResolverproductComponent } from './resolverproduct/resolverproduct.component';
 import { ProductresolverService } from './productresolver.service';
+import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
 const arr : Routes=[
   {path:'',component:HomeComponent},
   {path:'product',canActivate:[UserGuardService],component:ProductdisplayComponent},
   {path:'task',component:TaskdisplayComponent},
   {path:'product1',resolve:{pdata:ProductresolverService},component:ResolverproductComponent},
+  {path:'editproduct/:pro_id',component:EditproductComponent},
   {path:'addproduct',component:ProductaddComponent},
   {path:'addtask',component:AddtaskComponent},
   {path:'edittask/:Id',component:EdittaskComponent},
