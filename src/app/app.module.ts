@@ -1,57 +1,57 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {  ReactiveFormsModule, FormsModule } from '@angular/forms';
-// import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { ResolverproductComponent } from './resolverproduct/resolverproduct.component';
-import { EdittaskComponent } from './taskdisplay/edittask/edittask.component';
-import { UserdisplayComponent } from './userdisplay/userdisplay.component';
-import { SignupreactiveComponent } from './userdisplay/signupreactive/signupreactive.component';
-import { EditreactiveComponent } from './userdisplay/editreactive/editreactive.component';
-import { MenuComponent } from './menu/menu.component';
-import { TaskdisplayComponent } from './taskdisplay/taskdisplay.component';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { routing } from './app.routing';
-import { HomeComponent } from './home/home.component';
-import { AddtaskComponent } from './taskdisplay/addtask/addtask.component';
-import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { ProductdisplayComponent } from './productdisplay/productdisplay.component';
-import { ProductaddComponent } from './productdisplay/productadd/productadd.component';
-import { EditproductComponent } from './productdisplay/editproduct/editproduct.component';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LanguageTranslationModule } from './shared/modules/language-translation/language-translation.module'
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LocationStrategy, HashLocationStrategy,DatePipe } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthGuard } from './shared';
 
+import { CommonHttpService } from './shared/common-http.service';
+import { LocalStorageService } from './shared/local-storage.service';
+import { JWTTokenInterceptorService } from './shared/jwttoken-interceptor.service';
+import { MasterService } from './services/master.service';
+import { MessageService } from 'primeng/components/common/messageservice';
+import { CookieService } from './services/cookie.service';
+import { CommonUtilityService } from './services/common-utility.service';
+import { CommonAppService } from './services/appservices/common-app.service';
+
+//Module
+import { GrowlModule } from 'primeng/growl';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PagenotfoundComponent,
-    ProductdisplayComponent,
-    ProductaddComponent,
-    HomeComponent,
-    AddtaskComponent,
-    LoginComponent,
-    SignupreactiveComponent,
-    ResolverproductComponent,
-    EdittaskComponent,
-    UserdisplayComponent,
-    SignupreactiveComponent,
-    MenuComponent,
-    TaskdisplayComponent,
-    EditreactiveComponent,
-    EditproductComponent
-
-  ],
-  imports: [
-    BrowserModule,
-    // AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    routing,
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        CommonModule,
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        LanguageTranslationModule,
+        AppRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpModule,
+        GrowlModule,
+    ],
+    declarations: [AppComponent],
+    providers: [
+        DatePipe,
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: JWTTokenInterceptorService,
+            multi: true,
+        },
+        AuthGuard, CommonHttpService, LocalStorageService, MasterService, MessageService, CookieService
+        , CommonAppService, CommonUtilityService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
