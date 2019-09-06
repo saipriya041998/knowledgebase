@@ -25,7 +25,14 @@ export class CommonHttpService {
         return this.http.get(this.Edit_Fetch_URL, ArticleId);
     }
 
+    // insert logic here
+    public addArticle(array) {
+        let body = JSON.stringify(array);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        return this.http.post(this.INSERT_URL,body,{headers:head});
+    }
 
+    // public
     // end
 
 
