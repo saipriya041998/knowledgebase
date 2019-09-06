@@ -21,38 +21,21 @@
   </ul>
   <div>
   <div class="row">
-        <div class="first" class="col-md-12" style="background-color:rgba(246, 242, 242, 0.863);">
-          <div id="dvarticlecontainer" style="display: inline-block; vertical-align: top;border-right:1px solid grey;padding-top:20px">
-            <div id="allarticletabview">
-              <div *ngFor="let item of arr &&  filterdArticle || arr;let i=index">
-                <div class="container" *ngIf="item.isAdmin;else falseblock">
-                  <img src='{{item.image1}}' alt="Avatar" style="width:90px">sss
-                  <h3 class="mb-2">{{item.article_name}}dd</h3>
-                  <span style="padding-right:20px;">{{item.published_date}} {{item.published_time}}dd</span>
-                  <span style="padding-right:20px;">{{item.category}}dd</span>
-                  <span style="padding-right:20px;">{{item.created_by}}dd</span>
-                  <p>{{item.description}}dd</p>
-                  <span style="padding-right:20px;"><button class="firstbut" class="btn btn-primary btn-xs" (click)='onReadMore(item)'>Read More</button></span>
-                  <button class="btn btn-primary btn-xs"  (click)="openEdit(i)">Edit</button>
-                </div>
-                <ng-template #falseblock>
-                  <div class="container">
-                    <img src='{{item.image1}}' alt="Avatar" style="width:90px">
-                    <h3 class="mb-2">{{item.article_name}}</h3>
-                    <span style="padding-right:20px;">{{item.published_date}} {{item.published_time}}</span>
-                    <span style="padding-right:20px;">{{item.category}}</span>
-                    <span style="padding-right:20px;">{{item.created_by}}</span>
-                    <p>{{item.description}}</p>
-                    <span style="padding-right:20px;">&nbsp;<button  class="btn btn-primary btn-xs" (click)='onReadMore(item)'>Read More</button>
-
-                    </span>
-                  </div>
-                </ng-template>
-              </div>
+        <div class="first" class="col-md-9" >
+          <div id="dvarticlecontainer" style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;border-right:1px solid grey;padding-top:20px">
+                <div *ngFor="let item of arr; let i=index">
+                <p>{{item.ArticleName}}</p>
+                <span style="padding-right:20px;">{{item.PreviewContent}} {{item.CategoryName}}dd</span>
+                <span style="padding-right:20px;">{{item.CreatedBy}}dd</span>
+                <span style="padding-right:20px;">{{item.CreatedByName}}dd</span>
+                <span style="padding-right:20px;">{{item.CreatedDate}}dd</span>
             </div>
           </div>
-          <!-- <div id="dvarticlecontainer" style="display: inline-block; vertical-align: top;padding-top:20px"> -->
+
           <!-- </div> -->
+        </div>
+        <div class="first" class="col-md-3">
+            <div id="dvarticlecontainer"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;padding-top:20px">
             <app-searcharticle></app-searcharticle>
         </div>
       </div>
