@@ -14,3 +14,4 @@ export  class KBArticles {
       public  ModifiedDate: string
     ) {}
   }
+

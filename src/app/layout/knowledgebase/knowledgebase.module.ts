@@ -14,8 +14,8 @@ import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 import { SearcharticleComponent } from './searcharticle/searcharticle.component';
 import { EditarticleComponent } from './editarticle/editarticle.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
-import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
+import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 @NgModule({
     imports: [
         CommonModule,

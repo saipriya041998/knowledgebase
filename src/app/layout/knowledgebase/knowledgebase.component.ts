@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { KBArticles } from 'src/app/kbarticles';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-knowledgebase',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KnowledgebaseComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
+  }
+  onReadMore(item:KBArticles){
+    this.router.navigate(['/readmore',item.ArticleId]);
   }
 
 }

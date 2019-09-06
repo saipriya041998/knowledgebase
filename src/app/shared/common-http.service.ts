@@ -9,7 +9,7 @@ export class CommonHttpService {
     Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
     CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
     ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ='
+    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
@@ -20,6 +20,9 @@ export class CommonHttpService {
   {
     return this.http.get(this.GetAllArticles);
   }
+  public  getArticleById(ArticleId){
+    return this.http.get(this.ReadMore_URL);
+  }
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().
@@ -27,7 +30,6 @@ export class CommonHttpService {
         //console.log("error happend", e);
       });
   }
-
   public globalGetServiceByUrl(url: string, data: any) {
     return this.http.get(url + data).toPromise().
       catch(e => {
