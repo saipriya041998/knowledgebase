@@ -12,6 +12,7 @@ export class KnowledgebaseComponent implements OnInit {
   constructor(private _data: CommonHttpService) { }
 
   ngOnInit() {
+    //   get articles through api
     this._data.getKbArticleById(1).subscribe(
 
         (data: KBArticles[]) => {
