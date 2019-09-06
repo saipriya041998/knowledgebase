@@ -6,23 +6,55 @@ import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
 @Injectable()
 export class CommonHttpService {
+<<<<<<< HEAD
     Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
     CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
     ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
     GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+=======
+    Edit_Fetch_URL: string = 'https://5044f2be.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
+    CAT_URL = 'https://5044f2be.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://5044f2be.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://5044f2be.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    INSERT_URL ='https://5044f2be.ngrok.io/api/KB/InsertUpdateKBAricles';
+>>>>>>> a53c1673e3abb048b6b10ba98d943d491483dcba
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
-
   }
- public getKbArticleById(ArticleId)
-  {
-    return this.http.get(this.GetAllArticles);
-  }
+<<<<<<< HEAD
   public  getArticleById(ArticleId){
     return this.http.get(this.ReadMore_URL);
   }
+=======
+
+    // began  knowledge base article methods
+    public getKbArticleById(ArticleId)
+    {
+        console.log(ArticleId);
+        return this.http.get(this.Edit_Fetch_URL+ArticleId);
+    }
+
+    // insert logic here
+    public addArticle(array) {
+        let body = JSON.stringify(array);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        console.log(array);
+        return this.http.post(this.INSERT_URL,body,{headers:head});
+    }
+    public getCategoriesById()
+    {
+        console.log();
+        return this.http.get(this.CAT_URL);
+    }
+
+    // public
+    // end
+
+
+
+>>>>>>> a53c1673e3abb048b6b10ba98d943d491483dcba
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().
