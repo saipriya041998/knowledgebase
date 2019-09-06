@@ -37,14 +37,11 @@ export class ReadmorearticleComponent implements OnInit {
       );
       this._data.getArticleById(this.id).subscribe(
 
-        (data:KBArticles[])=>{
-          this.arr=data;
-            this.arr1=Object.keys(this.arr);
+        (data:KBArticles)=>{
+          this.arr=data[0];
             // console.log(this.arr);
-            for(var prop of this.arr1) {
-                this.myarr.push(this.arr1[prop]);
                 // console.log(this.myarr);
-            }
+
           this.name=data[0].ArticleName;
           this.content=data[0].Content;
           this.pcontent=data[0].PreviewContent;
