@@ -6,20 +6,30 @@ import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
 @Injectable()
 export class CommonHttpService {
-    Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
     CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
     ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ='
+    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    INSERT_URL ='https://8bb9e835.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
 
   }
- public getKbArticleById(ArticleId)
-  {
-    return this.http.get(this.GetAllArticles);
-  }
+
+    // began  knowledge base article methods
+    public getKbArticleById(ArticleId)
+    {
+        console.log(ArticleId);
+        return this.http.get(this.Edit_Fetch_URL, ArticleId);
+    }
+
+
+    // end
+
+
+
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().

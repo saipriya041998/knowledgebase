@@ -7,7 +7,7 @@ import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./addarticle.component.scss']
 })
 export class AddarticleComponent implements OnInit {
-    addForm: FormGroup;
+  addForm: FormGroup;
   constructor( private fb: FormBuilder) { }
 
   ngOnInit() {
