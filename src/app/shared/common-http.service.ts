@@ -10,6 +10,9 @@ export class CommonHttpService {
     CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
     ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
     GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+
+    Search_article='https://5044f2be.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
     INSERT_URL ='https://5044f2be.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
@@ -18,6 +21,10 @@ export class CommonHttpService {
   }
   public  getArticleById(ArticleId){
     return this.http.get(this.ReadMore_URL);
+  }
+  public getSearchById()
+  {
+      return this.http.get(this.Search_article);
   }
 
     // began  knowledge base article methods
@@ -45,7 +52,7 @@ export class CommonHttpService {
 
 
 
- a53c1673e3abb048b6b10ba98d943d491483dcba
+
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().
