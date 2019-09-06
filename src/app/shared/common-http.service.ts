@@ -6,10 +6,11 @@ import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
 @Injectable()
 export class CommonHttpService {
-    Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ='
+    Edit_Fetch_URL: string = 'https://5044f2be.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://5044f2be.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://5044f2be.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://5044f2be.ngrok.io/api/KB/GetArticles?getall=0&categ=';
+    Search_article='https://5044f2be.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
@@ -19,6 +20,10 @@ export class CommonHttpService {
  public getKbArticleById(ArticleId)
   {
     return this.http.get(this.GetAllArticles);
+  }
+  public getSearchById()
+  {
+      return this.http.get(this.Search_article);
   }
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
