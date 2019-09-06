@@ -18,7 +18,8 @@ export class CommonHttpService {
   }
  public getKbArticleById(ArticleId)
   {
-    return this.http.get(this.GetAllArticles);
+    console.log(ArticleId);
+    return this.http.get(this.Edit_Fetch_URL,ArticleId);
   }
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
