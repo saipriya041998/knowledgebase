@@ -6,18 +6,9 @@ import { EditarticleComponent } from './editarticle/editarticle.component';
 
 
 const routes: Routes = [
-    {
-        path: '',
-        component: KnowledgebaseComponent
-    },
-    {
-        path: 'add',
-        component: AddarticleComponent
-    },
-    {
-        path: 'edit/:id',
-        component: EditarticleComponent
-    }
+    { path: '', component: KnowledgebaseComponent},
+    {path: 'add', component: AddarticleComponent},
+    {path: 'edit/:id',component: EditarticleComponent}
 ];
 
 @NgModule({

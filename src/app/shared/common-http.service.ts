@@ -6,10 +6,11 @@ import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
 @Injectable()
 export class CommonHttpService {
-    Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ='
+    Edit_Fetch_URL: string = 'https://5044f2be.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://5044f2be.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://5044f2be.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://5044f2be.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    INSERT_URL ='https://5044f2be.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
@@ -19,8 +20,31 @@ export class CommonHttpService {
  public getKbArticleById(ArticleId)
   {
     console.log(ArticleId);
-    return this.http.get(this.Edit_Fetch_URL,ArticleId);
+    return this.http.get(this.Edit_Fetch_URL);
   }
+
+  public getCategory()
+  {
+    return this.http.get(this.CAT_URL);
+  }
+ 
+    public addArticle(array) {
+        let body = JSON.stringify(array);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        return this.http.post(this.INSERT_URL,body,{headers:head});
+    }
+
+    
+    public editArticle(newArticle) {
+      let head = new HttpHeaders().set("Content-Type", "application/json");
+      let body = JSON.stringify(newArticle);
+      return this.http.put(this.INSERT_URL + newArticle.ArticleId, body, {
+        headers: head
+      });
+    }
+
+
+
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().

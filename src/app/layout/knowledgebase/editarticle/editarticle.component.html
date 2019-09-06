@@ -105,14 +105,16 @@
 
               <tr>
                     <td style="width:150px;"> Article Name<span style="color:red">*</span></td>
-                    <td><input type="text" ></td>
+                    <td><input type="text" formControlName="ArticleName"></td>
                   </tr>
           <tr>
             <td>category</td>
             <td><select formControlName="CategoryName" class="custom-select" >
-                <option value="">Choose your category</option>
-                <option *ngFor="let item of arr1" [value]="item.category">{{item.category1}}</option>
-              </select></td>
+              <option value="">Choose your category
+
+              </option>
+              <option *ngFor="let item of arr" [value]="item.CategoryName">{{item.CategoryName}}</option>
+            </select></td>
           </tr>
 
           <tr>
@@ -134,7 +136,7 @@
       <div class="row custom-wrapper">
         <div class="col-md-12 btn-box">
           <button type="submit" class="btn btn-primary btn-sm-2 text-white btn-save">Save</button>&nbsp;&nbsp;
-          <button type="button" class="btn btn-danger btn-sm-2 text-white btn-cancel" aria-label="Close" (click)="modal.dismiss('Cross click')">Close</button> <br/>
+          <button type="button" class="btn btn-danger btn-sm-2 text-white btn-cancel" aria-label="Close">Close</button> <br/>
         </div>
       </div>
     </div>
