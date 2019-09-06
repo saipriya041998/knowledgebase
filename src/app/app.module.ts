@@ -24,6 +24,8 @@ import { CommonAppService } from './services/appservices/common-app.service';
 
 //Module
 import { GrowlModule } from 'primeng/growl';
+import { KnowledgebaseModule } from './layout/knowledgebase/knowledgebase.module';
+
 
 @NgModule({
     imports: [
@@ -37,8 +39,9 @@ import { GrowlModule } from 'primeng/growl';
         ReactiveFormsModule,
         HttpModule,
         GrowlModule,
+        KnowledgebaseModule
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent,],
     providers: [
         DatePipe,
         {

@@ -4,7 +4,7 @@
             <i class="fa fa-fw fa-dashboard"></i>&nbsp;
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
-        <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <!-- <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-fw fa-bar-chart-o"></i>&nbsp;
             <span>{{ 'Charts' | translate }}</span>
         </a>
@@ -27,8 +27,10 @@
         <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-th-list"></i>&nbsp;
             <span>{{ 'Component' | translate }}</span>
-        </a>
-        <div class="nested-menu">
+        </a> -->
+
+        <!-- Submenu  -->
+        <!-- <div class="nested-menu">
             <a class="list-group-item" (click)="addExpandClass('pages')">
                 <i class="fa fa-plus"></i>&nbsp;
                 <span>{{ 'Menu' | translate }}</span>
@@ -55,11 +57,16 @@
                     </li>
                 </ul>
             </li>
-        </div>
+        </div> -->
         <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <i class="fa fa-file-o"></i>&nbsp;
             <span>{{ 'Blank Page' | translate }}</span>
-        </a>        
+        </a>
+
+        <a [routerLink]="['/knowledge-base']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <i class="fa fa-book"></i>&nbsp;
+            <span>{{ 'Knowledge Base' | translate }}</span>
+        </a>
 
         <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">

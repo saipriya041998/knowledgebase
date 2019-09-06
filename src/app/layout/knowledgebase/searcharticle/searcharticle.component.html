@@ -1,0 +1,38 @@
+<div style="display: inline-block; vertical-align: top;padding-top:30px; padding-left:10px">
+    <div id="dvSearch">
+      <div style="font-size:medium">
+        <label>Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      </div>
+      <form class="form-inline mr-auto ">
+        <!-- <input class="form-control " type="text" placeholder="Search for Designation" aria-label="Search" (keyup)='onSearch(d.value)' name='n1' #d id='search-box-round'> -->
+        <input type="text"  id="txtbxsearch" style="width: 70%;height: 35px;" name='n1' #f placeholder=" Article Name / Description">
+        <button class="btn btn-primary" type='submit' (click)='onSearch(f.value)'><b>Search</b></button>
+      </form>
+      <hr style="border: 1px solid #d4cfc3;">
+      <h3 style="margin-top:30px;">Categories</h3>
+      <ul style="list-style: none;padding-left: 0px;width: 100%;">
+        <form>
+          <label>
+            <input type="checkbox" (click)="Search()" id="checkboxmyarticle">Show All
+            <!-- <input  type="radio" (onclick)="Search()" name="categories" formControlName="categories" value="Show All">Show All -->
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" (click)="Search1()" id="checkboxmyarticle">Accounts Recivables - Collections
+            <!-- <input type="radio" ngModel="value" (click)="Search1()" name="categories" formControlName="categories" value="Accounts Recivables - Collections">Accounts Recivables - Collections -->
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" (click)="Search2()" id="checkboxmyarticle">Office - Practice Management
+            <!-- <input type="radio" ngModel="value" (click)="Search2()" name="categories" formControlName="categories" value="Office - Practice Management">Office - Practice Management -->
+          </label>
+          <br>
+          <label>
+            <input type="checkbox" (click)="Search3()" id="checkboxmyarticle">Surgical Authorizations & Verifications
+            <!-- <input type="radio" ngModel="value" (click)="Search3()" name="categories" formControlName="categories" value="Surgical Authorizations & Verifications">Surgical Authorizations & Verifications -->
+          </label>
+          <br>
+        </form>
+      </ul>
+    </div>
+  </div>

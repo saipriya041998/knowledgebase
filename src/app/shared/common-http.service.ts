@@ -6,10 +6,19 @@ import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
 @Injectable()
 export class CommonHttpService {
+    Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ='
+
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
 
+  }
+ public getKbArticleById(ArticleId)
+  {
+    return this.http.get(this.GetAllArticles);
   }
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
@@ -30,7 +39,7 @@ export class CommonHttpService {
       //console.log("error happend", e);
       if (e.status == 401) {
         //console.log(e.statusText);
-        // window.location.href = "../../access.html"; 
+        // window.location.href = "../../access.html";
       }
     });
 
@@ -66,7 +75,7 @@ export class CommonHttpService {
     // let body = res.json();
     return res || {};
   }
- 
+
   private handleError(error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;
