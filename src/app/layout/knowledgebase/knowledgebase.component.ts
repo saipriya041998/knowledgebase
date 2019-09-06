@@ -1,6 +1,7 @@
 import { KBArticles } from 'src/app/kbarticles';
 import { CommonHttpService } from './../../shared/common-http.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-knowledgebase',
@@ -8,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./knowledgebase.component.scss']
 })
 export class KnowledgebaseComponent implements OnInit {
+<<<<<<< HEAD
     arr: KBArticles[] = [];
   constructor(private _data: CommonHttpService) { }
+=======
+
+  constructor(private act:ActivatedRoute) { }
+  show=false;
+>>>>>>> f9a55853c1fc23830d691742aba7fd0cf6fdcc15
 
   ngOnInit() {
     //   get articles through api
@@ -26,4 +33,8 @@ export class KnowledgebaseComponent implements OnInit {
       );
   }
 
+
+  onClickOpenAdd() {
+
+  }
 }

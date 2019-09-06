@@ -68,8 +68,6 @@ arr:KBArticles[]=[];
           }
         );
       }
-
-
     public closeAlert(alert: any) {
         const index: number = this.alerts.indexOf(alert);
         this.alerts.splice(index, 1);

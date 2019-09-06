@@ -235,3 +235,17 @@ a:not([href]):not([tabindex]) {
     border-radius: 14px;
     padding-left: 8px;
   }
+  *[_ngcontent-frn-c4], [_ngcontent-frn-c4]::after, [_ngcontent-frn-c4]::before {
+    box-sizing: border-box;
+    background-color: rgba(246, 242, 242, 0.863);
+}
+h3{
+    background-color: rgba(246, 242, 242, 0.863);
+}
+.norecord {
+    padding-left: 659px;
+    width: 80%;
+    padding-top: 179px;
+    /* padding: 50px; */
+    background-color: rgba(246, 242, 242, 0.863);
+}
