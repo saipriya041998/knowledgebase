@@ -16,7 +16,8 @@ export class CommonHttpService {
     return this.http.post(url, data).toPromise();
 
   }
- public getKbArticleById(ArticleId)
+//   get articles through api
+ public getAllKbArticle(ArticleId)
   {
     return this.http.get(this.GetAllArticles);
   }
