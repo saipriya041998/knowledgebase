@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { CommonHttpService } from 'src/app/shared/common-http.service';
+import { KBArticles } from 'src/app/kbarticles';
 
 @Component({
   selector: 'app-addarticle',
@@ -8,11 +10,11 @@ import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 })
 export class AddarticleComponent implements OnInit {
   addForm: FormGroup;
-  constructor( private fb: FormBuilder) { }
+  constructor( private fb: FormBuilder, private data: CommonHttpService) { }
 
   ngOnInit() {
     this.addForm = this.fb.group({
-        article_id: new FormControl(),
+        // article_id: new FormControl(),
         article_name: new FormControl(),
         content: new FormControl(),
         category_id: new FormControl(),
@@ -29,8 +31,28 @@ export class AddarticleComponent implements OnInit {
 
   }
 
-  onAddArticle() {}
+  onAddArticle() {
+     this.data.addArticle(
+         new KBArticles(
+             this.addForm.value.article_name,
+         )
+     )
+  }
 
 }
 
 
+onUserSave() {
+    this._data
+      .addUser(
+        new User(
+          this.signup.value.user_email,
+          this.signup.value.user_name,
+          this.signup.value.user_password_group.user_password,
+          this.signup.value.user_mobile_no
+        )
+      )
+      .subscribe((x: any) => {
+        alert("record added");
+      });
+  }
