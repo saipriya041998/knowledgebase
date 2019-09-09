@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { KBArticles } from 'src/app/kbarticles';
-import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommonHttpService } from './../../shared/common-http.service';
 
@@ -12,9 +11,9 @@ import { CommonHttpService } from './../../shared/common-http.service';
 })
 export class KnowledgebaseComponent implements OnInit {
 
-  constructor(private router:Router ,private act:ActivatedRoute,private _data: CommonHttpService) { }
+  constructor(private router: Router , private act: ActivatedRoute, private _data: CommonHttpService) { }
 
-  show=false;
+  show = false;
   arr: KBArticles[] = [];
 
   ngOnInit() {
@@ -32,8 +31,8 @@ export class KnowledgebaseComponent implements OnInit {
       );
   }
 
-  onReadMore(item:KBArticles){
-    this.router.navigate(['/readmore',item.ArticleId]);
+  onReadMore(item: KBArticles) {
+    this.router.navigate(['/readmore', item.ArticleId]);
   }
 
 

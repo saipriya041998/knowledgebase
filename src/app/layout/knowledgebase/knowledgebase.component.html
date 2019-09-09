@@ -35,7 +35,7 @@
                  <span style="padding-right:20px;">{{item.CreatedBy}}dd</span>
                  <span style="padding-right:20px;">{{item.CreatedByName}}dd</span>
                  <span style="padding-right:20px;">{{item.CreatedDate}}dd</span>
-                  <span style="padding-right:20px;"><button class="firstbut" class="btn btn-primary btn-xs" (click)='onReadMore(item)'>Read More</button></span>
+                  <span style="padding-right:20px;"><button class="firstbut" class="btn btn-primary btn-xs" (click)='onReadMore(item)' style="margin-left:6px; background-color: #34495e; border-color: #34495e; color: #fff;">Read More</button></span>
                   <button class="btn btn-primary btn-xs"  (click)="openEdit(i)">Edit</button>
                 </div>
                 <ng-template #falseblock>
@@ -47,7 +47,7 @@
                     <span style="padding-right:20px;">{{item.category}}</span>
                     <span style="padding-right:20px;">{{item.created_by}}</span>
                     <p>{{item.description}}</p>
-                    <span style="padding-right:20px;">&nbsp;<button  class="btn btn-primary btn-xs" (click)='onReadMore(item)'>Read More</button>
+                    <span style="padding-right:20px;">&nbsp;<button  class="btn btn-primary btn-xs" (click)='onReadMore(item)' style="margin-left:6px; background-color: #34495e; border-color: #34495e; color: #fff;">Read More</button>
 
                     </span>
                   </div>
@@ -58,7 +58,6 @@
           </div>
           <!-- <div id="dvarticlecontainer" style="display: inline-block; vertical-align: top;padding-top:20px"> -->
           <!-- </div> -->
-            <app-searcharticle></app-searcharticle>
         </div>
         </div>
         <div class='norecord'>

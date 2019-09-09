@@ -10,46 +10,46 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ReadmorearticleComponent implements OnInit {
 
-    constructor(private _actroute:ActivatedRoute, private _data:CommonHttpService) { }
-    arr:KBArticles[]=[];
-    arr1=[];
-    id:number;
-    name:string='';
-    content:string='';
-    pcontent:string='';
-    catid:number;
-    catname:string='';
-    createdby:number;
-    createdbyname:string='';
-    createddate:string='';
-    modifiedby:number;
-    modifieddate:string='';
-    ddlcatname:string='';
+    constructor(private _actroute: ActivatedRoute, private _data: CommonHttpService) { }
+    arr: KBArticles[] = [];
+    arr1 = [];
+    id: number;
+    name = '';
+    content = '';
+    pcontent = '';
+    catid: number;
+    catname = '';
+    createdby: number;
+    createdbyname = '';
+    createddate = '';
+    modifiedby: number;
+    modifieddate = '';
+    ddlcatname = '';
 
     ngOnInit() {
       this._actroute.params.subscribe(
 
-        (x)=>{
-          this.id=this.id;
-        //   console.log(this.id);
+        (x) => {
+          this.id = this.id;
+          console.log(this.id);
         }
       );
       this._data.getArticleById(this.id).subscribe(
 
-        (data:KBArticles)=>{
-          this.arr=data[0];
+        (data: KBArticles) => {
+          this.arr = data[0];
             console.log(this.arr);
 
-         this.name=data[0].ArticleName;
-          this.content=data[0].Content;
-          this.pcontent=data[0].PreviewContent;
-          this.catid=data[0].CategoryId;
-          this.catname=data[0].CategoryName;
-          this.createdby=data[0].CreatedBy;
-          this.createdbyname=data[0].CreatedByName;
-          this.createddate=data[0].CreatedDate;
-          this.modifiedby=data[0].ModifiedBy;
-          this.modifieddate=data[0].ModifiedDate;
+         this.name = data[0].ArticleName;
+          this.content = data[0].Content;
+          this.pcontent = data[0].PreviewContent;
+          this.catid = data[0].CategoryId;
+          this.catname = data[0].CategoryName;
+          this.createdby = data[0].CreatedBy;
+          this.createdbyname = data[0].CreatedByName;
+          this.createddate = data[0].CreatedDate;
+          this.modifiedby = data[0].ModifiedBy;
+          this.modifieddate = data[0].ModifiedDate;
         }
       );
           console.log(this.arr);

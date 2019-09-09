@@ -9,33 +9,31 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./searcharticle.component.scss']
 })
 export class SearcharticleComponent implements OnInit {
-arr_search:KBArticles[]=[];
-id:number;
-  constructor(private _data:CommonHttpService,private _actroute:ActivatedRoute) { }
+arr_search: KBArticles[] = [];
+id: number;
+  constructor(private _data: CommonHttpService, private _actroute: ActivatedRoute) { }
 
   ngOnInit() {
       this._actroute.params.subscribe(
-          (x)=>{
-              this.id=this.id;
+          (x) => {
+              this.id = this.id;
               console.log(this.id);
           }
       );
       this._data.getSearchById().subscribe(
-          (x:KBArticles[])=>{
-              this.arr_search=x;
+          (x: KBArticles[]) => {
+              this.arr_search = x;
               console.log(this.arr_search);
 
           }
       );
   }
-  onSearch(value){
+  onSearch(value) {
       console.log(value);
-      if(value!=''){
-        this.arr_search = this.arr_search.filter(x => x.ArticleName.indexOf(value)!=-1);
+      if (value != '') {
+        this.arr_search = this.arr_search.filter(x => x.ArticleName.indexOf(value) != -1);
           console.log('yes');
-      }
-      else
-      {
+      } else {
         this._data.getSearchById().subscribe(
           (data: KBArticles[]) => {
             this.arr_search = data;

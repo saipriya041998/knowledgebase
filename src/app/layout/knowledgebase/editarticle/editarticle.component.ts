@@ -10,9 +10,9 @@ import { CommonHttpService } from 'src/app/shared/common-http.service';
 })
 export class EditarticleComponent implements OnInit {
   editForm: FormGroup;
-  displayArticle:KBArticles[] = [];
-  constructor(private _data:CommonHttpService, private fb:FormBuilder) { }
-  id:number;
+  displayArticle: KBArticles[] = [];
+  constructor(private _data: CommonHttpService, private fb: FormBuilder) { }
+  id: number;
   ngOnInit() {
     // this.id=this._act.snapshot.params["ArticleId"];
 //     this._data.getKbArticleById(this.id).subscribe((x:KBArticles[]) => {
@@ -48,7 +48,7 @@ export class EditarticleComponent implements OnInit {
 
 
 
-    this.editForm= this.fb.group({
+    this.editForm = this.fb.group({
       ArticleName: new FormControl(null),
       ArticleId: new FormControl(null),
       CategoryName: new FormControl(null),
