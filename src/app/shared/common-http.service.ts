@@ -6,22 +6,58 @@ import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
 @Injectable()
 export class CommonHttpService {
-    Edit_Fetch_URL: string = 'https://8bb9e835.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://8bb9e835.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://8bb9e835.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://8bb9e835.ngrok.io/api/KB/GetArticles?getall=0&categ='
+    Edit_Fetch_URL: string = 'https://9eec69f1.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://9eec69f1.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://9eec69f1.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+
+    Search_article='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
+    INSERT_URL ='https://9eec69f1.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
-
   }
-
-//   get articles through api
- public getAllKbArticle(ArticleId)
+  public getAllKbArticle(ArticleId)
   {
     return this.http.get(this.GetAllArticles);
   }
+
+  public  getArticleById(ArticleId){
+    return this.http.get(this.ReadMore_URL);
+  }
+  public getSearchById()
+  {
+      return this.http.get(this.Search_article);
+  }
+
+    // began  knowledge base article methods
+    public getKbArticleById(ArticleId)
+    {
+        console.log(ArticleId);
+        return this.http.get(this.Edit_Fetch_URL+ArticleId);
+    }
+
+    // insert logic here
+    public addArticle(array) {
+        let body = JSON.stringify(array);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        console.log(array);
+        return this.http.post(this.INSERT_URL,body,{headers:head});
+    }
+    public getCategoriesById()
+    {
+        console.log();
+        return this.http.get(this.CAT_URL);
+    }
+
+    // public
+    // end
+
+
+
+
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().
@@ -29,7 +65,6 @@ export class CommonHttpService {
         //console.log("error happend", e);
       });
   }
-
   public globalGetServiceByUrl(url: string, data: any) {
     return this.http.get(url + data).toPromise().
       catch(e => {
