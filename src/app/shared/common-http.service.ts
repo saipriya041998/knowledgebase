@@ -1,3 +1,4 @@
+import { KBArticles } from 'src/app/kbarticles';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Http, Headers, Response,ResponseContentType } from '@angular/http';
@@ -19,7 +20,7 @@ export class CommonHttpService {
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
   }
-  public getAllKbArticle(ArticleId)
+  public getAllKbArticle()
   {
     return this.http.get(this.GetAllArticles);
   }
@@ -134,4 +135,6 @@ export class CommonHttpService {
       {headers : headers,responseType: 'blob' as 'json'}).toPromise();
     //return file;
   }
+
+
 }
