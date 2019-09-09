@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonHttpService } from 'src/app/shared/common-http.service';
-import { KBArticles } from 'src/app/kbarticles';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-searcharticle',
@@ -9,33 +6,32 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./searcharticle.component.scss']
 })
 export class SearcharticleComponent implements OnInit {
-arr_search:KBArticles[]=[];
-id:number;
-  constructor(private _data:CommonHttpService,private _actroute:ActivatedRoute) { }
+<<<<<<< HEAD
+arr_search: KBArticles[] = [];
+id: number;
+  constructor(private _data: CommonHttpService, private _actroute: ActivatedRoute) { }
 
   ngOnInit() {
       this._actroute.params.subscribe(
-          (x)=>{
-              this.id=this.id;
+          (x) => {
+              this.id = this.id;
               console.log(this.id);
           }
       );
       this._data.getSearchById().subscribe(
-          (x:KBArticles[])=>{
-              this.arr_search=x;
+          (x: KBArticles[]) => {
+              this.arr_search = x;
               console.log(this.arr_search);
 
           }
       );
   }
-  onSearch(value){
+  onSearch(value) {
       console.log(value);
-      if(value!=''){
-        this.arr_search = this.arr_search.filter(x => x.ArticleName.indexOf(value)!=-1);
+      if (value != '') {
+        this.arr_search = this.arr_search.filter(x => x.ArticleName.indexOf(value) != -1);
           console.log('yes');
-      }
-      else
-      {
+      } else {
         this._data.getSearchById().subscribe(
           (data: KBArticles[]) => {
             this.arr_search = data;
@@ -46,5 +42,12 @@ id:number;
           function() {}
         );
       }
+=======
+
+  constructor() { }
+
+  ngOnInit() {
+>>>>>>> a750595323a0ff2c1be31a1448899daacd6320c9
   }
+
 }
