@@ -4,6 +4,7 @@ import { KnowledgebaseComponent } from './knowledgebase.component';
 import { AddarticleComponent } from './addarticle/addarticle.component';
 import { EditarticleComponent } from './editarticle/editarticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
+import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
     {
         path: 'myarticle',
         component: MyarticleComponent
+    },
+    {
+        path:'readmore/:id',
+        component:ReadmorearticleComponent
     }
 ];
 

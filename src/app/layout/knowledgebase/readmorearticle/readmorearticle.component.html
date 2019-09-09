@@ -1,41 +1,19 @@
-<<<<<<< HEAD
 <div class="tab-pane" id="readarticletabview">
-    <div class="row" style="padding:10px" *ngFor="let item of arr; let i=index">
-        <div class="col-md-12" style="padding:20px;">
-            <div class="hpanel  blog-box">
-                <div class="panel-heading">
-                    <div class="media clearfix">
-                        <a class="pull-left">
-                          <div ></div>
-                            <!-- <img  src="{http://qa.zoomteams.com/images/a3.jpg}"alt="profile-picture" class="avatar"> -->
-                        </a>
-                        <div class="media-body">
-                            <small>{{item.ArticleName}}<span class="font-bold"></span> </small>
-                            <br>
-                            <small class="text-muted">
-                              {{item.CreatedDate}}
-                            </small>
-                            <br>
-                            <small class="text-muted"></small>
+    <!-- <div class="row" style="padding:10px" *ngFor="let item of arr; let i=index"> -->
+            <div  class="row" style="padding:10px" *ngFor="let item of article[1]; let i=index">
+                    <!-- <div *ngFor="let item of article"> -->
+
+
+                            <img src="/assets/images/profile_img.jpg" alt="Avatar" style="  border-radius:50%;" alt="profile-picture">
+
+                            <p>{{item.ArticleName}}</p>
+                            <p>{{item.PreviewContent}}</p>
+
+                            <span style="padding-right:20px;"><button  (click)='onReadMore(item)'>Read More</button></span>
+                          <button  (click)="openEdit(item)">Edit</button>
                         </div>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <h3>{{item.ArticleName}}</h3><!--article name-->
-                    <hr>
-                    <div>
-                      <!--preview content--><h3>{{item.PreviewContent}}</h3>
-                    </div>
-                    <!-- <span> IANS</span> -->
-                    <span><span> Updated </span>{{item.ModifiedDate}}</span>
-                  </div>
-           </div>
-          </div>
           <div>{{item.Content}}</div>
     </div>
-</div>
-=======
-<p>
-  readmorearticle works!
-</p>
->>>>>>> a750595323a0ff2c1be31a1448899daacd6320c9
+
+
+
