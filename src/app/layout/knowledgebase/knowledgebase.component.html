@@ -28,12 +28,13 @@
             <div id="allarticletabview">
               <div *ngFor="let item of arr &&  filterdArticle || arr;let i=index">
                 <div class="container" *ngIf="item.isAdmin;else falseblock">
-                    <!-- get article  -->
-                        <p>{{item.ArticleName}}</p>
-                        <span style="padding-right:20px;">{{item.PreviewContent}} {{item.CategoryName}}dd</span>
-                        <span style="padding-right:20px;">{{item.CreatedBy}}dd</span>
-                        <span style="padding-right:20px;">{{item.CreatedByName}}dd</span>
-                        <span style="padding-right:20px;">{{item.CreatedDate}}dd</span>
+                  <img src='{{item.image1}}' alt="Avatar" style="width:90px">sss
+                 <!-- get article  -->
+                 <p>{{item.ArticleName}}</p>
+                 <span style="padding-right:20px;">{{item.PreviewContent}} {{item.CategoryName}}dd</span>
+                 <span style="padding-right:20px;">{{item.CreatedBy}}dd</span>
+                 <span style="padding-right:20px;">{{item.CreatedByName}}dd</span>
+                 <span style="padding-right:20px;">{{item.CreatedDate}}dd</span>
                   <span style="padding-right:20px;"><button class="firstbut" class="btn btn-primary btn-xs" (click)='onReadMore(item)'>Read More</button></span>
                   <button class="btn btn-primary btn-xs"  (click)="openEdit(i)">Edit</button>
                 </div>
@@ -55,10 +56,8 @@
               </div>
             </div>
           </div>
-
-        </div>
-        <div class="first" class="col-md-3">
-            <div id="dvarticlecontainer"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;padding-top:20px">
+          <!-- <div id="dvarticlecontainer" style="display: inline-block; vertical-align: top;padding-top:20px"> -->
+          <!-- </div> -->
             <app-searcharticle></app-searcharticle>
         </div>
         </div>
