@@ -10,16 +10,34 @@ export class CommonHttpService {
     CAT_URL = 'https://9eec69f1.ngrok.io/api/KB/GetCategories';
     ReadMore_URL = 'https://9eec69f1.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
     GetAllArticles ='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+
+    Search_article='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
     INSERT_URL ='https://9eec69f1.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   constructor(private http: HttpClient,private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
 
+    // all Knowledge Article methods here
   }
- public getKbArticleById(ArticleId)
+  public getAllKbArticle(ArticleId)
+  {
+    return this.http.get(this.GetAllArticles);
+  }
+
+  public  getArticleById(ArticleId){
+    return this.http.get(this.ReadMore_URL);
+  }
+
+  public getKbArticleById(ArticleId)
   {
     console.log(ArticleId);
+    return this.http.get(this.Edit_Fetch_URL);
+  }
+  public getSearchById()
+  {
+    console.log();
     return this.http.get(this.Edit_Fetch_URL);
   }
 
@@ -43,6 +61,7 @@ export class CommonHttpService {
       });
     }
 
+    // End of methods
 
 
   public globalGetService(url: string, data: any) {

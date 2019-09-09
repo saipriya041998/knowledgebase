@@ -52,22 +52,22 @@ export class DashboardComponent implements OnInit {
             }
         );
     }
-id:string;
-arr:KBArticles[]=[];
-    ngOnInit() {
-        this._data.getKbArticleById(1).subscribe(
-          (data: KBArticles[]) => {
-            this.arr = data;
-            console.log(data);
-        },
-        function(error) {
-            alert(error);
-        },
-        function() {
-            console.log('Server Responded');
-          }
-        );
-      }
+// id:string;
+// arr:KBArticles[]=[];
+//     ngOnInit() {
+//         this._data.getKbArticleById(1).subscribe(
+//           (data: KBArticles[]) => {
+//             this.arr = data;
+//             console.log(data);
+//         },
+//         function(error) {
+//             alert(error);
+//         },
+//         function() {
+//             console.log('Server Responded');
+//           }
+//         );
+//       }
 
 
     public closeAlert(alert: any) {
