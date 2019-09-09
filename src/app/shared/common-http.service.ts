@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 export class CommonHttpService {
     Edit_Fetch_URL: string = 'https://9eec69f1.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
     CAT_URL = 'https://9eec69f1.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://9eec69f1.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    ReadMore_URL = 'https://9eec69f1.ngrok.io/api/KB/GetReadArticle?ArticleId=';
     GetAllArticles ='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
     Search_article='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
@@ -25,7 +25,7 @@ export class CommonHttpService {
   }
 
   public  getArticleById(ArticleId){
-    return this.http.get(this.ReadMore_URL);
+    return this.http.get(this.ReadMore_URL+ArticleId);
   }
   public getSearchById()
   {

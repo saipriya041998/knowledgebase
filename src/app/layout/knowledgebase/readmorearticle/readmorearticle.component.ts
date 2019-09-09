@@ -13,7 +13,6 @@ export class ReadmorearticleComponent implements OnInit {
     constructor(private _actroute:ActivatedRoute, private _data:CommonHttpService) { }
     arr:KBArticles[]=[];
     arr1=[];
-    myarr:KBArticles[];
     id:number;
     name:string='';
     content:string='';
@@ -39,10 +38,9 @@ export class ReadmorearticleComponent implements OnInit {
 
         (data:KBArticles)=>{
           this.arr=data[0];
-            // console.log(this.arr);
-                // console.log(this.myarr);
+            console.log(this.arr);
 
-          this.name=data[0].ArticleName;
+         this.name=data[0].ArticleName;
           this.content=data[0].Content;
           this.pcontent=data[0].PreviewContent;
           this.catid=data[0].CategoryId;
@@ -54,7 +52,7 @@ export class ReadmorearticleComponent implements OnInit {
           this.modifieddate=data[0].ModifiedDate;
         }
       );
-    //   console.log(this.arr);
+          console.log(this.arr);
     }
   }
 
