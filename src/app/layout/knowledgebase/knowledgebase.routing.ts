@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { KnowledgebaseComponent } from './knowledgebase.component';
 import { AddarticleComponent } from './addarticle/addarticle.component';
 import { EditarticleComponent } from './editarticle/editarticle.component';
-import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
 
 
@@ -21,11 +20,6 @@ const routes: Routes = [
         component: EditarticleComponent
     },
     {
-
-        path: 'readmore/:id',
-        component: ReadmorearticleComponent},
-
-{
         path: 'myarticle',
         component: MyarticleComponent
     }

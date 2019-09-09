@@ -18,6 +18,8 @@ export class CommonHttpService {
   constructor(private http: HttpClient, private AngHttp: Http) { }
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
+
+    // all Knowledge Article methods here
   }
   public getAllKbArticle(ArticleId) {
     return this.http.get(this.GetAllArticles + ArticleId);
@@ -26,6 +28,7 @@ export class CommonHttpService {
   public  getArticleById(ArticleId) {
     return this.http.get(this.ReadMore_URL + ArticleId);
   }
+<<<<<<< HEAD
   public getSearchById() {
       return this.http.get(this.Search_article);
   }
@@ -51,6 +54,43 @@ export class CommonHttpService {
     // public
     // end
 
+=======
+
+  public getKbArticleById(ArticleId)
+  {
+    console.log(ArticleId);
+    return this.http.get(this.Edit_Fetch_URL);
+  }
+  public getSearchById()
+  {
+    console.log();
+    return this.http.get(this.Edit_Fetch_URL);
+  }
+
+  public getCategory()
+  {
+    return this.http.get(this.CAT_URL);
+  }
+ 
+    public addArticle(array) {
+        let body = JSON.stringify(array);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        return this.http.post(this.INSERT_URL,body,{headers:head});
+    }
+
+    
+    public editArticle(newArticle) {
+      let head = new HttpHeaders().set("Content-Type", "application/json");
+      let body = JSON.stringify(newArticle);
+      return this.http.put(this.INSERT_URL + newArticle.ArticleId, body, {
+        headers: head
+      });
+    }
+
+    // End of methods
+
+
+>>>>>>> a750595323a0ff2c1be31a1448899daacd6320c9
   public globalGetService(url: string, data: any) {
     const querystring = '?' + $.param(data);
     return this.http.get(url + querystring).toPromise().
@@ -58,6 +98,7 @@ export class CommonHttpService {
         // console.log("error happend", e);
       });
   }
+
   public globalGetServiceByUrl(url: string, data: any) {
     return this.http.get(url + data).toPromise().
       catch(e => {

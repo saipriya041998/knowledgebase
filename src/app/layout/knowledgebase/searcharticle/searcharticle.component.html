@@ -1,4 +1,4 @@
-<div style="display: inline-block; vertical-align: top;padding-top:30px; padding-left:10px;background-color: rgba(246, 242, 242, 0.863);">
+<div style="display: inline-block; vertical-align: top;padding-top:30px; padding-left:10px">
     <div id="dvSearch">
       <div style="font-size:large; font-weight: 600px" >
         <label style="font-weight: 700px">Search&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -9,6 +9,7 @@
         <!-- <input class="form-control " type="text" placeholder="Search for Designation" aria-label="Search" (keyup)='onSearch(d.value)' name='n1' #d id='search-box-round'> -->
         <input type="text"  id="txtbxsearch" style="width: 70%;height: 35px;" name='n1' #f placeholder=" Article Name / Description">
         <button class="btn btn-primary" type='submit' (click)="onSearch(f.value)" style="margin-left:6px; background-color: #34495e; border-color: #34495e; color: #fff;" >Search</button>
+        <button class="btn btn-primary" type='submit' (click)='onSearch(f.value)'><b>Search</b></button>
       </form>
       <hr style="border: 1px solid #d4cfc3;">
       <h3 style="margin-top:30px;">Categories</h3>
