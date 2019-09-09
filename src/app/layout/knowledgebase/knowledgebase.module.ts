@@ -12,10 +12,15 @@ import { KnowledgebaseRoutingModule } from './knowledgebase.routing';
 import { AddarticleComponent } from './addarticle/addarticle.component';
 import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 import { SearcharticleComponent } from './searcharticle/searcharticle.component';
+<<<<<<< HEAD
 // import { EditarticleComponent } from './editarticle/editarticle.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+=======
+import { EditarticleComponent } from './editarticle/editarticle.component';
+>>>>>>> 242b6c5e61817ddff877714432ba9cd48c8041e0
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 @NgModule({
     imports: [
         CommonModule,
@@ -33,7 +38,8 @@ import { MyarticleComponent } from './myarticle/myarticle.component';
         SearcharticleComponent,
         // EditarticleComponent,
         ReadmorearticleComponent,
-        MyarticleComponent
+        MyarticleComponent,
+
         // LayoutComponent,
         // SidebarComponent,
         // HeaderComponent

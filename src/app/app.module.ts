@@ -1,3 +1,4 @@
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -40,7 +41,8 @@ import { CommonHttpService } from './shared/common-http.service';
         ReactiveFormsModule,
         HttpModule,
         GrowlModule,
-        KnowledgebaseModule
+        KnowledgebaseModule,
+        RichTextEditorAllModule
     ],
     declarations: [AppComponent,],
     providers: [

@@ -2,6 +2,7 @@
    <p>{{item.ArticleName}}</p>
    <p>{{item.Content}}</p>
 
+<<<<<<< HEAD
 </div> -->
 <ul class="nav justify-content-end">
     <h1 class="header">Knowledge Base / Articles</h1>
@@ -51,4 +52,69 @@
             <app-searcharticle></app-searcharticle>
         </div>
       </div>
+=======
+   </div> -->
+   <ul class="nav justify-content-end">
+        <h4 class="font-light m-b-xs titlename">
+           Knowledge Base / Articles
+        </h4>
+        <li class="nav-item">
+           <a class="nav-link active" ><span class='fa fa-group'></span> Dashboard</a>
+        </li>
+        <div class="vertical">
+        </div>
+        <li class="nav-item">
+           <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a>
+        </li>
+        <div class="vertical">
+        </div>
+        <li class="nav-item">
+           <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a>
+        </li>
+        <div class="vertical">
+        </div>
+     </ul>
+     <div>
+     <div class="row">
+        <div class="first" class="col-md-9"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;border-right:1px solid grey;padding-top:20px" >
+           <div>
+              <div id="dvarticlecontainer" >
+                 <div id="allarticletabview">
+                    <div class="col-md-12" style="padding-bottom:50px;">
+                       <div *ngFor="let item of article[1]">
+                          <div class="container" >
+                             <img src="/assets/images/profile_img.jpg" alt="Avatar" style=" width:65px; border-radius:50%;float:left;" alt="profile-picture">
+                             <div class="col-md-10">
+                                <h3 class="mb-2">{{item.ArticleName}}</h3>
+                                <br>
+                                <div class="meta-wrap">
+                                   <p class="meta">
+                                      <span style="padding-right:20px;"><i class="icon-calendar mr-2"></i>{{item.CreatedDate}}</span>
+                                      <span style="padding-right:20px;"><a href="single.html"><i class="icon-folder-o mr-2"></i> {{item.CategoryName}}</a></span>
+                                      <span style="padding-right:20px;"><a href="single.html"><i class="icon-folder-o mr-2"></i> {{/<[^>]*>/g item.PreviewContent}}</a></span>
+                                      <span style="padding-right:20px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{item.CreatedByName}}</span>
+                                   </p>
+                                </div>
+                                <p class="mb-4">{{item.PreviewContent}}</p>
+                                <p>
+                                   <span style="padding-right:20px;"><button class="" (click)='onReadMore(item)'>Read More</button></span>
+                                   <span style="padding-right:20px;"><button class="" (click)='onReadMore(item)' *ngIf="item.CreatedByName=='Admin Manjunath'">Edit</button></span>
+
+                                </p>
+                             </div>
+
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+           <div class="first" class="col-md-3">
+              <div id="dvarticlecontainer" class="SER"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;padding-top:20px">
+                 <app-searcharticle></app-searcharticle>
+              </div>
+           </div>
+
+>>>>>>> 242b6c5e61817ddff877714432ba9cd48c8041e0
     </div>

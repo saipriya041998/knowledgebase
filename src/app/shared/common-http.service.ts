@@ -7,6 +7,7 @@ import * as $ from 'jquery';
 import { KBArticles } from '../kbarticles';
 @Injectable()
 export class CommonHttpService {
+<<<<<<< HEAD
   constructor(private http: HttpClient,private AngHttp: Http, private CommonHttpService:CommonHttpService) { }
   getCategory() {
     throw new Error("Method not implemented.");
@@ -22,6 +23,16 @@ GetAllArticles ='https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 Search_article='https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
 INSERT_URL ='https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+=======
+    Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+
+    Search_article='https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
+    INSERT_URL ='https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+>>>>>>> 242b6c5e61817ddff877714432ba9cd48c8041e0
 
 
 
@@ -66,9 +77,46 @@ public getSearchById()
       return this.http.get(this.CAT_URL);
   }
 
+<<<<<<< HEAD
 
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
+=======
+    // began  knowledge base article methods
+    public getKbArticleById(ArticleId)
+    {
+        console.log(ArticleId);
+        return this.http.get(this.Edit_Fetch_URL+ArticleId);
+    }
+
+    // insert logic here
+    public addArticle(array) {
+        let body = JSON.stringify(array);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        console.log(array);
+        return this.http.post(this.INSERT_URL,body,{headers:head});
+    }
+    public getCategoriesById()
+    {
+        console.log();
+        return this.http.get(this.CAT_URL);
+    }
+
+    // public
+    // end
+
+
+    public getCategory()
+    {
+        console.log();
+        return this.http.get(this.CAT_URL);
+    }
+    public editArticle(updateArr) {
+        let body = JSON.stringify(updateArr);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        return this.http.put(this.INSERT_URL+updateArr,body,{headers:head});
+    }
+>>>>>>> 242b6c5e61817ddff877714432ba9cd48c8041e0
 
   }
   public globalGetService(url: string, data: any) {
