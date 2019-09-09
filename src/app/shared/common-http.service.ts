@@ -19,6 +19,11 @@ export class CommonHttpService {
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
   }
+  public getAllKbArticle(ArticleId)
+  {
+    return this.http.get(this.GetAllArticles);
+  }
+
   public  getArticleById(ArticleId){
     return this.http.get(this.ReadMore_URL);
   }
