@@ -57,7 +57,16 @@ export class CommonHttpService {
     // end
 
 
-
+    public getCategory()
+    {
+        console.log();
+        return this.http.get(this.CAT_URL);
+    }
+    public editArticle(updateArr) {
+        let body = JSON.stringify(updateArr);
+        let head = new HttpHeaders().set("Content-Type", "application/json");
+        return this.http.put(this.INSERT_URL+updateArr,body,{headers:head});
+    }
 
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);

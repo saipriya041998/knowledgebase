@@ -11,7 +11,7 @@ import { KBArticles } from 'src/app/kbarticles';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
-
+    ngOnInit(){}
     constructor(private _data: CommonHttpService) {
         this.sliders.push(
             {

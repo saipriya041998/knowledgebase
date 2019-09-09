@@ -12,24 +12,6 @@ import { DdlCatogoryName } from 'src/app/ddlcategory';
 })
 export class EditarticleComponent implements OnInit {
   editForm: FormGroup;
-<<<<<<< HEAD
-  displayArticle: KBArticles[] = [];
-  constructor(private _data: CommonHttpService, private fb: FormBuilder) { }
-  id: number;
-  ngOnInit() {
-    // this.id=this._act.snapshot.params["ArticleId"];
-//     this._data.getKbArticleById(this.id).subscribe((x:KBArticles[]) => {
-//      //  this.arr = x;
-//      //  console.log(this.arr);
-//     this.displayArticle = x[0];
-//     this.editForm.patchValue({
-//      ArticleName:this.displayArticle.ArticleName,
-//      ArticleId: this.displayArticle.ArticleId,
-//      categoryId:this.displayArticle.CategoryId,
-//      CategoryName: this.displayArticle.CategoryName,
-//      previewcontent: this.displayArticle.PreviewContent,
-//      Content: this.displayArticle.Content
-=======
   displayArticle:KBArticles;
   id:number;
   catname:string;
@@ -37,17 +19,16 @@ export class EditarticleComponent implements OnInit {
   arr:DdlCatogoryName[]=[];
 
   constructor(private _data:CommonHttpService, private fb:FormBuilder,private _act:ActivatedRoute,private _router:Router) { }
->>>>>>> a750595323a0ff2c1be31a1448899daacd6320c9
 
   ngOnInit() {
     this.id=this._act.snapshot.params["ArticleId"];
-    this._data.getKbArticleById(this.id).subscribe((x:KBArticles[]) => {
+    this._data.getKbArticleById(this.id).subscribe((x:KBArticles) => {
       this.displayArticle = x;
      //  console.log(this.arr);
      console.log(this.displayArticle.ArticleName);
     // this.displayArticle = x[0];
     this.editForm.patchValue({
-      
+
      ArticleName:this.displayArticle.ArticleName,
      ArticleId: this.displayArticle.ArticleId,
      categoryId:this.displayArticle.CategoryId,
@@ -65,7 +46,7 @@ export class EditarticleComponent implements OnInit {
        this.id=this.id;
       //  console.log(this.id);
      });
-     this._data.getCategory().subscribe(
+     this._data.getCategoriesById().subscribe(
        (data:DdlCatogoryName[])=>{
         //  console.log(data);
          this.arr = data;

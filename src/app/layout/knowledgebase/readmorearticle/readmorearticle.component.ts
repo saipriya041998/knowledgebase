@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { KBArticles } from 'src/app/kbarticles';
+import { ActivatedRoute } from '@angular/router';
+import { CommonHttpService } from 'src/app/shared/common-http.service';
 
 @Component({
   selector: 'app-readmorearticle',
@@ -7,7 +10,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReadmorearticleComponent implements OnInit {
 
-<<<<<<< HEAD
     constructor(private _actroute: ActivatedRoute, private _data: CommonHttpService) { }
     arr: KBArticles[] = [];
     arr1 = [];
@@ -52,11 +54,6 @@ export class ReadmorearticleComponent implements OnInit {
       );
           console.log(this.arr);
     }
-=======
-  constructor() { }
-
-  ngOnInit() {
->>>>>>> a750595323a0ff2c1be31a1448899daacd6320c9
   }
 
-}
+

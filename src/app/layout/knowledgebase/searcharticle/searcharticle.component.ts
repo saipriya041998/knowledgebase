@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { KBArticles } from 'src/app/kbarticles';
+import { CommonHttpService } from 'src/app/shared/common-http.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-searcharticle',
@@ -6,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searcharticle.component.scss']
 })
 export class SearcharticleComponent implements OnInit {
-<<<<<<< HEAD
 arr_search: KBArticles[] = [];
 id: number;
   constructor(private _data: CommonHttpService, private _actroute: ActivatedRoute) { }
@@ -42,12 +44,6 @@ id: number;
           function() {}
         );
       }
-=======
-
-  constructor() { }
-
-  ngOnInit() {
->>>>>>> a750595323a0ff2c1be31a1448899daacd6320c9
   }
 
 }

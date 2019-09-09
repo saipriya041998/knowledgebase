@@ -77,9 +77,9 @@ a:not([href]):not([tabindex]) {
     color: gray;
   }
 
-  th.leave-type {
-    color: cornflowerblue;
-  }
+//   th.leave-type {
+//     color: cornflowerblue;
+//   }
   .vertical {
     background-color: #dee2e6;
     height: 33px;
@@ -145,16 +145,15 @@ a:not([href]):not([tabindex]) {
     background-color: white;
   }
   span.btn-btn {
-    cursor: pointer;
     padding: 12px 47px;
     background-color: #d3d3d352;
     width: -webkit-fill-available;
     font-size: 12px;
     font-weight: 600;
   }
-  span.btn-btn:hover {
-    background-color: skyblue;
-  }
+//   span.btn-btn:hover {
+//     background-color: skyblue;
+//   }
 
   .mat-toolbar-row,
   .mat-toolbar-single-row {
@@ -174,10 +173,7 @@ a:not([href]):not([tabindex]) {
     height: 21px;
     color: lightgrey;
   }
-  .hamberger:hover{
-    background-color: white;
 
-  }
   img.zlogo {
     background-color: #002046;
     height: 26px;

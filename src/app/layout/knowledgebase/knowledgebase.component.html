@@ -29,14 +29,22 @@
             <div class="first" class="col-md-9" >
               <div id="dvarticlecontainer" style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;border-right:1px solid grey;padding-top:20px">
                 <div *ngFor="let item of article[1]">
+
                     <p>{{item.ArticleName}}</p>
                     <img src="/assets/images/profile_img.jpg" alt="Avatar" style="  border-radius:50%;" alt="profile-picture">
-                    <!-- C:\Users\USER1\Desktop\Task_an\New folder\Team3\src\app\layout\knowledgebase\knowledgebase.component.html -->
+
+                    <p>{{item.ArticleName}}</p>
+                    <span style="padding-right:20px;">{{item.PreviewContent}} {{item.CategoryName}}dd</span>
+                    <span style="padding-right:20px;">{{item.CreatedBy}}dd</span>
+                    <span style="padding-right:20px;">{{item.CreatedByName}}dd</span>
+                    <span style="padding-right:20px;">{{item.CreatedDate}}dd</span>
+                    <span style="padding-right:20px;"><button class="firstbut" class="btn btn-primary btn-xs" (click)='onReadMore(item)'>Read More</button></span>
+                  <button class="btn btn-primary btn-xs"  (click)="openEdit(item)">Edit</button>
                 </div>
 
               </div>
 
-              <!-- </div> -->
+
             </div>
             <div class="first" class="col-md-3">
                 <div id="dvarticlecontainer"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;padding-top:20px">
