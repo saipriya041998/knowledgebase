@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { KBArticles } from 'src/app/kbarticles';
+import _ from 'lodash';
+import { ArticleService } from 'src/app/services/appservices/article.service';
+
 
 @Component({
   selector: 'app-readmorearticle',
@@ -10,52 +12,39 @@ import { KBArticles } from 'src/app/kbarticles';
 })
 export class ReadmorearticleComponent implements OnInit {
 
-    constructor(private _actroute: ActivatedRoute, private _data: CommonHttpService) { }
+    constructor(private _actroute: ActivatedRoute, private article: ArticleService) { }
     arr: KBArticles[] = [];
-    artcle:KBArticles[];
-    article:KBArticles[];
+    showrecords= false;
     id: number;
-    name = '';
-    content = '';
-    pcontent = '';
-    catid: number;
-    catname = '';
-    createdby: number;
-    createdbyname = '';
-    createddate = '';
-    modifiedby: number;
-    modifieddate = '';
-    ddlcatname = '';
-
     ngOnInit() {
-      this._actroute.params.subscribe(
+	this.getArticleById();
+	}
 
-        (x) => {
-          this.id = this.id;
-          console.log(this.id);
-        }
-      );
-      this._data.getArticleById(this.id).subscribe(
-
-        (data: KBArticles) => {
-          this.arr = data[0];
-            console.log(this.arr);
-
-         this.name = data[0].ArticleName;
-          this.content = data[0].Content;
-          this.pcontent = data[0].PreviewContent;
-          this.catid = data[0].CategoryId;
-          this.catname = data[0].CategoryName;
-          this.createdby = data[0].CreatedBy;
-          this.createdbyname = data[0].CreatedByName;
-          this.createddate = data[0].CreatedDate;
-          this.modifiedby = data[0].ModifiedBy;
-          this.modifieddate = data[0].ModifiedDate;
-        }
-      );
-          console.log(this.arr);
-    }
+   getArticleById() {
+        let req = {
+          ArticleId: 1
+        };
 
 
+        this.article.getArticleById(req)
+          .then(res => {
+            debugger;
+            if (res) {
+              if (!_.isEmpty(res)) {
+                this.arr = res;
+                this.showrecords = true;
+                console.log('res', res);
+              } else {
+                this.arr = [];
+                console.log('failed');
+                return false;
+              }
+            }
+          }, error => {
 
-}
+
+          });
+      }
+
+
+  }

@@ -40,7 +40,7 @@ export class KnowledgebaseComponent implements OnInit {
   }
 
   onReadMore(item:KBArticles){
-    this.router.navigate(['/readmore',item.ArticleId]);
+    this.router.navigate(['/knowledge-base/readmore',item.ArticleId]);
   }
 
 

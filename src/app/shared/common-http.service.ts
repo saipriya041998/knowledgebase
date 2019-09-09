@@ -1,64 +1,76 @@
-import { KBArticles } from 'src/app/kbarticles';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Http, Headers, Response,ResponseContentType } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
+import { KBArticles } from '../kbarticles';
 @Injectable()
 export class CommonHttpService {
-    Edit_Fetch_URL: string = 'https://9eec69f1.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://9eec69f1.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://9eec69f1.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+  constructor(private http: HttpClient,private AngHttp: Http, private CommonHttpService:CommonHttpService) { }
+  getCategory() {
+    throw new Error("Method not implemented.");
+}
+editArticle(arg0:KBArticles) {
+    throw new Error("Method not implemented.");
+}
+Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
+ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+GetAllArticles ='https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
-    Search_article='https://9eec69f1.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+Search_article='https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
-    INSERT_URL ='https://9eec69f1.ngrok.io/api/KB/InsertUpdateKBAricles';
+INSERT_URL ='https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
 
-  constructor(private http: HttpClient,private AngHttp: Http) { }
+
+
+public getAllKbArticle()
+{
+return this.http.get(this.GetAllArticles);
+}
+
+
+//   public  getArticleById(ArticleId){
+//     return this.http.get(this.ReadMore_URL+ArticleId);
+//   }
+public getArticleById(data: any): Promise<any> {
+
+return this.CommonHttpService.globalGetService("https://510e3c09.ngrok.io/api/KB/GetReadArticle", data)
+    .then(data => {
+        return data;
+    });
+}
+public getSearchById()
+{
+    return this.http.get(this.Search_article);
+}
+
+  // began  knowledge base article methods
+  public getKbArticleById(ArticleId)
+  {
+      console.log(ArticleId);
+      return this.http.get(this.Edit_Fetch_URL+ArticleId);
+  }
+
+  // insert logic here
+  public addArticle(array) {
+      let body = JSON.stringify(array);
+      let head = new HttpHeaders().set("Content-Type", "application/json");
+      console.log(array);
+      return this.http.post(this.INSERT_URL,body,{headers:head});
+  }
+  public getCategoriesById()
+  {
+      console.log();
+      return this.http.get(this.CAT_URL);
+  }
+
+
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
+
   }
-  public getAllKbArticle()
-  {
-    return this.http.get(this.GetAllArticles);
-  }
-
-  public  getArticleById(ArticleId){
-    return this.http.get(this.ReadMore_URL);
-  }
-  public getSearchById()
-  {
-      return this.http.get(this.Search_article);
-  }
-
-    // began  knowledge base article methods
-    public getKbArticleById(ArticleId)
-    {
-        console.log(ArticleId);
-        return this.http.get(this.Edit_Fetch_URL+ArticleId);
-    }
-
-    // insert logic here
-    public addArticle(array) {
-        let body = JSON.stringify(array);
-        let head = new HttpHeaders().set("Content-Type", "application/json");
-        console.log(array);
-        return this.http.post(this.INSERT_URL,body,{headers:head});
-    }
-    public getCategoriesById()
-    {
-        console.log();
-        return this.http.get(this.CAT_URL);
-    }
-
-    // public
-    // end
-
-
-
-
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().
@@ -66,6 +78,7 @@ export class CommonHttpService {
         //console.log("error happend", e);
       });
   }
+
   public globalGetServiceByUrl(url: string, data: any) {
     return this.http.get(url + data).toPromise().
       catch(e => {
@@ -136,5 +149,12 @@ export class CommonHttpService {
     //return file;
   }
 
-
+  public getbyurl(url: string): Promise<any> {
+    let headers = new HttpHeaders();
+    headers.append("Access-Control-Allow-Methods","GET, POST");
+    headers.append("Access-Control-Allow-Origin","*");
+    return  this.http.get<any>(url,
+      {headers : headers,responseType: 'json' as 'json'}).toPromise();
+    //return file;
+  }
 }

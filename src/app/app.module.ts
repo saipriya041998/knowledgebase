@@ -8,12 +8,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy,DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './shared';
 
-import { CommonHttpService } from './shared/common-http.service';
+// import { CommonHttpService } from './shared/common-http.service';
 import { LocalStorageService } from './shared/local-storage.service';
 import { JWTTokenInterceptorService } from './shared/jwttoken-interceptor.service';
 import { MasterService } from './services/master.service';
@@ -21,10 +20,12 @@ import { MessageService } from 'primeng/components/common/messageservice';
 import { CookieService } from './services/cookie.service';
 import { CommonUtilityService } from './services/common-utility.service';
 import { CommonAppService } from './services/appservices/common-app.service';
-
 //Module
 import { GrowlModule } from 'primeng/growl';
 import { KnowledgebaseModule } from './layout/knowledgebase/knowledgebase.module';
+import { DbGroupService } from './services/appservices/dbChatService';
+import { ArticleService } from './services/appservices/article.service';
+import { CommonHttpService } from './shared/common-http.service';
 
 
 @NgModule({
@@ -53,8 +54,9 @@ import { KnowledgebaseModule } from './layout/knowledgebase/knowledgebase.module
             useClass: JWTTokenInterceptorService,
             multi: true,
         },
+        DbGroupService ,
         AuthGuard, CommonHttpService, LocalStorageService, MasterService, MessageService, CookieService
-        , CommonAppService, CommonUtilityService],
+        , CommonAppService, CommonUtilityService,ArticleService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

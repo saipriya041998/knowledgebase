@@ -12,7 +12,7 @@ import { KnowledgebaseRoutingModule } from './knowledgebase.routing';
 import { AddarticleComponent } from './addarticle/addarticle.component';
 import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 import { SearcharticleComponent } from './searcharticle/searcharticle.component';
-import { EditarticleComponent } from './editarticle/editarticle.component';
+// import { EditarticleComponent } from './editarticle/editarticle.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
@@ -31,7 +31,7 @@ import { MyarticleComponent } from './myarticle/myarticle.component';
         KnowledgebaseComponent,
         AddarticleComponent,
         SearcharticleComponent,
-        EditarticleComponent,
+        // EditarticleComponent,
         ReadmorearticleComponent,
         MyarticleComponent
         // LayoutComponent,
