@@ -23,8 +23,9 @@ const routes: Routes = [
     {
 
         path: 'readmore/:id',
-        component: ReadmorearticleComponent
+        component: ReadmorearticleComponent},
 
+{
         path: 'myarticle',
         component: MyarticleComponent
     }
