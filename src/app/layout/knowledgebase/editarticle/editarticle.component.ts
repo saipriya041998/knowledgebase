@@ -23,10 +23,10 @@ export class EditarticleComponent implements OnInit {
   ngOnInit() {
     this.id=this._act.snapshot.params["ArticleId"];
     this._data.getKbArticleById(this.id).subscribe((x:KBArticles[]) => {
-     //  this.arr = x;
+      this.displayArticle = x;
      //  console.log(this.arr);
-    //  console.log(x);
-    this.displayArticle = x[0];
+     console.log(this.displayArticle.ArticleName);
+    // this.displayArticle = x[0];
     this.editForm.patchValue({
       
      ArticleName:this.displayArticle.ArticleName,
