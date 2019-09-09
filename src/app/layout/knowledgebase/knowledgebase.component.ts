@@ -40,4 +40,5 @@ export class KnowledgebaseComponent implements OnInit {
   onClickOpenAdd() {
 
   }
+
 }
