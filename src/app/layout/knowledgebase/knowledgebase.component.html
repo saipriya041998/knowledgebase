@@ -1,5 +1,46 @@
-<div *ngFor="let item of article[1]" >
+<!-- <div *ngFor="let item of article[1]" >
    <p>{{item.ArticleName}}</p>
    <p>{{item.Content}}</p>
 
-</div>
+</div> -->
+<ul class="nav justify-content-end">
+        <h1 class="header">Knowledge Base / Articles</h1>
+        <li class="nav-item">
+          <a class="nav-link active" ><span class='fa fa-group'></span> Dashboard</a>
+        </li>
+        <div class="vertical">
+
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a>
+        </li>
+        <div class="vertical">
+
+        </div>
+        <li class="nav-item">
+          <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a>
+        </li>
+        <div class="vertical">
+
+        </div>
+      </ul>
+      <div>
+      <div class="row">
+            <div class="first" class="col-md-9" >
+              <div id="dvarticlecontainer" style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;border-right:1px solid grey;padding-top:20px">
+                <div *ngFor="let item of article[1]">
+                    <p>{{item.ArticleName}}</p>
+                    <img src="/assets/images/profile_img.jpg" alt="Avatar" style="  border-radius:50%;" alt="profile-picture">
+                    <!-- C:\Users\USER1\Desktop\Task_an\New folder\Team3\src\app\layout\knowledgebase\knowledgebase.component.html -->
+                </div>
+
+              </div>
+
+              <!-- </div> -->
+            </div>
+            <div class="first" class="col-md-3">
+                <div id="dvarticlecontainer"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;padding-top:20px">
+                <app-searcharticle></app-searcharticle>
+            </div>
+          </div>
+        </div>

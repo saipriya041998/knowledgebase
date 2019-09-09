@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { KBArticles } from 'src/app/kbarticles';
-import { FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CommonHttpService } from './../../shared/common-http.service';
 import _ from 'lodash';
