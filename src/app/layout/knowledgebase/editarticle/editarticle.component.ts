@@ -48,7 +48,7 @@ export class EditarticleComponent implements OnInit {
        this.id=this.id;
       //  console.log(this.id);
      });
-     this._data.getCategoriesById().subscribe(
+     this._data.getCategory().subscribe(
        (data:DdlCatogoryName[])=>{
         //  console.log(data);
          this.arr = data;
