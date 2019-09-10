@@ -12,12 +12,12 @@ import { KnowledgebaseRoutingModule } from './knowledgebase.routing';
 import { AddarticleComponent } from './addarticle/addarticle.component';
 import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 import { SearcharticleComponent } from './searcharticle/searcharticle.component';
-// import { EditarticleComponent } from './editarticle/editarticle.component';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { EditarticleComponent } from './editarticle/editarticle.component';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
-// import { CommonHttpService } from '../../shared/common-http.service';
+// third party plugin
+import {DialogModule} from 'primeng/dialog';
 @NgModule({
     imports: [
         CommonModule,
@@ -27,13 +27,14 @@ import { MyarticleComponent } from './myarticle/myarticle.component';
         KnowledgebaseRoutingModule,
         ReactiveFormsModule,
         FormsModule,
-        RichTextEditorAllModule
+        RichTextEditorAllModule,
+        DialogModule
     ],
     declarations: [
         KnowledgebaseComponent,
         AddarticleComponent,
         SearcharticleComponent,
-        // EditarticleComponent,
+        EditarticleComponent,
         ReadmorearticleComponent,
         MyarticleComponent,
 
@@ -41,8 +42,6 @@ import { MyarticleComponent } from './myarticle/myarticle.component';
         // SidebarComponent,
         // HeaderComponent
     ],
-    // providers: [
-    //      CommonHttpService
-    //     ],
+
 })
 export class KnowledgebaseModule {}

@@ -22,20 +22,21 @@ export class EditarticleComponent implements OnInit {
   constructor(private _data:ArticleService, private fb:FormBuilder,private _act:ActivatedRoute,private _router:Router) { }
 
   ngOnInit() {
-    this.id=this._act.snapshot.params["ArticleId"];
+    this.id=this._act.snapshot.params['id'];
+    console.log(this.id);
     this._data.getKbArticleById(this.id).subscribe((x:KBArticles) => {
       this.displayArticle = x;
      //  console.log(this.arr);
-     console.log(this.displayArticle.ArticleName);
+     console.log(this.displayArticle.articleName);
     // this.displayArticle = x[0];
     this.editForm.patchValue({
 
-     ArticleName:this.displayArticle.ArticleName,
-     ArticleId: this.displayArticle.ArticleId,
-     categoryId:this.displayArticle.CategoryId,
-     CategoryName: this.displayArticle.CategoryName,
-     previewcontent: this.displayArticle.PreviewContent,
-     Content: this.displayArticle.Content
+     ArticleName:this.displayArticle.articleName,
+     ArticleId: this.displayArticle.articleId,
+     categoryId:this.displayArticle.categoryId,
+     CategoryName: this.displayArticle.categoryName,
+     previewcontent: this.displayArticle.previewContent,
+     Content: this.displayArticle.content
 
 
 

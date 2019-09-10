@@ -1,4 +1,3 @@
-<<<<<<< HEAD
  <div class="tab-pane" id="readarticletabview" *ngIf="showrecords">
       <div class="row" style="padding:10px">
           <div class="col-md-12" style="padding:20px;">
@@ -10,10 +9,10 @@
                               <!-- <img  src="{http://qa.zoomteams.com/images/a3.jpg}"alt="profile-picture" class="avatar"> -->
                           </a>
                           <div class="media-body">
-                              <small>{{arr.ArticleName}}<span class="font-bold"></span> </small>
+                              <small>{{arr.articleName}}<span class="font-bold"></span> </small>
                               <br>
                               <small class="text-muted">
-                                {{arr.CreatedDate}}
+                                {{arr.createdDate}}
                               </small>
                               <br>
                               <small class="text-muted"></small>
@@ -21,37 +20,16 @@
                       </div>
                   </div>
                   <div class="panel-body">
-                      <h3>{{arr.ArticleName}}</h3><!--article name-->
+                      <h3>{{arr.articleName}}</h3><!--article name-->
                       <hr>
                       <div>
-                        <!--preview content--><h3>{{arr.PreviewContent}}</h3>
+                        <!--preview content--><h3>{{arr.previewContent}}</h3>
                       </div>
                       <!-- <span> IANS</span> -->
-                      <span><span> Updated </span>{{arr.ModifiedDate}}</span>
+                      <span><span>  </span>{{arr.modifiedDate}}</span>
                     </div>
              </div>
             </div>
-            <div [innerHtml]="arr.Content"></div>
+            <div [innerHtml]="arr.content"></div>
       </div>
   </div>
-=======
-<div class="tab-pane" id="readarticletabview">
-    <!-- <div class="row" style="padding:10px" *ngFor="let item of arr; let i=index"> -->
-            <div  class="row" style="padding:10px" *ngFor="let item of article[1]; let i=index">
-                    <!-- <div *ngFor="let item of article"> -->
-
-
-                            <img src="/assets/images/profile_img.jpg" alt="Avatar" style="  border-radius:50%;" alt="profile-picture">
-
-                            <p>{{item.ArticleName}}</p>
-                            <p>{{item.PreviewContent}}</p>
-
-                            <span style="padding-right:20px;"><button  (click)='onReadMore(item)'>Read More</button></span>
-                          <button  (click)="openEdit(item)">Edit</button>
-                        </div>
-          <div>{{item.Content}}</div>
-    </div>
-
-
-
->>>>>>> 242b6c5e61817ddff877714432ba9cd48c8041e0
