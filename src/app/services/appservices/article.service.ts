@@ -40,12 +40,12 @@ export class ArticleService {
     public getArticleById(data: any): Promise<any> {
         console.log(data);
         return this.CommonHttpService.globalGetService(this.ReadMore_URL, data)
-        .then(data => {
+            .then(data => {
                 return data;
             },
-            err=>{
-                console.log(err);
-            });
+                err => {
+                    console.log(err);
+                });
     }
 
     // insert logic here
@@ -92,6 +92,11 @@ export class ArticleService {
             .then(data => {
                 return data;
             });
+    }
+
+    public getCategoriesById() {
+        console.log();
+        return this.http.get(this.CAT_URL);
     }
 
 }
