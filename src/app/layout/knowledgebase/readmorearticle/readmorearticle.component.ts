@@ -13,7 +13,6 @@ import _ from 'lodash';
   styleUrls: ['./readmorearticle.component.scss']
 })
 export class ReadmorearticleComponent implements OnInit {
-
   constructor(private _actroute: ActivatedRoute, private _data: ArticleService) { }
   arr: KBArticles[] = [];
   artcle: KBArticles[];
