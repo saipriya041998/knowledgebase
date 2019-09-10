@@ -28,7 +28,8 @@ import { DbGroupService } from './services/appservices/dbChatService';
 import { ArticleService } from './services/appservices/article.service';
 import { CommonHttpService } from './shared/common-http.service';
 
-
+//third party plugin
+import {DialogModule} from 'primeng/dialog';
 @NgModule({
     imports: [
         CommonModule,
@@ -42,7 +43,8 @@ import { CommonHttpService } from './shared/common-http.service';
         HttpModule,
         GrowlModule,
         KnowledgebaseModule,
-        RichTextEditorAllModule
+        RichTextEditorAllModule,
+        // DialogModule
     ],
     declarations: [AppComponent,],
     providers: [

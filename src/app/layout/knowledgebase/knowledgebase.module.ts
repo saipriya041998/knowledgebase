@@ -18,6 +18,8 @@ import { EditarticleComponent } from './editarticle/editarticle.component';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
 // import { CommonHttpService } from '../../shared/common-http.service';
+//third party plugin
+import {DialogModule} from 'primeng/dialog';
 @NgModule({
     imports: [
         CommonModule,
@@ -27,7 +29,8 @@ import { MyarticleComponent } from './myarticle/myarticle.component';
         KnowledgebaseRoutingModule,
         ReactiveFormsModule,
         FormsModule,
-        RichTextEditorAllModule
+        RichTextEditorAllModule,
+        DialogModule
     ],
     declarations: [
         KnowledgebaseComponent,

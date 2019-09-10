@@ -11,12 +11,24 @@ import { CommonHttpService } from './../../shared/common-http.service';
 
 @Injectable()
 export class ArticleService {
-    Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-    INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+    // Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    // CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
+    // ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    // GetAllArticles = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    // Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+    // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+
+    Edit_Fetch_URL: string = 'https://e5471e05.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://e5471e05.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://e5471e05.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+
+    Search_article='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
+    INSERT_URL ='https://e5471e05.ngrok.io/api/KB/InsertUpdateKBAricles';
+    CategoryId1='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    CategoryId2='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
+    CategoryId3='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
 
     constructor(
         private http: HttpClient, public router: Router,
