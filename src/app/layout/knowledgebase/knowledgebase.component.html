@@ -4,25 +4,26 @@
 
    </div> -->
    <ul class="nav justify-content-end">
-        <h4 class="font-light m-b-xs titlename">
-           Knowledge Base / Articles
-        </h4>
-        <li class="nav-item">
-           <a class="nav-link active" ><span class='fa fa-group'></span> Dashboard</a>
-        </li>
-        <div class="vertical">
-        </div>
-        <li class="nav-item">
-           <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a>
-        </li>
-        <div class="vertical">
-        </div>
-        <li class="nav-item">
-           <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a>
-        </li>
-        <div class="vertical">
-        </div>
-     </ul>
+    <h1 class="header">Knowledge Base / Articles</h1>
+    <li class="nav-item">
+    <a class="nav-link active" [routerLink]="['/hrms']" routerLinkActive="router-link-active" ><span class='fa fa-group'></span> Dashboard</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+    <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active" ><span class='fa fa-list'></span>My Articles</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+    <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+    </ul>
      <div>
      <div class="row">
         <div class="first" class="col-md-9"  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;border-right:1px solid grey;padding-top:20px" >

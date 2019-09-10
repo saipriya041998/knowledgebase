@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from 'src/app/Models/kbarticles';
 import { Subscriber, Subscription, observable } from 'rxjs';
 import { ArticleService } from 'src/app/services/appservices/article.service';
 

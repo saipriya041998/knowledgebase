@@ -4,7 +4,7 @@ import { Http, Headers, Response, ResponseContentType } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
-import { KBArticles } from '../kbarticles';
+import { KBArticles } from '../Models/kbarticles';
 @Injectable()
 export class CommonHttpService {
   constructor(private http: HttpClient, private AngHttp: Http) { }
@@ -14,14 +14,14 @@ export class CommonHttpService {
   editArticle(arg0: KBArticles) {
     throw new Error("Method not implemented.");
   }
-  Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-  CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
-  ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-  GetAllArticles = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+  Edit_Fetch_URL='https://f2cd7047.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+  CAT_URL = 'https://f2cd7047.ngrok.io/api/KB/GetCategories';
+  ReadMore_URL = 'https://f2cd7047.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+  GetAllArticles = 'https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
-  Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+  Search_article = 'https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
-  INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+  INSERT_URL = 'https://f2cd7047.ngrok.io/api/KB/InsertUpdateKBAricles';
   // public getAllKbArticle() {
   //   return this.http.get(this.GetAllArticles);
   // }
@@ -30,7 +30,7 @@ export class CommonHttpService {
   //   public  getArticleById(ArticleId){
   //     return this.http.get(this.ReadMore_URL+ArticleId);
   //   }
-  
+
   // public getSearchById() {
   //   return this.http.get(this.Search_article);
   // }
@@ -88,8 +88,8 @@ export class CommonHttpService {
 
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
-
   }
+
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().

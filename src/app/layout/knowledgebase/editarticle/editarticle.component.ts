@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from 'src/app/Models/kbarticles';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DdlCatogoryName } from 'src/app/ddlcategory';
+import { DdlCatogoryName } from 'src/app/Models/ddlcategory';
 import { ArticleService } from 'src/app/services/appservices/article.service';
 
 @Component({

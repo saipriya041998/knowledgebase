@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from 'src/app/Models/kbarticles';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../../app/services/appservices/article.service'
 import _ from 'lodash';
@@ -39,7 +39,7 @@ export class KnowledgebaseComponent implements OnInit {
       );
   }
   onReadMore(item:KBArticles){
-    this.router.navigate(['/knowledge-base/readmore',item.ArticleId]);
+    this.router.navigate(['/knowledge-base/readmore', item.ArticleId]);
   }
 
 
