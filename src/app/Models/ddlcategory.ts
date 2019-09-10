@@ -1,7 +1,7 @@
 export  class DdlCatogoryName
     {
       public constructor(
-      public CategoryId: number,
-      public CategoryName: string
+      public categoryId: number,
+      public categoryName: string
        ) {}
     }

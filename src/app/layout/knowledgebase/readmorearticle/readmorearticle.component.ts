@@ -22,8 +22,8 @@ export class ReadmorearticleComponent implements OnInit {
     }
 
    getArticleById() {
-    this.id = this._actroute.snapshot.params['id'];
-    // console.log(this.id);
+    this.id = this._actroute.snapshot.params['ArticleId'];
+    console.log(this.id);
         this._data.getArticleById(this.id)
           .then(res => {
             // debugger;

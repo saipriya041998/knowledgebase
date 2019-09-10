@@ -105,6 +105,7 @@ export class CommonHttpService {
 
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
+    console.log(querystring);
     return this.http.get(url + querystring).toPromise().
       catch(e => {
         //console.log("error happend", e);
