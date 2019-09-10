@@ -51,7 +51,10 @@ export class KnowledgebaseComponent implements OnInit {
     // this.router.navigate(['/knowledge-base/readmore', item.articleId]);
     this.router.navigate(['/knowledge-base/readmore'], { queryParams: { ArticleId: item.articleId } });
   }
-
+  onEditArticle(item)
+  {
+    this.router.navigate(['/knowledge-base/edit'], { queryParams: { ArticleId: item.articleId } });
+  }
 
   openAdd() {
     this.show_add_article = true;

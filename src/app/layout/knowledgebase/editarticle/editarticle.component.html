@@ -1,146 +1,39 @@
-<!-- <div>
-     <div class="header" style="background-color: white">
-      <a  class="font-light m-b-xs titlename">Edit Article </a>
-      <div class="header-right">
-        <a class=""  style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;">
-        <i class="fa fa-users" aria-hidden="true"></i> My Dashboard</a>
-        <a class="" (click)=" myArticle()"  style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;"><i class="fa fa-list"></i> My Articles</a>
-        <a class="btn btn-white btn-xs"  style="color: #3498db;padding: 8px;font-size: 10pt;height:34px !important;font-weight: 600;border-right: 1px solid #f1f1f1;" >  <i class="fa fa-book"></i>Add Article</a>
-      </div>
-    </div>
-
-
-
-    <form [formGroup]="kb" (ngSubmit)="onEditArticle()">
-<div class="col-md-8" style = " ">  -->
-<!-- <div  style="display: inline-block; vertical-align: top;border-right-width:2px solid #ddd7d7;padding-top:20px">
-<div class="row table-responsive content" style="padding: 30px">
-<table class="table table-bordered">
-   <tbody>
-      <tr>
-         <div class="form-group">
-         <td style="width:150px;"> Article Name<span style="color:red">*</span></td>
-         <td>
-            <input formControlName="ArticleName" type="text"  class="form-controll" style="width:300px;">
-         </td>
-         </div>
-      </tr>
-      <tr>
-         <div class="form-group">
-         <td> Category</td>
-         <td>
-            <select data-val="true" data-val-number="The field CategoryId must be a number." id="ideditcategory" name="CategoryId" style="width:300px;">
-               <option selected="selected" value="1">Accounts Recivables - Collections</option>
-               <option value="3">Office - Practice Management</option>
-               <option value="2">Surgical Authorizations &amp; Verifications</option>
-               <option value="">Choose your category</option>
-               <option *ngFor="let item of arr" [value]="item.CategoryName">{{item.CategoryName}}</option>
-            </select>
-         </td>
-      </div>
-      </tr>
-      <tr>
-         <div class="form-group">
-         <td> Description  </td>
-      </div>
-        <tr>
-       <ejs-richtexteditor></ejs-richtexteditor>
-      </tr>
-   </tbody>
-</table>
-
-</div>
-</div>
-</form>
- </div>
-
-
- -->
-
- <ul class="nav justify-content-end">
-        <h1 class="header">Edit article</h1>
-        <li class="nav-item">
-          <a class="nav-link active" ><span class='fa fa-group'></span> Dashboard</a>
-        </li>
-        <div class="vertical">
-
-        </div>
-        <li class="nav-item">
-          <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a>
-        </li>
-        <div class="vertical">
-
-        </div>
-        <li class="nav-item">
-          <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a>
-        </li>
-        <div class="vertical">
-
-        </div>
-      </ul>
-
-
-
-    <div class="main-contaner">
+<div class="main-content">
+  <div class="container-fluid">
     <form [formGroup]="editForm" (ngSubmit)="onEditArticle()">
-    <div class="container">
-
-
-      <!-- <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-6">
-            <label><b>Article_name</b></label>
-            <input formControlName="article_name" type="text" class="form-control" >
-          </div>
-        </div>
-      <div class="row">
-        <div class="clearfix visible-xs-block"></div>
-        <div class="col-xs-6 col-sm-4 col-md-8">
-          <label><b>Description</b></label>
-          <ejs-richtexteditor formControlName="content"></ejs-richtexteditor>
-        </div>
-      </div> -->
-      <br/>
-      <table class="table table-bordered ">
-        <tbody>
-
-              <tr>
-                    <td style="width:150px;"> Article Name<span style="color:red">*</span></td>
-                    <td><input type="text" formControlName="ArticleName"></td>
-                  </tr>
-          <tr>
-            <td>category</td>
-            <td><select formControlName="CategoryName" class="custom-select" >
-              <option value="">Choose your category
-
-              </option>
-              <option *ngFor="let item of arr" [value]="item.CategoryName">{{item.CategoryName}}</option>
-            </select></td>
-          </tr>
-
-          <tr>
-            <td>Description</td>
-          </tr>
-        </tbody>
-      </table>
-      <ejs-richtexteditor formControlName="Content" class="box"></ejs-richtexteditor>
-    <!-- <div class="row">
-        <div class="clearfix visible-xs-block"></div>
-        <div class="col-xs-6 col-sm-4 col-md-8">
-          <label><b>Image 1</b></label>
-         <input type="text" formControlName="" class="form-control">
-        </div>
-      </div> -->
-      <br>
-    </div>
-    <div class="container">
-      <div class="row custom-wrapper">
-        <div class="col-md-12 btn-box">
-          <button type="submit" class="btn btn-primary btn-sm-2 text-white btn-save">Save</button>&nbsp;&nbsp;
-          <button type="button" class="btn btn-danger btn-sm-2 text-white btn-cancel" aria-label="Close">Close</button> <br/>
-        </div>
+      <div class="container">
+        <br />
+        <table class="table table-bordered " style="margin-left: 0px !important;">
+          <tbody>
+            <tr>
+              <td style="width:150px;"> Article Name<span style="color:red">*</span></td>
+              <td><input type="text" formControlName="ArticleName"></td>
+            </tr>
+            <tr>
+              <td>category</td>
+              <!-- [compareWith]="compareFn" [formControl]="selectedCountriesControl" -->
+              <td>
+                <select formControlName="CategoryId" class="custom-select">
+                  <option value="">Choose your category
+                  </option>
+                  <option *ngFor="let item of arr" [value]="item.categoryId">{{item.categoryName}}</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Description</td>
+            </tr>
+          </tbody>
+        </table>
+        <ejs-richtexteditor formControlName="Content" class="box"></ejs-richtexteditor>
+        <br>
       </div>
-    </div>
-    <br/>
-    <!-- </div> -->
+      <div>
+        <button class="btn btn-primary">Save</button>
+        <!-- <button class="btn btn-danger">cancel</button> -->
+      </div>
+      <br />
+      <!-- </div> -->
     </form>
-    </div>
+  </div>
+</div>

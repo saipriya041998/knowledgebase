@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { KBArticles } from 'src/app/kbarticles';
 import { Subscriber, Subscription, observable } from 'rxjs';
 import { ArticleService } from 'src/app/services/appservices/article.service';
-
+import { Observable } from 'rxjs';
 import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import _ from 'lodash';
@@ -14,12 +14,13 @@ import _ from 'lodash';
   styleUrls: ['./readmorearticle.component.scss'],
   providers: [MessageService]
 })
-export class ReadmorearticleComponent implements OnInit {
+export class ReadmorearticleComponent implements OnInit, OnDestroy {
   public queryparams:any;
+  private _subscriptions = new Subscription();
   constructor(private _actroute: ActivatedRoute, private router: Router, private _data: ArticleService, private messageService : MessageService) { 
-    this.router.routerState.root.queryParams.subscribe((params: Params) => {      
+    this._subscriptions.add(this.router.routerState.root.queryParams.subscribe((params: Params) => {      
       this.queryparams = params['ArticleId'];     
-    });
+    }));
   }
   arr: KBArticles[] = [];
   artcle: KBArticles[];
@@ -73,6 +74,9 @@ export class ReadmorearticleComponent implements OnInit {
 
 
       })
+  }
+  ngOnDestroy(){
+    this._subscriptions.unsubscribe();
   }
 
 }

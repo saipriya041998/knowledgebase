@@ -36,7 +36,7 @@ import {DialogModule} from 'primeng/dialog';
         KnowledgebaseComponent,
         AddarticleComponent,
         SearcharticleComponent,
-        // EditarticleComponent,
+        EditarticleComponent,
         ReadmorearticleComponent,
         MyarticleComponent,
 
