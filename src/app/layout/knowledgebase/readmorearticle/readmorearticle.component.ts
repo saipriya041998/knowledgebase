@@ -2,9 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { KBArticles } from 'src/app/kbarticles';
 import { Subscriber, Subscription, observable } from 'rxjs';
-import { ArticleService } from 'src/app/services/appservices/article.service';
+import { ArticleService } from '../../../services/appservices/article.service';
 import { Observable } from 'rxjs';
-import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { MessageService } from 'primeng/components/common/messageservice';
 import _ from 'lodash';
 
@@ -17,12 +16,15 @@ import _ from 'lodash';
 export class ReadmorearticleComponent implements OnInit, OnDestroy {
   public queryparams:any;
   private _subscriptions = new Subscription();
-  constructor(private _actroute: ActivatedRoute, private router: Router, private _data: ArticleService, private messageService : MessageService) { 
-    this._subscriptions.add(this.router.routerState.root.queryParams.subscribe((params: Params) => {      
-      this.queryparams = params['ArticleId'];     
+  constructor(private _actroute: ActivatedRoute,
+    private router: Router,
+    private _data: ArticleService,
+    private messageService : MessageService) {
+    this._subscriptions.add(this.router.routerState.root.queryParams.subscribe((params: Params) => {
+      this.queryparams = params['ArticleId'];
     }));
   }
-  arr: KBArticles[] = [];
+  arr: KBArticles;
   artcle: KBArticles[];
   article: KBArticles[];
   arr1 = [];
@@ -49,6 +51,7 @@ export class ReadmorearticleComponent implements OnInit, OnDestroy {
     var req = {
       ArticleId : this.queryparams
     };
+    console.log(req);
     this._data.getArticleById(req)
       .then(res => {
         if (res) {
@@ -63,7 +66,7 @@ export class ReadmorearticleComponent implements OnInit, OnDestroy {
             this.messageService.add({ severity: 'success', summary: 'Success', detail: "success." });
           }
           else {
-            this.arr = [];
+            this.arr;
             this.read_more = [];
             console.log("failed");
             this.messageService.add({ severity: 'error', summary: 'Error', detail: "failed." });

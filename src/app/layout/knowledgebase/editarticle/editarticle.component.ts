@@ -160,16 +160,13 @@ export class EditarticleComponent implements OnInit, OnDestroy {
       this._data.updateArticle(req)
       .then(res => {
         if (res) {
-          this._router.navigate(['/knowledgebase'])
-          // this._router.navigateByUrl('knowledgebase');
+          this._router.navigate(['/knowledge-base']);
         }
-        else{
-          console.log("failed");
+        else {
+          console.log('failed');
         }
       }, error => {
-
-
-      })
+      });
     }
 
 
