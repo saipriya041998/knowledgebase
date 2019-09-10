@@ -47,8 +47,9 @@ export class KnowledgebaseComponent implements OnInit {
       function () { }
     );
   }
-  onReadMore(item: KBArticles) {
-    this.router.navigate(['/knowledge-base/readmore', item.ArticleId]);
+  onReadMore(item) {
+    // this.router.navigate(['/knowledge-base/readmore', item.articleId]);
+    this.router.navigate(['/knowledge-base/readmore'], { queryParams: { ArticleId: item.articleId } });
   }
 
 

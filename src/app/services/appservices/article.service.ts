@@ -18,17 +18,18 @@ export class ArticleService {
     // Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
     // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
 
-    Edit_Fetch_URL: string = 'https://e5471e05.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://e5471e05.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://e5471e05.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    Edit_Fetch_URL: string = 'https://f2cd7047.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://f2cd7047.ngrok.io/api/KB/GetCategories';
+    //ReadMore_URL = 'https://f2cd7047.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    ReadMore_URL = 'https://f2cd7047.ngrok.io/api/KB/GetReadArticle';
+    GetAllArticles ='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
-    Search_article='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+    Search_article='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
-    INSERT_URL ='https://e5471e05.ngrok.io/api/KB/InsertUpdateKBAricles';
-    CategoryId1='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    CategoryId2='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    CategoryId3='https://e5471e05.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
+    INSERT_URL ='https://f2cd7047.ngrok.io/api/KB/InsertUpdateKBAricles';
+    CategoryId1='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    CategoryId2='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
+    CategoryId3='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
 
     constructor(
         private http: HttpClient, public router: Router,
@@ -37,7 +38,7 @@ export class ArticleService {
 
     }
     public getArticleById(data: any): Promise<any> {
-        return this.CommonHttpService.globalGetService("https://510e3c09.ngrok.io/api/KB/GetReadArticle", data)
+        return this.CommonHttpService.globalGetService(this.ReadMore_URL, data)
             .then(data => {
                 return data;
             });

@@ -1,16 +1,16 @@
 export  class KBArticles {
     public constructor(
-      public  ArticleId: number,
-      public  ArticleName: string,
-      public  Content: string,
-      public  PreviewContent: string,
-      public  CategoryId: number,
-      public  CategoryName: string,
-      public  CreatedBy: number,
-      public  CreatedByName: string,
-      public  CreatedDate: string,
-      public  ModifiedBy: number,
-      public  ModifiedByName: string,
-      public  ModifiedDate: string
+      public  articleId: number,
+      public  articleName: string,
+      public  content: string,
+      public  previewContent: string,
+      public  categoryId: number,
+      public  categoryName: string,
+      public  createdBy: number,
+      public  createdByName: string,
+      public  createdDate: string,
+      public  modifiedBy: number,
+      public  modifiedByName: string,
+      public  modifiedDate: string
     ) {}
   }

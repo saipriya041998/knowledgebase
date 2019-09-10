@@ -32,7 +32,7 @@ export class SearcharticleComponent implements OnInit {
   onSearch(value) {
     console.log(value);
     if (value != '') {
-      this.arr_search = this.arr_search.filter(x => x.ArticleName.indexOf(value) != -1);
+      this.arr_search = this.arr_search.filter(x => x.articleName.indexOf(value) != -1);
       console.log('yes');
     } else {
       this._data.getSearchById().subscribe(
