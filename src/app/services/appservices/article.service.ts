@@ -41,6 +41,9 @@ export class ArticleService {
         return this.CommonHttpService.globalGetService(this.ReadMore_URL, data)
             .then(data => {
                 return data;
+            },
+            err=>{
+                console.log(err);
             });
     }
 

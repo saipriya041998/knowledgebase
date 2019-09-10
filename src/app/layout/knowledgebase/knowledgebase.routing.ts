@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { KnowledgebaseComponent } from './knowledgebase.component';
 import { AddarticleComponent } from './addarticle/addarticle.component';
-import { EditarticleComponent } from './editarticle/editarticle.component';
+// import { EditarticleComponent } from './editarticle/editarticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
+import { EditarticleComponent } from './editarticle/editarticle.component';
 
 
 const routes: Routes = [

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from 'src/app/Models/kbarticles';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from '../../../app/services/appservices/article.service'
 import _ from 'lodash';
+import { Item } from '@syncfusion/ej2-splitbuttons';
 
 @Component({
   selector: 'app-knowledgebase',
@@ -33,10 +34,10 @@ export class KnowledgebaseComponent implements OnInit {
 
       (data: KBArticles[]) => {
         this.arr = data;
-        // console.log(this.arr);
-        
+        console.log(this.arr);
+
         // this.artcle = _.toArray(this.arr);
-        this.all_articles = this.arr["kbArticles"];
+        this.all_articles = this.arr['kbArticles'];
         // console.log(this.artcle[1]);
         this.article = this.artcle;
         console.log(this.article);

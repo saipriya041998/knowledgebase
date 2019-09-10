@@ -4,7 +4,7 @@ import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { Subscriber, Subscription, observable } from 'rxjs';
 import { ActivatedRoute, Router, Params } from '@angular/router';
-import { DdlCatogoryName } from 'src/app/ddlcategory';
+import { DdlCatogoryName } from 'src/app/Models/ddlcategory';
 import { ArticleService } from 'src/app/services/appservices/article.service';
 import _ from 'lodash';
 @Component({

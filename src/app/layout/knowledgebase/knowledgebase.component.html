@@ -11,17 +11,20 @@
       <ul class="nav justify-content-end">
 
          <li class="nav-item">
-            <a class="nav-link active"><span class='fa fa-group'></span> Dashboard</a>
+            <!-- <a class="nav-link active"><span class='fa fa-group'></span> Dashboard</a> -->
+            <a class="nav-link active" [routerLink]="['/hrms']" routerLinkActive="router-link-active" ><span class='fa fa-group'></span> Dashboard</a>
          </li>
          <div class="vertical">
          </div>
          <li class="nav-item" style="cursor: pointer">
-            <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a>
+            <!-- <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a> -->
+            <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active" ><span class='fa fa-list'></span>My Articles</a>
          </li>
          <div class="vertical">
          </div>
          <li class="nav-item" style="cursor: pointer">
-            <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a>
+            <!-- <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a> -->
+            <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
          </li>
          <div class="vertical">
          </div>
@@ -54,10 +57,10 @@
                                        </p>
                                     </div>
                                     <p class="mb-4" [innerHtml]="item.previewContent">
-                                       
+
                                     </p>
                                     <p>
-                                       <span style="padding-right:20px;"><button class=""
+                                       <span style="padding-right:20px;"><button type='button' class=""
                                              (click)='onReadMore(item)'>Read More</button></span>
                                        <span style="padding-right:20px;"><button class="" (click)='onEditArticle(item)'
                                              *ngIf="item.createdByName=='Admin Manjunath'">Edit</button></span>

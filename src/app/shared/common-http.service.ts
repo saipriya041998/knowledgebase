@@ -4,9 +4,21 @@ import { Http, Headers, Response, ResponseContentType } from '@angular/http';
 import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import * as $ from 'jquery';
-import { KBArticles } from '../kbarticles';
+import { KBArticles } from '../Models/kbarticles';
 @Injectable()
 export class CommonHttpService {
+    // Edit_Fetch_URL: string = 'https://f2cd7047.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    // CAT_URL = 'https://f2cd7047.ngrok.io/api/KB/GetCategories';
+    // ReadMore_URL = 'https://f2cd7047.ngrok.io/api/KB/GetReadArticle?ArticleId=';
+    // GetAllArticles ='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+
+    // Search_article='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
+    // INSERT_URL ='https://f2cd7047.ngrok.io/api/KB/InsertUpdateKBAricles';
+    // CategoryId1='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    // CategoryId2='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
+    // CategoryId3='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
+
   constructor(private http: HttpClient, private AngHttp: Http) { }
   getCategory() {
     throw new Error("Method not implemented.");
@@ -42,7 +54,7 @@ export class CommonHttpService {
   //   public  getArticleById(ArticleId){
   //     return this.http.get(this.ReadMore_URL+ArticleId);
   //   }
-  
+
   // public getSearchById() {
   //   return this.http.get(this.Search_article);
   // }
@@ -100,8 +112,8 @@ export class CommonHttpService {
 
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
-
   }
+
   public globalGetService(url: string, data: any) {
     var querystring = "?" + $.param(data);
     return this.http.get(url + querystring).toPromise().

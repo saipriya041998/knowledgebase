@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 // import { CommonHttpService } from 'src/app/shared/common-http.service';
-import { KBArticles } from 'src/app/kbarticles';
-import { DdlCatogoryName } from 'src/app/ddlcategory';
+import { KBArticles } from 'src/app/Models/kbarticles';
+import { DdlCatogoryName } from 'src/app/Models/ddlcategory';
 import { ArticleService } from '../../../../app/services/appservices/article.service'
 
 @Component({
@@ -11,7 +11,7 @@ import { ArticleService } from '../../../../app/services/appservices/article.ser
   styleUrls: ['./addarticle.component.scss']
 })
 export class AddarticleComponent implements OnInit {
-  addForm: FormGroup; 
+  addForm: FormGroup;
 
   constructor(private fb: FormBuilder, private data: ArticleService) { }
   cat: DdlCatogoryName[] = [];

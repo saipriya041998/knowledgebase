@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from 'src/app/Models/kbarticles';
 import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { ActivatedRoute } from '@angular/router';
 import { ArticleService } from 'src/app/services/appservices/article.service';
