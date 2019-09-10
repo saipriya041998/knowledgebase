@@ -38,8 +38,9 @@ export class ArticleService {
 
     }
     public getArticleById(data: any): Promise<any> {
+        console.log(data);
         return this.CommonHttpService.globalGetService(this.ReadMore_URL, data)
-            .then(data => {
+        .then(data => {
                 return data;
             },
             err=>{
@@ -54,7 +55,8 @@ export class ArticleService {
         console.log(array);
         return this.http.post(this.INSERT_URL, body, { headers: head });
     }
-    public getCategoriesById() {
+
+    public getCategory() {
         console.log();
         return this.http.get(this.CAT_URL);
     }

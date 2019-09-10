@@ -16,12 +16,12 @@ export class AddarticleComponent implements OnInit {
   constructor(private fb: FormBuilder, private data: ArticleService) { }
   cat: DdlCatogoryName[] = [];
   ngOnInit() {
-    // this.data.getCategory().subscribe(
-    //     (data:DdlCatogoryName[])=>{
-    //       this.cat=data;
-    //       console.log(this.cat);
-    //     }
-    //   );
+    this.data.getCategory().subscribe(
+        (data:DdlCatogoryName[])=>{
+          this.cat=data;
+          console.log(this.cat);
+        }
+      );
     this.addForm = this.fb.group({
       article_name: new FormControl(),
       content: new FormControl(),
