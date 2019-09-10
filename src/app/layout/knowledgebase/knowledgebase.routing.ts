@@ -14,11 +14,15 @@ const routes: Routes = [
         component: KnowledgebaseComponent
     },
     {
+        path: 'knowledgebase',
+        component: KnowledgebaseComponent
+    },
+    {
         path: 'add',
         component: AddarticleComponent
     },
     {
-        path: 'edit/:id',
+        path: 'edit',
         component: EditarticleComponent
     },
     {
@@ -26,8 +30,8 @@ const routes: Routes = [
         component: MyarticleComponent
     },
     {
-        path: 'readmore/:id',
-        component: ReadmorearticleComponent
+        path:'readmore',
+        component:ReadmorearticleComponent
     }
 ];
 

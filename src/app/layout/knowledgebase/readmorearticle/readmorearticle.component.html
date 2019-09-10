@@ -1,4 +1,4 @@
- <div class="tab-pane" id="readarticletabview" *ngIf="showrecords">
+ <div class="tab-pane" id="readarticletabview">
       <div class="row" style="padding:10px">
           <div class="col-md-12" style="padding:20px;">
               <div class="hpanel  blog-box">
@@ -26,10 +26,27 @@
                         <!--preview content--><h3>{{arr.previewContent}}</h3>
                       </div>
                       <!-- <span> IANS</span> -->
-                      <span><span>  </span>{{arr.modifiedDate}}</span>
+                      <span><span> Updated </span>{{arr.modifiedDate}}</span>
                     </div>
              </div>
             </div>
             <div [innerHtml]="arr.content"></div>
       </div>
   </div>
+<!-- <div class="tab-pane" id="readarticletabview">
+    
+            <div  class="row" style="padding:10px" *ngFor="let item of article[1]; let i=index">                   
+
+                            <img src="/assets/images/profile_img.jpg" alt="Avatar" style="  border-radius:50%;" alt="profile-picture">
+
+                            <p>{{item.ArticleName}}</p>
+                            <p>{{item.PreviewContent}}</p>
+
+                            <span style="padding-right:20px;"><button  (click)='onReadMore(item)'>Read More</button></span>
+                          <button  (click)="openEdit(item)">Edit</button>
+                        </div>
+          <div>{{item.Content}}</div>
+    </div> -->
+
+
+

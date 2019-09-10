@@ -48,12 +48,13 @@ export class KnowledgebaseComponent implements OnInit {
       function () { }
     );
   }
-  onReadMore(item: KBArticles) {
-    this.router.navigate(['/knowledge-base/readmore', item.articleId]);
+  onReadMore(item) {
+    // this.router.navigate(['/knowledge-base/readmore', item.articleId]);
+    this.router.navigate(['/knowledge-base/readmore'], { queryParams: { ArticleId: item.articleId } });
   }
-
-  onClickEdit(articleArr:KBArticles) {
-    this.router.navigate(['/knowledge-base/edit/', articleArr.articleId]);
+  onEditArticle(item)
+  {
+    this.router.navigate(['/knowledge-base/edit'], { queryParams: { ArticleId: item.articleId } });
   }
 
   openAdd() {
