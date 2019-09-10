@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
-import { CommonHttpService } from 'src/app/shared/common-http.service';
+// import { CommonHttpService } from 'src/app/shared/common-http.service';
 @Component({
     selector: 'app-dashboard',
     templateUrl: './dashboard.component.html',
@@ -8,13 +8,11 @@ import { CommonHttpService } from 'src/app/shared/common-http.service';
     animations: [routerTransition()]
 })
 export class DashboardComponent implements OnInit {
-    ngOnInit() {
-
-    }
+    
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
-    ngOnInit(){}
-    constructor(private _data: CommonHttpService) {
+    
+    constructor() {
         this.sliders.push(
             {
                 imagePath: 'assets/images/slider1.jpg',
@@ -75,5 +73,8 @@ export class DashboardComponent implements OnInit {
     public closeAlert(alert: any) {
         const index: number = this.alerts.indexOf(alert);
         this.alerts.splice(index, 1);
+    }
+    ngOnInit(){
+
     }
 }
