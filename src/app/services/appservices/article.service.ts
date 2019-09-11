@@ -1,50 +1,60 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpHeaders } from '@angular/common/http';
-// import { Subject } from 'rxjs/Subject';
-// import { Observable } from 'rxjs/Rx';
-
-
+import * as appSettings from '../../../assets/constant.json';
+import { AppConstant } from '../../app.constant';
 import * as _ from 'lodash';
 import { Router, Params } from '@angular/router';
 import { CommonHttpService } from './../../shared/common-http.service';
 
 @Injectable()
 export class ArticleService {
-    // Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    // CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
-    // ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    // GetAllArticles = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    // Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-    // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+    appSettings: any = appSettings;
+    api_url: string;
+    appendpoint: string;
+    ReadMore_URL: string;
+    cpDefaultUrl: string;
+    cpDefaultUpdateUrl: string;
+    Edit_Fetch_URL: string;
+    CAT_URL: string;
+    INSERT_URL: string;
+    Search_article: string;
+    GetAllArticles: string;
 
-    Edit_Fetch_URL: string = 'https://9876e87a.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
-    CAT_URL = 'https://9876e87a.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://9876e87a.ngrok.io/api/KB/GetReadArticle';
-    GetAllArticles = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=';
+    // Edit_Fetch_URL: string = 'https://325cd82f.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
+    // CAT_URL = 'https://325cd82f.ngrok.io/api/KB/GetCategories';
+    // ReadMore_URL = 'https://325cd82f.ngrok.io/api/KB/GetReadArticle';
+    // GetAllArticles = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
-    Search_article = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-onsearch= 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=&Page=1&SearchString=';
-    INSERT_URL = 'https://9876e87a.ngrok.io/api/KB/InsertUpdateKBAricles';
-    CategoryId1 = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    CategoryId2 = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    CategoryId3 = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
-    GetAdminArticles ='https://9876e87a.ngrok.io/api/KB/GetArticles?getall=1&categ=1';
+    // Search_article = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+
+    // INSERT_URL = 'https://325cd82f.ngrok.io/api/KB/InsertUpdateKBAricles';
+    // CategoryId1 = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    // CategoryId2 = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
+    // CategoryId3 = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
+
     constructor(
         private http: HttpClient, public router: Router,
         private CommonHttpService: CommonHttpService
     ) {
-
+        this.api_url = AppConstant.API_ENDPOINT;
+        this.appendpoint = this.api_url;
+        this.ReadMore_URL = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.READMORE;
+        this.Edit_Fetch_URL = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETARTICLEBYID;
+        this.CAT_URL = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETCATEGORIES;
+        this.INSERT_URL = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.INSERTARTICLE;
+        this.Search_article = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.SEARCHARTICLE;
+        this.GetAllArticles = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETALLARTICLE;
     }
     public getArticleById(data: any): Promise<any> {
         console.log(data);
         return this.CommonHttpService.globalGetService(this.ReadMore_URL, data)
-        .then(data => {
+            .then(data => {
                 return data;
             },
-            err=>{
-                console.log(err);
-            });
+                err => {
+                    console.log(err);
+                });
     }
 
     // insert logic here
@@ -82,7 +92,7 @@ onsearch= 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=&Page=1&S
     }
 
     public getArticleBySearch(value){
-        return this.http.get(this.onsearch+value);
+        return this.http.get(this.Search_article+value);
 
     }
 
@@ -110,7 +120,12 @@ onsearch= 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=&Page=1&S
         });
     }
     public getAdminArticles(){
-        return this.http.get(this.GetAdminArticles);
+        return this.http.get(this.GetAllArticles);
     }
+
+    // public getCategoriesById() {
+    //     console.log();
+    //     return this.http.get(this.CAT_URL);
+    // }
 
 }
