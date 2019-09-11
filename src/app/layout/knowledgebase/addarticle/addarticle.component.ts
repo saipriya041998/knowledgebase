@@ -4,6 +4,7 @@ import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { KBArticles } from 'src/app/Models/kbarticles';
 import { DdlCatogoryName } from 'src/app/Models/ddlcategory';
 import { ArticleService } from '../../../../app/services/appservices/article.service'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-addarticle',
@@ -13,7 +14,7 @@ import { ArticleService } from '../../../../app/services/appservices/article.ser
 export class AddarticleComponent implements OnInit {
   addForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private data: ArticleService) { }
+  constructor(private fb: FormBuilder, private data: ArticleService,private route:Router) { }
   cat: DdlCatogoryName[] = [];
   ngOnInit() {
     this.data.getCategory().subscribe(
@@ -32,7 +33,7 @@ export class AddarticleComponent implements OnInit {
   }
 
   onAddArticle() {
-    this.data.addArticle(
+    this.data.add1Article(
       new KBArticles(
         this.addForm.value.article_id,
         this.addForm.value.article_name,
@@ -46,11 +47,21 @@ export class AddarticleComponent implements OnInit {
         this.addForm.value.modified_by,
         this.addForm.value.modified_by_name,
         this.addForm.value.modified_date
-      )).subscribe((x: any) => {
-        alert('done');
-        let check = x;
-        console.log(check);
-      });
+      ))
+    //   .subscribe((x: any) => {
+    //     alert('done');
+    //     let check = x;
+    //     console.log(check);
+    //   });
+    .then((x)=>{
+        console.log('added');
+    },
+    function(err){
+        console.log(err);
+    });
+  }
 
+  onClickClose() {
+    this.route.navigate(['/knowledge-base']);
   }
 }

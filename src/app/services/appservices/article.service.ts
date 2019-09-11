@@ -18,18 +18,18 @@ export class ArticleService {
     // Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
     // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
 
-    Edit_Fetch_URL: string = 'https://f25ec8b4.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
-    CAT_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetReadArticle';
-    GetAllArticles = 'https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    Edit_Fetch_URL: string = 'https://9876e87a.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
+    CAT_URL = 'https://9876e87a.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://9876e87a.ngrok.io/api/KB/GetReadArticle';
+    GetAllArticles = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=';
 
-    Search_article = 'https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-
-    INSERT_URL = 'https://f25ec8b4.ngrok.io/api/KB/InsertUpdateKBAricles';
-    CategoryId1 = 'https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    CategoryId2 = 'https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    CategoryId3 = 'https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
-
+    Search_article = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+onsearch= 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=&Page=1&SearchString=';
+    INSERT_URL = 'https://9876e87a.ngrok.io/api/KB/InsertUpdateKBAricles';
+    CategoryId1 = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    CategoryId2 = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
+    CategoryId3 = 'https://9876e87a.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
+    GetAdminArticles ='https://9876e87a.ngrok.io/api/KB/GetArticles?getall=1&categ=1';
     constructor(
         private http: HttpClient, public router: Router,
         private CommonHttpService: CommonHttpService
@@ -55,6 +55,14 @@ export class ArticleService {
         return this.http.post(this.INSERT_URL, body, { headers: head });
     }
 
+    //insert1  logic
+    public add1Article(data: any): Promise<any> {
+        return this.CommonHttpService.globalPostService(this.INSERT_URL, data)
+            .then(data => {
+                return data;
+        });
+    }
+
     public getCategory() {
         console.log();
         return this.http.get(this.CAT_URL);
@@ -68,6 +76,15 @@ export class ArticleService {
         console.log(ArticleId);
         return this.http.get(this.Edit_Fetch_URL + ArticleId);
     }
+    public getCategoriesById(value)
+    {
+        return this.http.get(this.GetAllArticles+value);
+    }
+
+    public getArticleBySearch(value){
+        return this.http.get(this.onsearch+value);
+
+    }
 
     // public getKbArticleById(data) {
     //     return this.CommonHttpService.globalGetService(this.Edit_Fetch_URL, data)
@@ -79,7 +96,7 @@ export class ArticleService {
     public editArticle(updateArr) {
         let body = JSON.stringify(updateArr);
         let head = new HttpHeaders().set("Content-Type", "application/json");
-        return this.http.put(this.INSERT_URL + updateArr, body, { headers: head });
+        return this.http.put(this.INSERT_URL, body, { headers: head });
     }
 
     public getAllKbArticle() {
@@ -90,7 +107,10 @@ export class ArticleService {
         return this.CommonHttpService.globalPostService(this.INSERT_URL, data)
             .then(data => {
                 return data;
-            });
+        });
+    }
+    public getAdminArticles(){
+        return this.http.get(this.GetAdminArticles);
     }
 
 }

@@ -3,32 +3,31 @@
    <p>{{item.Content}}</p>
 
    </div> -->
-<div class="main-content">
-   <div class="container-fluid">
-      <h6 class="font-light m-b-xs titlename">
-         Knowledge Base / Articles
-      </h6>
-      <ul class="nav justify-content-end">
-
-         <li class="nav-item">
-            <!-- <a class="nav-link active"><span class='fa fa-group'></span> Dashboard</a> -->
-            <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" ><span class='fa fa-group'></span> Dashboard</a>
-         </li>
-         <div class="vertical">
-         </div>
-         <li class="nav-item" style="cursor: pointer">
-            <!-- <a class="nav-link" (click)=" myArticle()"><span class='fa fa-list'></span>My Articles</a> -->
-            <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active" ><span class='fa fa-list'></span>My Articles</a>
-         </li>
-         <div class="vertical">
-         </div>
-         <li class="nav-item" style="cursor: pointer">
-            <!-- <a class="nav-link" (click)="openAdd()"><span class='fa fa-book'></span>Add Articles</a> -->
-            <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
-         </li>
-         <div class="vertical">
-         </div>
-      </ul>
+   <div class="positionfix" data-spy="affix">
+    <ul class="nav justify-content-end positionfix">
+        <h4 class="font-light m-b-xs titlename">
+            Knowledge Base / Articles
+        </h4>
+        <li class="nav-item">
+                <!-- <a class="nav-link active"  [routerLink]="['/hrms']" routerLinkActive="router-link-active" ><span class='fa fa-group'></span> Dashboard</a> -->
+                <button class="btn1" [routerLink]="['/hrms']" routerLinkActive="router-link-active"  ><span class='fa fa-group'></span> Dashboard</button>
+            </li>
+            <div class="vertical">
+            </div>
+            <li class="nav-item">
+                <!-- <a class="nav-link" (click)="getAdminArticles()"><span class='fa fa-list'></span>My Articles</a> -->
+                <button class="btn1" (click)="getAdminArticles()"><span class='fa fa-list'></span>My Articles</button>
+            </li>
+            <div class="vertical">
+            </div>
+            <li class="nav-item">
+               <!-- <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a> -->
+               <button class="btn1"  [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</button>
+            </li>
+            <div class="vertical">
+            </div>
+    </ul>
+</div>
       <div>
          <div class="row">
             <div class="first" class="col-md-9"
@@ -46,45 +45,42 @@
                                     <br>
                                     <div class="meta-wrap">
                                        <p class="meta">
-                                          <span style="padding-right:20px;"><i
-                                                class="icon-calendar mr-2"></i>{{item.createdDate}}</span>
-                                          <span style="padding-right:20px;"><a href="single.html"><i
-                                                   class="icon-folder-o mr-2"></i> {{item.categoryName}}</a></span>
-                                          <span style="padding-right:20px;"><a href="single.html"><i
-                                                   class="icon-folder-o mr-2"></i> <span [innerHtml]="item.previewContent">ss</span></a></span>
-                                          <span style="padding-right:20px;"><i
-                                                class="fa fa-user"></i>&nbsp;&nbsp;{{item.createdByName}}</span>
+                                        <span style="padding-right:10px;"><i class="icon-calendar mr-2"></i>{{item.createdDate}}</span>
+                                        <span style="padding-right:10px; font-family: initial"><i class="icon-folder-o mr-2"></i> {{item.categoryName}}</span>
+                                        <span style="padding-right:10px;"><i class="fa fa-user"></i>&nbsp;&nbsp;{{item.createdByName}}</span>
                                        </p>
                                     </div>
                                     <p class="mb-4" [innerHtml]="item.previewContent">
 
                                     </p>
                                     <p>
-                                       <span style="padding-right:20px;"><button type='button' class=""
+                                       <span style="padding-right:20px;"><button type='button' class="btn btn-primary btn-xs"
                                              (click)='onReadMore(item)'>Read More</button></span>
-                                       <span style="padding-right:20px;"><button class="" (click)='onEditArticle(item)'
-                                             *ngIf="item.createdByName=='Admin Manjunath'">Edit</button></span>
-
+                                       <span style="padding-right:20px;"><button class="btn btn-info btn-xs" (click)='onEditArticle(item)'
+                                             *ngIf="item.createdByName=='Admin Manjunath'"><i class="fa fa-pencil"> </i>Edit</button></span>
                                     </p>
                                  </div>
                               </div>
                            </div>
+                           <div class="custompagination pull-right pgArticleList" data-req-url="/KB/GetKBArticles" data-updatecontainer="#dvarticlecontainer">
+                            <span class="badge pagerInfo">Total Items:<b>{{all_articles.length}}</b></span>
+                            </div>
                         </div>
                      </div>
                   </div>
                </div>
             </div>
-            <div class="first" class="col-md-3">
-               <div id="dvarticlecontainer" class="SER"
-                  style="background-color:rgba(246, 242, 242, 0.863); display: inline-block; vertical-align: top;padding-top:20px">
-                  <app-searcharticle></app-searcharticle>
-               </div>
+            <div class="first" class="col-md-3" style="background-color:rgba(246, 242, 242, 0.863);display: inline-block; vertical-align: top;padding-top:30px; padding-left:10px">
+                <div id="dvSearch">
+                    <app-searcharticle (emit1)="onSideBarClick($event)" (emit2)="onSideBarClick2($event)"></app-searcharticle>
+                </div>
             </div>
 
          </div>
       </div>
-      <p-dialog header="Add Article" [(visible)]="show_add_article" [modal]="true" [responsive]="true"
+      <!-- <p-dialog header="Add Article" [(visible)]="show_add_article" [modal]="true" [responsive]="true"
          [maximizable]="true" [baseZIndex]="10000">
          <app-addarticle></app-addarticle>
-      </p-dialog>
-   </div>
+      </p-dialog> -->
+    <!-- container-fluid-end -->
+<!-- main-containent-end -->
