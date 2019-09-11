@@ -5,12 +5,7 @@ export const AppConstant = Object.freeze({
   APP: {
     MODULE_NAME: 'ChatApp-CpMp'
   },
-  API_ENDPOINT: 'https://ChatApp.com/api/',
-  UI_MP_ORGIN: 'https://ChatApp.com/',
-  UI_UP_ORGIN: 'https://ChatApp.com/',
-  UI_MP_SUBORGIN: 'mp/',
-  UI_CP_SUBORGIN: '/cp/',
-  UI_UP_SUBORGIN: '/up/',
+  API_ENDPOINT: 'https://9c99950c.ngrok.io/api/KB/',
   FILE_LOCATION: {
     base: "wwwroot",
     ConnectionFilesPath: "StaticFiles/ConnectionFiles/HTML/",
@@ -20,8 +15,8 @@ export const AppConstant = Object.freeze({
   ENCRYPTDECRIYPTKEY: 'moc.ppa-tahc-key', //chat-app-key
   API_CONFIG: {
     APP_CONTENT: {
-      APP_NAME: 'ChatApp',
-      APP_DESC: 'ChatApp',
+      APP_NAME: 'KnowledgeBase',
+      APP_DESC: 'KnowledgeBase',
     },
     LOCALSTORAGE: {
       STR_PREFIX: 'ichatUP-',
@@ -115,78 +110,18 @@ export const AppConstant = Object.freeze({
         GETBYCOMPANY: "/GetByCompany",
         REGISTEREMPLOYEE: "registeremployee",
       },
-      MESSAGES: {
-        BASE: "CpAgreement",
-      },
-      GROUP: {
-        BASE: "MpGroup"
-      },
-      MASTERGROUP: {
-        BASE: "Group",
-      },
-      RIGHTS: {
-        BASE: "MpLegoRights"
-      },
-      UPMODEL: {
-        BASE: "UPModel"
-      },
-      LEGO: {
-        BASE: "Lego"
-      },
-      WORKFLOW: {
-        BASE: "Workflow"
-      },
-      CONNECTIONS: {
-        BASE: "Connections"
-      },
-      BOOKMARK: {
-        BASE: "Bookmark"
-      },
-      ASSESSMENT: {
-        BASE: "Assessment"
-      },
-      DOCUMENT: {
-        BASE: "Document"
-      },
-      STRATEGY: {
-        BASE: "Strategy"
-      },
-      CPFEESDETAILS: {
-        BASE: "CpFeesDetails",
-        GETALLCPFEES: ""
-      },
-      CPAGREEMENT: {
-        BASE: "CPAgreement"
-        //GETALLCPFEES : ""       
-      },
-      CPPAYMENTTYPE: {
-        BASE: "CpPayType"
-      },
-      CPCARDTYPE: {
-        BASE: "CPCreditCardType"
-      },
-      DETAILS: {
-        BASE: "Details"
-      },
-      PERFORMANCE: {
-        BASE: "Performance"
-      },
-      COLLABORATION: {
-        BASE: "Collaboration"
-      },
-      OVERALLSEARCH: {
-        BASE: "OverallSearch"
-      },
-      REPORTS: {
-        BASE: "Reports"
-      },
-      PINMODULE: {
-        BASE: "Pinmodule"
-      },
-      SPREADSHEET: {
-        BASE: "SpreadSheet"
+      KNOWLEDGE: {
+        GETARTICLEBYID: "GetKBArticlesById?ArticleId=",
+        GETCATEGORIES: "GetCategories",
+        READMORE: "GetReadArticle",
+        INSERTARTICLE: "InsertUpdateKBAricles",
+        SEARCHARTICLE: "GetArticles?getall=0&categ=1&Page=1&SearchString=hundred",  
+        GETALLARTICLE: "GetArticles?getall=0&categ=1",        
       },
       NOTIFICATION: {
+        BASE: "TextEmail"
+      },
+      MESSAGES: {
         BASE: "TextEmail"
       },
     }

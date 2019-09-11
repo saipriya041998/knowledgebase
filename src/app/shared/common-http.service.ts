@@ -35,17 +35,17 @@ export class CommonHttpService {
 
   // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
 
-  Edit_Fetch_URL: string = 'https://f25ec8b4.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+  Edit_Fetch_URL: string = 'https://325cd82f.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+    CAT_URL = 'https://325cd82f.ngrok.io/api/KB/GetCategories';
+    ReadMore_URL = 'https://325cd82f.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+    GetAllArticles ='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
-    Search_article='https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+    Search_article='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
-    INSERT_URL ='https://f25ec8b4.ngrok.io/api/KB/InsertUpdateKBAricles';
-    CategoryId1='https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    CategoryId2='https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    CategoryId3='https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
+    INSERT_URL ='https://325cd82f.ngrok.io/api/KB/InsertUpdateKBAricles';
+    CategoryId1='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+    CategoryId2='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
+    CategoryId3='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
   // public getAllKbArticle() {
   //   return this.http.get(this.GetAllArticles);
   // }
