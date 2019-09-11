@@ -20,7 +20,6 @@ export class ArticleService {
 
     Edit_Fetch_URL: string = 'https://f25ec8b4.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
     CAT_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetCategories';
-    //ReadMore_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
     ReadMore_URL = 'https://f25ec8b4.ngrok.io/api/KB/GetReadArticle';
     GetAllArticles = 'https://f25ec8b4.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 

@@ -42,7 +42,7 @@ export class EditarticleComponent implements OnInit, OnDestroy {
     //       if (!_.isEmpty(res)) {
     //         // this.arr = res;
     //         this.displayArticle = res[0];
-            
+
     //         // this.messageService.add({ severity: 'success', summary: 'Success', detail: "success." });
     //       }
     //       else {
@@ -64,16 +64,16 @@ export class EditarticleComponent implements OnInit, OnDestroy {
     this.catid = this.displayArticle.categoryId;
     console.log(this.catid);
     this.editForm.patchValue({
-      
+
       ArticleName:this.displayArticle.articleName,
       ArticleId: this.displayArticle.articleId,
       CategoryId:this.displayArticle.categoryId,
       CategoryName: this.displayArticle.categoryName,
       previewcontent: this.displayArticle.previewContent,
       Content: this.displayArticle.content,
-   
-      
-      
+
+
+
     });
     // var cid=this.catid;
     return this.catid;
@@ -88,14 +88,14 @@ export class EditarticleComponent implements OnInit, OnDestroy {
   //     this.id=this.catid;
   //      console.log(x);
   //   });
-    this._data.getCategoriesById().subscribe(
+    this._data.getCategory().subscribe(
       (data:DdlCatogoryName[])=>{
         //  console.log(data);
         this.arr = data;
-        
+
       });
-      
-      
+
+
       console.log(this.catid);
       this.editForm = this.fb.group({
         ArticleName: new FormControl(null),
@@ -105,14 +105,14 @@ export class EditarticleComponent implements OnInit, OnDestroy {
         Content: new FormControl(null),
         previewcontent: new FormControl(null)
       });
-      
+
   }
 
   // onEditArticle() {
-    
+
   //     this._data.editArticle(
   //       new KBArticles(
-          
+
   //         this.editForm.value.ArticleName,
   //         this.editForm.value.ArticleId,
   //         this.editForm.value.CategoryId,
@@ -164,15 +164,13 @@ export class EditarticleComponent implements OnInit, OnDestroy {
           this._router.navigate(['/knowledge-base/'], { queryParams: { } });
           // this._router.navigateByUrl('knowledgebase');
         }
-        else{
-          console.log("failed");
+        else {
+          console.log('failed');
         }
       }, error => {
-
-
-      })
+      });
     }
-  
+
 
   ngOnDestroy() {
     this._subscriptions.unsubscribe();
