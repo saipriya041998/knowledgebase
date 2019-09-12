@@ -33,7 +33,7 @@ export class AddarticleComponent implements OnInit {
   }
 
   onAddArticle() {
-    this.data.add1Article(
+    this.data.addArticle(
       new KBArticles(
         this.addForm.value.article_id,
         this.addForm.value.article_name,
@@ -48,13 +48,9 @@ export class AddarticleComponent implements OnInit {
         this.addForm.value.modified_by_name,
         this.addForm.value.modified_date
       ))
-    //   .subscribe((x: any) => {
-    //     alert('done');
-    //     let check = x;
-    //     console.log(check);
-    //   });
+
     .then((x)=>{
-        console.log('added');
+        alert('Article Added');
     },
     function(err){
         console.log(err);

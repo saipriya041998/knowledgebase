@@ -5,7 +5,7 @@ export const AppConstant = Object.freeze({
   APP: {
     MODULE_NAME: 'ChatApp-CpMp'
   },
-  API_ENDPOINT: 'https://9c99950c.ngrok.io/api/KB/',
+  API_ENDPOINT: 'https://18232d92.ngrok.io/api/KB/',
   FILE_LOCATION: {
     base: "wwwroot",
     ConnectionFilesPath: "StaticFiles/ConnectionFiles/HTML/",
@@ -83,7 +83,7 @@ export const AppConstant = Object.freeze({
       iconDimLimit: 100,//4 kb
       photoPath: "UserPhotos/",
       photosizeLimit: 102400,//102 kb
-      photoDimLimit: 600,//600 pixels 
+      photoDimLimit: 600,//600 pixels
       account: {
         BASE: "Account",
         REGISTER: "/register",
@@ -111,12 +111,15 @@ export const AppConstant = Object.freeze({
         REGISTEREMPLOYEE: "registeremployee",
       },
       KNOWLEDGE: {
-        GETARTICLEBYID: "GetKBArticlesById?ArticleId=",
+        FETCHARTICLEBYID:'GetKBArticlesById?ArticleId=',
+        GETARTICLEBYID: "GetArticles?getall=0&categ=",
         GETCATEGORIES: "GetCategories",
-        READMORE: "GetReadArticle",
+        READMORE: 'GetReadArticle',
         INSERTARTICLE: "InsertUpdateKBAricles",
-        SEARCHARTICLE: "GetArticles?getall=0&categ=1&Page=1&SearchString=hundred",  
-        GETALLARTICLE: "GetArticles?getall=0&categ=1",        
+        SEARCHARTICLE: "GetArticles?getall=0&categ=&Page=1&SearchString=",
+        // SEARCHARTICLE1:'GetArticles?getall=0&categ=&Page=1&SearchString=',
+        GETALLARTICLE: "GetArticles?getall=0&categ=1",
+        GETADMINARTICLES:'GetArticles?getall=1&categ=1',
       },
       NOTIFICATION: {
         BASE: "TextEmail"

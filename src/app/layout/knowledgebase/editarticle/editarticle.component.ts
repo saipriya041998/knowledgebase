@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from '../../../Models/kbarticles';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { Subscriber, Subscription, observable } from 'rxjs';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { DdlCatogoryName } from '../../../Models/ddlcategory';
-import { ArticleService } from 'src/app/services/appservices/article.service';
+import { ArticleService } from '../../../services/appservices/article.service';
 import _ from 'lodash';
 @Component({
     selector: "app-editarticle",
@@ -69,7 +68,7 @@ export class EditarticleComponent implements OnInit, OnDestroy {
         this._data.getKbArticleById(this.id).subscribe((x: KBArticles) => {
             this.displayArticle = x;
             this.catid = this.displayArticle.categoryId;
-            console.log(this.catid);
+            console.log(this.displayArticle);
             this.editForm.patchValue({
                 ArticleName: this.displayArticle.articleName,
                 ArticleId: this.displayArticle.articleId,
@@ -78,12 +77,10 @@ export class EditarticleComponent implements OnInit, OnDestroy {
                 previewcontent: this.displayArticle.previewContent,
                 Content: this.displayArticle.content
             });
-            // var cid=this.catid;
-            return this.catid;
-            // console.log(cid);
-            //     if (this.catid===this.catArr.CategoryId) {
-            //       console.log('fetched');
-            // }
+
+        },
+        function(err){
+            alert('Internal Server');
         });
         // console.log(this.catid);
         // this._act.params.subscribe(
@@ -106,39 +103,6 @@ export class EditarticleComponent implements OnInit, OnDestroy {
             previewcontent: new FormControl(null)
         });
     }
-
-    // onEditArticle() {
-
-    //     this._data.editArticle(
-    //       new KBArticles(
-
-    //         this.editForm.value.ArticleName,
-    //         this.editForm.value.ArticleId,
-    //         this.editForm.value.CategoryId,
-    //         this.editForm.value.CategoryName,
-    //         this.editForm.value.Content,
-    //         this.editForm.value.previewcontent,
-    //         this.editForm.value.CreatedBy,
-    //         this.editForm.value.CreatedByName,
-    //         this.editForm.value.CreatedDate,
-    //         this.editForm.value.ModifiedBy,
-    //         this.editForm.value.ModifiedByName,
-    //         this.editForm.value.ModifiedDate
-    //       )
-    //     )
-    //     .subscribe(
-    //       (x:any)=>{
-    //         console.log(x);
-    //         this._router.navigate['/knowledge-base/']
-    //       },
-    //       function(err) {
-    //         console.log(err);
-    //       },
-    //       function() {
-    //         console.log('server req successfull');
-    //       }
-    //     )
-    //   }
 
     onEditArticle() {
         var req = {

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { KBArticles } from '../../kbarticles';
+import { KBArticles } from '../../Models/kbarticles';
 import { ArticleService } from '../../services/appservices/article.service';
 import _ from 'lodash';
 // import { Item } from '@syncfusion/ej2-splitbuttons';
@@ -16,7 +16,7 @@ export class KnowledgebaseComponent implements OnInit {
   constructor(private router: Router, private act: ActivatedRoute, private _data: ArticleService) {
 
   }
-
+  Article_Header:string;
   show = false;
   arr: KBArticles[] = [];
   artcle: KBArticles[];
@@ -29,10 +29,12 @@ export class KnowledgebaseComponent implements OnInit {
     this.getArticles();
   }
   getAdminArticles(){
+      this.Article_Header="/MY Articles";
     this._data.getAdminArticles().subscribe(
         (data:KBArticles[])=>{
+          //  console.log(data);
             this.arr=data;
-            this.artcle=_.toArray(this.arr);
+            this.all_articles=this.arr['kbArticles'];
         }
     )
 }
@@ -51,7 +53,7 @@ export class KnowledgebaseComponent implements OnInit {
         // console.log(this.article);
       },
       function (error) {
-        alert(error);
+        alert('Internal Server:500');
       },
       function () { }
     );
@@ -71,6 +73,7 @@ export class KnowledgebaseComponent implements OnInit {
     this._data.getCategoriesById(value).subscribe(
       (data:KBArticles[])=>
         {
+            console.log(data);
           this.arr=data;
           this.all_articles=this.arr['kbArticles'];
         });
@@ -103,6 +106,8 @@ onSideBarClick2(value) {
       this._data.getArticleBySearch(value).subscribe(
         (data:KBArticles[])=>
           {
+
+            console.log(data);
             this.arr=data;
             this.all_articles= this.arr['kbArticles'];
           });
@@ -135,7 +140,7 @@ onSideBarClick2(value) {
 //     )
 // }
 
-}
 //   openAdd() {
-//     this.show_add_article = true;
-//   }
+    //     this.show_add_article = true;
+    //   }
+}

@@ -7,17 +7,6 @@ import * as $ from 'jquery';
 import { KBArticles } from '../Models/kbarticles';
 @Injectable()
 export class CommonHttpService {
-    // Edit_Fetch_URL: string = 'https://f2cd7047.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    // CAT_URL = 'https://f2cd7047.ngrok.io/api/KB/GetCategories';
-    // ReadMore_URL = 'https://f2cd7047.ngrok.io/api/KB/GetReadArticle?ArticleId=';
-    // GetAllArticles ='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-
-    // Search_article='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-
-    // INSERT_URL ='https://f2cd7047.ngrok.io/api/KB/InsertUpdateKBAricles';
-    // CategoryId1='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    // CategoryId2='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    // CategoryId3='https://f2cd7047.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
 
   constructor(private http: HttpClient, private AngHttp: Http) { }
   getCategory() {
@@ -26,90 +15,6 @@ export class CommonHttpService {
   editArticle(arg0: KBArticles) {
     throw new Error("Method not implemented.");
   }
-  // Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-  // CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
-  // ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-  // GetAllArticles = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-
-  // Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-
-  // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
-
-  Edit_Fetch_URL: string = 'https://325cd82f.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-    CAT_URL = 'https://325cd82f.ngrok.io/api/KB/GetCategories';
-    ReadMore_URL = 'https://325cd82f.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-    GetAllArticles ='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-
-    Search_article='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-
-    INSERT_URL ='https://325cd82f.ngrok.io/api/KB/InsertUpdateKBAricles';
-    CategoryId1='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    CategoryId2='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    CategoryId3='https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
-  // public getAllKbArticle() {
-  //   return this.http.get(this.GetAllArticles);
-  // }
-
-
-  //   public  getArticleById(ArticleId){
-  //     return this.http.get(this.ReadMore_URL+ArticleId);
-  //   }
-
-  // public getSearchById() {
-  //   return this.http.get(this.Search_article);
-  // }
-
-  // // began  knowledge base article methods
-  // public getKbArticleById(ArticleId) {
-  //   console.log(ArticleId);
-  //   return this.http.get(this.Edit_Fetch_URL + ArticleId);
-  // }
-
-  // insert logic here
-  // public addArticle(array) {
-  //   let body = JSON.stringify(array);
-  //   let head = new HttpHeaders().set("Content-Type", "application/json");
-  //   console.log(array);
-  //   return this.http.post(this.INSERT_URL, body, { headers: head });
-  // }
-  // public getCategoriesById() {
-  //   console.log();
-  //   return this.http.get(this.CAT_URL);
-  // }
-
-  // // began  knowledge base article methods
-  // public getKbArticleById(ArticleId) {
-  //   console.log(ArticleId);
-  //   return this.http.get(this.Edit_Fetch_URL + ArticleId);
-  // }
-
-  // insert logic here
-  // public addArticle(array) {
-  //   let body = JSON.stringify(array);
-  //   let head = new HttpHeaders().set("Content-Type", "application/json");
-  //   console.log(array);
-  //   return this.http.post(this.INSERT_URL, body, { headers: head });
-  // }
-  // public getCategoriesById() {
-  //   console.log();
-  //   return this.http.get(this.CAT_URL);
-  // }
-
-  // public
-  // end
-
-
-  // public getCategory() {
-  //   console.log();
-  //   return this.http.get(this.CAT_URL);
-  // }
-  // public editArticle(updateArr) {
-  //   let body = JSON.stringify(updateArr);
-  //   let head = new HttpHeaders().set("Content-Type", "application/json");
-  //   return this.http.put(this.INSERT_URL + updateArr, body, { headers: head });
-  // }
-
-
   public globalPostService(url: string, data: any) {
     return this.http.post(url, data).toPromise();
   }

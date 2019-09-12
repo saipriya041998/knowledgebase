@@ -3,14 +3,15 @@
    <p>{{item.Content}}</p>
 
    </div> -->
+   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
    <div class="positionfix" data-spy="affix">
     <ul class="nav justify-content-end positionfix">
         <h4 class="font-light m-b-xs titlename">
-            Knowledge Base / Articles
+      Knowledge Base{{Article_Header}}
         </h4>
         <li class="nav-item">
                 <!-- <a class="nav-link active"  [routerLink]="['/hrms']" routerLinkActive="router-link-active" ><span class='fa fa-group'></span> Dashboard</a> -->
-                <button class="btn1" [routerLink]="['/hrms']" routerLinkActive="router-link-active"  ><span class='fa fa-group'></span> Dashboard</button>
+                <button class="btn1" [routerLink]="['/hrms']" routerLinkActive="router-link-active" style='margin-left: -100px;' ><span class='fa fa-group'></span> Dashboard</button>
             </li>
             <div class="vertical">
             </div>
@@ -28,6 +29,7 @@
             </div>
     </ul>
 </div>
+</nav>
       <div>
          <div class="row">
             <div class="first" class="col-md-9"

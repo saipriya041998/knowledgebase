@@ -4,8 +4,14 @@
   position: relative;
 }
 //Heading
-h4.header {
-    margin-right: 1141px;
+h4.header-lg {
+    margin-right: 900px;
+}
+// h4.header-md {
+//     margin-right: 1141px;
+// }
+.link-db {
+    margin-left: -117px;
 }
 .custom-select {
   display: inline-block;
@@ -85,4 +91,7 @@ element.style {
 ejs-richtexteditor#richtexteditor_1899407818_0 {
     margin-left: -346px;
     // border-right-width: 262px;
+}
+.form-box {
+    margin-left: 400px;
 }
