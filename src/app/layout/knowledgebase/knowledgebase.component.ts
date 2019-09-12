@@ -67,7 +67,7 @@ export class KnowledgebaseComponent implements OnInit {
     this.router.navigate(['/knowledge-base/edit'], { queryParams: { ArticleId: item.articleId } });
   }
 
-  onSideBarClick(value)
+  onFilterCheck(value)
   {
       if(value !=''){
     this._data.getCategoriesById(value).subscribe(
@@ -99,7 +99,7 @@ export class KnowledgebaseComponent implements OnInit {
 }
 
 // search
-onSideBarClick2(value) {
+onSearchClick(value) {
     if (value != "") {
         //this.artcle3[1]=this.artcle[1];
       //  console.log("vinay"+this.artcle3);
