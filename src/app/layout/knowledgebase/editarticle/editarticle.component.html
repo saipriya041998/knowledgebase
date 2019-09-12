@@ -1,3 +1,25 @@
+<ul class="nav justify-content-end">
+    <h4 class="header">Edit Articles</h4>
+    <li class="nav-item">
+      <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><span class='fa fa-group'></span> Dashboard</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active"><span class='fa fa-list'></span>My Articles</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
+    </li>
+    <div class="vertical">
+
+    </div>
+  </ul>
+
 <div class="main-content">
   <div class="container-fluid">
     <form [formGroup]="editForm" (ngSubmit)="onEditArticle()">
@@ -29,8 +51,8 @@
         <br>
       </div>
       <div>
-        <button class="btn btn-primary">Save</button>
-        <!-- <button class="btn btn-danger">cancel</button> -->
+        <button class="btn btn-primary">Save</button>&nbsp;&nbsp;
+        <button class="btn btn-warning">Close</button>
       </div>
       <br />
       <!-- </div> -->

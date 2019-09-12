@@ -3,6 +3,10 @@
   height: 957px;
   position: relative;
 }
+//Heading
+h4.header {
+    margin-right: 1141px;
+}
 .custom-select {
   display: inline-block;
   width: 38%;
@@ -25,6 +29,7 @@
   margin-bottom: 1rem;
   background-color: transparent;
   margin-left: -345px;
+  margin-top: 36px;
 }
 div#richtexteditor_593717673_0_rte-edit-view {
   background-color: #bdbdbd36;
@@ -76,4 +81,8 @@ a.nav-link{
 }
 element.style {
   margin-bottom: 162px;
+}
+ejs-richtexteditor#richtexteditor_1899407818_0 {
+    margin-left: -346px;
+    // border-right-width: 262px;
 }

@@ -1,83 +1,57 @@
 <ul class="nav justify-content-end">
-        <h4 class="header">Knowledge Base / Articles</h4>
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><span class='fa fa-group'></span> Dashboard</a>
-        </li>
-        <div class="vertical">
-
-        </div>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active"><span class='fa fa-list'></span>My Articles</a>
-        </li>
-        <div class="vertical">
-
-        </div>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
-        </li>
-        <div class="vertical">
-
-        </div>
-      </ul>
-
-
-
-    <div class="main-contaner">
+    <h4 class="header">Knowledge Base / Articles</h4>
+    <li class="nav-item">
+       <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><span class='fa fa-group'></span> Dashboard</a>
+    </li>
+    <div class="vertical">
+    </div>
+    <li class="nav-item">
+       <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active"><span class='fa fa-list'></span>My Articles</a>
+    </li>
+    <div class="vertical">
+    </div>
+    <li class="nav-item">
+       <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
+    </li>
+    <div class="vertical">
+    </div>
+ </ul>
+ <div class="main-contaner">
     <form [formGroup]="addForm" (ngSubmit)="onAddArticle()">
     <div class="container">
-
-
-      <!-- <div class="row">
-          <div class="col-xs-6 col-sm-4 col-md-6">
-            <label><b>Article_name</b></label>
-            <input formControlName="article_name" type="text" class="form-control" >
-          </div>
-        </div>
-      <div class="row">
-        <div class="clearfix visible-xs-block"></div>
-        <div class="col-xs-6 col-sm-4 col-md-8">
-          <label><b>Description</b></label>
-          <ejs-richtexteditor formControlName="content"></ejs-richtexteditor>
-        </div>
-      </div> -->
-      <br/>
-      <table class="table table-bordered ">
-        <tbody>
-          <tr>
-            <td>category</td>
-            <td><select formControlName="category_id" class="custom-select" >
-                <!-- <option value="">Choose your category</option> -->
-                <option *ngFor="let item of cat" [value]="item.categoryId">{{item.categoryName}}</option>
-              </select></td>
-          </tr>
-          <tr>
-            <td>Name</td>
-            <td><input type="text" formControlName="article_name"></td>
-          </tr>
-          <tr>
-            <td>Description</td>
-          </tr>
-        </tbody>
-      </table>
-      <ejs-richtexteditor formControlName="content" class="box"></ejs-richtexteditor>
-    <!-- <div class="row">
-        <div class="clearfix visible-xs-block"></div>
-        <div class="col-xs-6 col-sm-4 col-md-8">
-          <label><b>Image 1</b></label>
-         <input type="text" formControlName="" class="form-control">
-        </div>
-      </div> -->
-      <br>
+       <br/>
+       <table class="table table-bordered ">
+          <tbody>
+             <tr>
+                <td>category</td>
+                <td>
+                   <select formControlName="category_id" class="custom-select" >
+                      <!-- <option value="">Choose your category</option> -->
+                      <option *ngFor="let item of cat" [value]="item.categoryId">{{item.categoryName}}</option>
+                   </select>
+                </td>
+             </tr>
+             <tr>
+                <td>Name</td>
+                <td><input type="text" formControlName="article_name"><span style="color:red">*</span></td>
+             </tr>
+             <tr>
+                <td>Description</td>
+             </tr>
+          </tbody>
+       </table>
+       <ejs-richtexteditor formControlName="content" class="box"></ejs-richtexteditor>
+       <br>
     </div>
     <div class="container">
-      <div class="row custom-wrapper">
-        <div class="col-md-12 btn-box">
-          <button type="submit" class="btn btn-primary btn-sm-2 text-white btn-save">Save</button>&nbsp;&nbsp;
-          <button type="button" class="btn btn-danger btn-sm-2 text-white btn-cancel">Close</button> <br/>
-        </div>
-      </div>
+       <div class="row custom-wrapper">
+          <div class="col-md-12 btn-box">
+             <button type="submit" class="btn btn-primary btn-sm-2 text-white btn-save">Save</button>&nbsp;&nbsp;
+             <button type="button" class="btn btn-danger btn-sm-2 text-white btn-cancel" (click)='onClickClose()'>Close</button> <br/>
+          </div>
+       </div>
     </div>
     <br/>
     <!-- </div> -->
     </form>
-    </div>
+ </div>

@@ -65,6 +65,14 @@ export class ArticleService {
         return this.http.post(this.INSERT_URL, body, { headers: head });
     }
 
+    //insert1  logic
+    public add1Article(data: any): Promise<any> {
+        return this.CommonHttpService.globalPostService(this.INSERT_URL, data)
+            .then(data => {
+                return data;
+        });
+    }
+
     public getCategory() {
         console.log();
         return this.http.get(this.CAT_URL);
@@ -78,6 +86,15 @@ export class ArticleService {
         console.log(ArticleId);
         return this.http.get(this.Edit_Fetch_URL + ArticleId);
     }
+    public getCategoriesById(value)
+    {
+        return this.http.get(this.GetAllArticles+value);
+    }
+
+    public getArticleBySearch(value){
+        return this.http.get(this.Search_article+value);
+
+    }
 
     // public getKbArticleById(data) {
     //     return this.CommonHttpService.globalGetService(this.Edit_Fetch_URL, data)
@@ -89,7 +106,7 @@ export class ArticleService {
     public editArticle(updateArr) {
         let body = JSON.stringify(updateArr);
         let head = new HttpHeaders().set("Content-Type", "application/json");
-        return this.http.put(this.INSERT_URL + updateArr, body, { headers: head });
+        return this.http.put(this.INSERT_URL, body, { headers: head });
     }
 
     public getAllKbArticle() {
@@ -100,12 +117,15 @@ export class ArticleService {
         return this.CommonHttpService.globalPostService(this.INSERT_URL, data)
             .then(data => {
                 return data;
-            });
+        });
+    }
+    public getAdminArticles(){
+        return this.http.get(this.GetAllArticles);
     }
 
-    public getCategoriesById() {
-        console.log();
-        return this.http.get(this.CAT_URL);
-    }
+    // public getCategoriesById() {
+    //     console.log();
+    //     return this.http.get(this.CAT_URL);
+    // }
 
 }
