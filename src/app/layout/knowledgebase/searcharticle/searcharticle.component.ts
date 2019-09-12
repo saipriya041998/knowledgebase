@@ -1,6 +1,6 @@
 import { DdlCatogoryName } from '../../../Models/ddlcategory';
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import { KBArticles } from 'src/app/kbarticles';
+import { KBArticles } from '../../../Models/kbarticles';
 import { CommonHttpService } from 'src/app/shared/common-http.service';
 import { ActivatedRoute } from '@angular/router';
 import _ from 'lodash';

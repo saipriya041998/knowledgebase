@@ -1,15 +1,17 @@
 .main-contaner {
-    background-color: #e0e0e061;
-    height: 957px;
+    background-color: #80808000;
+    height: 1000px;
     position: relative;
     background-color: #8080801f;
   }
   .main-content {
     background-color: #80808026;
+    width: 100%;
+    float: left;
 }
 
 h4.header {
-    margin-right: 1306px;
+    margin-right: 1729px;
     float: left;
 }
 
@@ -17,6 +19,7 @@ h4.header {
     float: -28px;
     margin-left: 0px;
     margin-top: 10px;
+    height: 1700px;
 }
   .custom-select {
     display: inline-block;
@@ -110,4 +113,27 @@ h4.header {
   ejs-richtexteditor#richtexteditor_1050597303_0 {
     margin-left: -344px;
 }
-
+button.btn.btn-primary {
+    margin-top: -2552px;
+    margin-left: 15px;
+}
+button.btn.btn-warning {
+    margin-top: -2552px;
+}
+.vertical-line {
+    float: left;
+    height: 1700px;
+    width: 2px;
+    background-color: lightgray;
+}
+.container-fluid {
+    width: 100%;
+    /* padding-right: 15px; */
+    /* padding-left: 15px; */
+    /* margin-right: auto; */
+    /* margin-left: auto; */
+    float: left;
+}
+.container-fluid.second-card {
+    width: 62%;
+}
