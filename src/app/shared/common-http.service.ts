@@ -26,14 +26,14 @@ export class CommonHttpService {
   editArticle(arg0: KBArticles) {
     throw new Error("Method not implemented.");
   }
-  // Edit_Fetch_URL: string = 'https://510e3c09.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
-  // CAT_URL = 'https://510e3c09.ngrok.io/api/KB/GetCategories';
-  // ReadMore_URL = 'https://510e3c09.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
-  // GetAllArticles = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
+  // Edit_Fetch_URL: string = 'https://18232d92.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
+  // CAT_URL = 'https://18232d92.ngrok.io/api/KB/GetCategories';
+  // ReadMore_URL = 'https://18232d92.ngrok.io/api/KB/GetReadArticle?ArticleId=1';
+  // GetAllArticles = 'https://18232d92.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
 
-  // Search_article = 'https://510e3c09.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
+  // Search_article = 'https://18232d92.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
 
-  // INSERT_URL = 'https://510e3c09.ngrok.io/api/KB/InsertUpdateKBAricles';
+  // INSERT_URL = 'https://18232d92.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   Edit_Fetch_URL: string = 'https://325cd82f.ngrok.io/api/KB/GetKBArticlesById?ArticleId=1';
     CAT_URL = 'https://325cd82f.ngrok.io/api/KB/GetCategories';
