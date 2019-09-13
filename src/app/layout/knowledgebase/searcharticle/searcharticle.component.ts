@@ -34,10 +34,16 @@ console.log(this.arr1);
 );
 
 
-}
+} 
+
+selectedAnswer:number;
 updateCheckedOptions(id)
 {
+
+this.selectedAnswer=id;
 this.emit1.emit(id);
+
+
 }
 onSearchClick(searchTerm){
 this.emit2.emit(searchTerm);

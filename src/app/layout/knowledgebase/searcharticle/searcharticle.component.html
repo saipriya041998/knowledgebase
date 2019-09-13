@@ -15,17 +15,26 @@
     <h3 style="margin-top:30px;">Categories</h3>
     <ul style="list-style: none;padding-left: 0px;width: 100%;">
     <div class="form-group">
-    <label for="options">Options:</label>
+<!--
     <div *ngFor="let option of arr1">
-    <label>
+        <label (click)="updateCheckedOptions(option.categoryId)" style="border-bottom: 1px solid #cecece;padding:7px;" > {{option.categoryName}}
     <input type="checkbox"
     name="options"
-    value="{{option.categoryName}}"
     (click)="updateCheckedOptions(option.categoryId)"
     />
-    {{option.categoryName}}
     </label>
-    </div>
+    </div> -->
+    <div *ngFor="let option of arr1">
+        <label>
+        <input *ngIf="option.categoryId == selectedAnswer" type="checkbox" [ngModel]="option.categoryId == selectedAnswer"
+        (ngModelChange)="option.categoryId"
+        name="options"
+        value="{{option.categoryName}}"
+        style="display: inline-flexbox"
+        />
+        <label (click)="updateCheckedOptions(option.categoryId)">{{option.categoryName}}</label>
+        </label>
+        </div>
     </div>
     </ul>
     </div>
