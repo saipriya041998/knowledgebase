@@ -49,7 +49,6 @@ export class EditarticleComponent implements OnInit, OnDestroy {
         //       if (!_.isEmpty(res)) {
         //         // this.arr = res;
         //         this.displayArticle = res[0];
-
         //         // this.messageService.add({ severity: 'success', summary: 'Success', detail: "success." });
         //       }
         //       else {
