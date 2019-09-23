@@ -3,6 +3,7 @@
    <p>{{item.Content}}</p>
 
    </div> -->
+
    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
    <div class="positionfix" data-spy="affix">
     <ul class="nav justify-content-end positionfix">
@@ -30,6 +31,7 @@
     </ul>
 </div>
 </nav>
+
       <div>
          <div class="row">
             <div class="first" class="col-md-9"
@@ -38,7 +40,7 @@
                   <div id="dvarticlecontainer">
                      <div id="allarticletabview">
                         <div class="col-md-12" style="padding-bottom:50px;">
-                           <div *ngFor="let item of all_articles">
+                           <div *ngFor="let item of all_articles ">
                               <div class="container">
                                  <img src="/assets/images/profile_img.jpg" alt="Avatar"
                                     style=" width:65px; border-radius:50%;float:left;" alt="profile-picture">
@@ -65,12 +67,13 @@
                               </div>
                            </div>
                            <div class="custompagination pull-right pgArticleList" data-req-url="/KB/GetKBArticles" data-updatecontainer="#dvarticlecontainer">
-                            <span class="badge pagerInfo">Total Items:<b>{{all_articles.length}}</b></span>
+                            <!-- <span class="badge pagerInfo">Total Items:<b>{{page.length}}</b></span> -->
                             </div>
                         </div>
                      </div>
                   </div>
                </div>
+
             </div>
             <div class="first" class="col-md-3" style="background-color:rgba(246, 242, 242, 0.863);display: inline-block; vertical-align: top;padding-top:30px; padding-left:10px">
                 <div id="dvSearch">
@@ -79,7 +82,38 @@
             </div>
 
          </div>
-      </div>
+         <!-- <div class="pagination">
+            <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+         </div> -->
+         <!-- <pagination-controls (pageChange)="p=$event"></pagination-controls> -->
+         <!-- <div class="custompagination pull-right pgArticleList" data-req-url="/KB/GetKBArticles" data-updatecontainer="#dvarticlecontainer">
+            <span class="badge pagerInfo">Showing <b>1-10</b> of <b>29</b></span><ul><li class="disabled"><a data-val="0" href="javascript:void(0)">&lt;&lt;</a></li><li><select class="pagerSelect input-small"><option selected="selected" value="1">1</option><option value="2">2</option><option value="3">3</option></select></li><li><a class="pagerItem" data-val="2" href="javascript:void(0)">&gt;&gt;</a></li></ul>
+        </div> -->
+        <div class="pagination">
+
+        <ngb-pagination  *ngIf="pageVariable" [collectionSize]="totalItem"  [(page)]="page" (pageChange)="loadPage(Page)" currentPage="Page" [rotate]="true" size="sm" [boundaryLinks]="true"></ngb-pagination> <br>
+
+        </div>
+        <!-- <ngb-pagination [collectionSize]="totalItem" [(page)]="page"  (pageChange)="loadPage(page)" ></ngb-pagination>
+        <ngb-pagination [collectionSize]="120" [(page)]="page" [maxSize]="5"></ngb-pagination>
+        <ngb-pagination [collectionSize]="totalItem" [(page)]="page"></ngb-pagination>
+        <ngb-pagination [collectionSize]="120" [(page)]="page"  [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+
+        {{Page}} -->
+
+        </div>
+        <!-- <div class="spin" *ngIf="!spinner">
+          <div class="spinner-grow text-muted"></div>
+          <div class="spinner-grow text-primary"></div>
+          <div class="spinner-grow text-success"></div>
+          <div class="spinner-grow text-info"></div>
+          <div class="spinner-grow text-warning"></div>
+          <div class="spinner-grow text-danger"></div>
+          <div class="spinner-grow text-secondary"></div>
+          <div class="spinner-grow text-dark"></div>
+          <div class="spinner-grow text-light"></div>
+          </div> -->
+
       <!-- <p-dialog header="Add Article" [(visible)]="show_add_article" [modal]="true" [responsive]="true"
          [maximizable]="true" [baseZIndex]="10000">
          <app-addarticle></app-addarticle>

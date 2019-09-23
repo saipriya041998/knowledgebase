@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { GrowlModule } from 'primeng/growl';
 // import { LayoutRoutingModule } from './layout-routing.module';
 // import { LayoutComponent } from './layout.component';
 // import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -16,8 +16,13 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
 import { EditarticleComponent } from './editarticle/editarticle.component';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
+//Pagination
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 // third party plugin
 import {DialogModule} from 'primeng/dialog';
+import { PaginationComponent } from './pagination/pagination.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -28,7 +33,10 @@ import {DialogModule} from 'primeng/dialog';
         ReactiveFormsModule,
         FormsModule,
         RichTextEditorAllModule,
-        DialogModule
+        DialogModule,
+        NgxPaginationModule,
+        NgbModule,
+        GrowlModule
     ],
     declarations: [
         KnowledgebaseComponent,
@@ -37,6 +45,8 @@ import {DialogModule} from 'primeng/dialog';
         EditarticleComponent,
         ReadmorearticleComponent,
         MyarticleComponent,
+        PaginationComponent,
+
 
         // LayoutComponent,
         // SidebarComponent,

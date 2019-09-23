@@ -17,6 +17,7 @@
     </div>
  </ul>
  <div class="main-contaner">
+        <p-growl [(value)]="msgs"></p-growl>
     <form [formGroup]="addForm" (ngSubmit)="onAddArticle()">
     <div class="container form-box">
        <br/>

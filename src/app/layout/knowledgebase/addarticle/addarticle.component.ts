@@ -5,6 +5,8 @@ import { KBArticles } from 'src/app/Models/kbarticles';
 import { DdlCatogoryName } from 'src/app/Models/ddlcategory';
 import { ArticleService } from '../../../../app/services/appservices/article.service'
 import { ActivatedRoute, Router } from '@angular/router';
+import { MessageService } from 'primeng/primeng';
+import { Message } from 'primeng/components/common/api';
 
 @Component({
   selector: 'app-addarticle',
@@ -13,8 +15,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AddarticleComponent implements OnInit {
   addForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private data: ArticleService,private route:Router) { }
+  msgs: Message[] = [];
+  constructor(private fb: FormBuilder, private data: ArticleService,private route:Router,private messageService: MessageService) { }
   cat: DdlCatogoryName[] = [];
   ngOnInit() {
     this.data.getCategory().subscribe(
@@ -48,16 +50,15 @@ export class AddarticleComponent implements OnInit {
         this.addForm.value.modified_by_name,
         this.addForm.value.modified_date
       ))
-
-    .then((x)=>{
-        alert('Article Added');
-    },
-    function(err){
-        console.log(err);
-    });
-  }
+      .then((x) => {
+        this.msgs = [];
+        this.msgs.push({ severity: 'success', summary: 'succes', detail: 'article  Added' }); },
+    function(err) { console.log(err); });
+}
 
   onClickClose() {
     this.route.navigate(['/knowledge-base']);
   }
+
 }
+

@@ -30,6 +30,7 @@ import { CommonHttpService } from './shared/common-http.service';
 
 //third party plugin
 import {DialogModule} from 'primeng/dialog';
+import { PaginationComponent } from './knowledgebase/pagination/pagination.component';
 @NgModule({
     imports: [
         CommonModule,
@@ -46,7 +47,7 @@ import {DialogModule} from 'primeng/dialog';
         RichTextEditorAllModule,
         // DialogModule
     ],
-    declarations: [AppComponent,],
+    declarations: [AppComponent, PaginationComponent,],
     providers: [
         DatePipe,
         {

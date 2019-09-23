@@ -5,7 +5,7 @@ export const AppConstant = Object.freeze({
   APP: {
     MODULE_NAME: 'ChatApp-CpMp'
   },
-  API_ENDPOINT: 'https://da84a803.ngrok.io/api/KB/',
+  API_ENDPOINT: 'https://af6c7af7.ngrok.io/api/KB/',
   FILE_LOCATION: {
     base: "wwwroot",
     ConnectionFilesPath: "StaticFiles/ConnectionFiles/HTML/",
@@ -118,8 +118,9 @@ export const AppConstant = Object.freeze({
         INSERTARTICLE: "InsertUpdateKBAricles",
         SEARCHARTICLE: "GetArticles?getall=0&categ=&Page=1&SearchString=",
         // SEARCHARTICLE1:'GetArticles?getall=0&categ=&Page=1&SearchString=',
-        GETALLARTICLE: "GetArticles?getall=0&categ=1",
+        GETALLARTICLE: "GetArticles?getall=0&categ=",
         GETADMINARTICLES:'GetArticles?getall=1&categ=1',
+        PAGINATION:'GetArticles?getall=0&'
       },
       NOTIFICATION: {
         BASE: "TextEmail"

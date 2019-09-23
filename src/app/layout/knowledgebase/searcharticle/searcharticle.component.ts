@@ -34,7 +34,7 @@ console.log(this.arr1);
 );
 
 
-} 
+}
 
 selectedAnswer:number;
 updateCheckedOptions(id)
