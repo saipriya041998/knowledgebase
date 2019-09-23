@@ -8,6 +8,7 @@ import { KBArticles } from '../../../Models/kbarticles';
 import { DdlCatogoryName } from '../../../Models/ddlcategory';
 import { ArticleService } from '../../../services/appservices/article.service';
 import { Message } from 'primeng/primeng';
+import { backgroundColor } from '@syncfusion/ej2-richtexteditor/src/rich-text-editor/models/toolbar-settings';
 @Component({
     selector: 'app-editarticle',
     templateUrl: './editarticle.component.html',
@@ -51,7 +52,7 @@ export class EditarticleComponent implements OnInit, OnDestroy {
         },
         resources: {
         // scripts: [''], // script.js
-        styles: ['height:300px'] // css
+        styles: ['height:300px','background-color: #a9a9a900'] // css
         }
     };
 

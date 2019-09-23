@@ -24,7 +24,7 @@ export class ReadmorearticleComponent implements OnInit, OnDestroy {
         this.queryparams = params['ArticleId'];
       }));
     }
-    arr: KBArticles[] = [];
+    arr: KBArticles;
     read_more: any;
     isAdmin = false;
 
@@ -51,7 +51,7 @@ export class ReadmorearticleComponent implements OnInit, OnDestroy {
               // console.log(this.article);
               this.messageService.add({ severity: 'success', summary: 'Success', detail: 'success.' });
             } else {
-              this.read_more = [];
+
               console.log('failed');
               this.messageService.add({ severity: 'error', summary: 'Error', detail: 'failed.' });
               return false;
