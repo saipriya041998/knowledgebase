@@ -5,7 +5,7 @@ export const AppConstant = Object.freeze({
   APP: {
     MODULE_NAME: 'ChatApp-CpMp'
   },
-  API_ENDPOINT: 'https://23fd6df3.ngrok.io/api/KB/',
+  API_ENDPOINT: 'https://af6c7af7.ngrok.io/api/KB/',
   FILE_LOCATION: {
     base: "wwwroot",
     ConnectionFilesPath: "StaticFiles/ConnectionFiles/HTML/",
@@ -111,15 +111,15 @@ export const AppConstant = Object.freeze({
         REGISTEREMPLOYEE: "registeremployee",
       },
       KNOWLEDGE: {
-        FETCHARTICLEBYID:'GetKBArticlesById?ArticleId=',
-        GETARTICLEBYID: "GetArticles?getall=0&categ=",
-        GETCATEGORIES: "GetCategories",
+        FETCHARTICLEBYID: 'GetKBArticlesById?ArticleId=',
+        GETARTICLEBYID: 'GetArticles?getall=0&categ=',
+        GETCATEGORIES: 'GetCategories',
         READMORE: 'GetReadArticle',
-        INSERTARTICLE: "InsertUpdateKBAricles",
-        SEARCHARTICLE: "GetArticles?getall=0&categ=&Page=1&SearchString=",
+        INSERTARTICLE: 'InsertUpdateKBAricles',
+        SEARCHARTICLE: 'GetArticles?getall=0&categ=&Page=1&SearchString=',
         // SEARCHARTICLE1:'GetArticles?getall=0&categ=&Page=1&SearchString=',
-        GETALLARTICLE: "GetArticles?getall=0&categ=1",
-        GETADMINARTICLES:'GetArticles?getall=1&categ=1',
+        GETALLARTICLE: 'GetArticles?getall=0',
+        GETADMINARTICLES: 'GetArticles?getall=1&categ=1',
       },
       NOTIFICATION: {
         BASE: "TextEmail"

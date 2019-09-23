@@ -1,10 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+import * as _ from 'lodash';
 import * as appSettings from '../../../assets/constant.json';
 import { AppConstant } from '../../app.constant';
-import * as _ from 'lodash';
-import { Router, Params } from '@angular/router';
 import { CommonHttpService } from './../../shared/common-http.service';
 
 @Injectable()
@@ -23,18 +22,6 @@ export class ArticleService {
     GETCATEGORIESBYID:string;
     GETADMINARTICLES:string;
 
-    // Edit_Fetch_URL: string = 'https://325cd82f.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
-    // CAT_URL = 'https://325cd82f.ngrok.io/api/KB/GetCategories';
-    // ReadMore_URL = 'https://325cd82f.ngrok.io/api/KB/GetReadArticle';
-    // GetAllArticles = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-
-    // Search_article = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1&Page=1&SearchString=hundred';
-
-    // INSERT_URL = 'https://325cd82f.ngrok.io/api/KB/InsertUpdateKBAricles';
-    // CategoryId1 = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=1';
-    // CategoryId2 = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=2';
-    // CategoryId3 = 'https://325cd82f.ngrok.io/api/KB/GetArticles?getall=0&categ=3';
-
     constructor(
         private http: HttpClient, public router: Router,
         private CommonHttpService: CommonHttpService
@@ -48,8 +35,8 @@ export class ArticleService {
         this.INSERT_URL = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.INSERTARTICLE;
         this.Search_article = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.SEARCHARTICLE;
         this.GetAllArticles = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETALLARTICLE;
-        this.GETADMINARTICLES=this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETADMINARTICLES;
-        this.GETCATEGORIESBYID=this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETARTICLEBYID;
+        this.GETADMINARTICLES = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETADMINARTICLES;
+        this.GETCATEGORIESBYID = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETARTICLEBYID;
     }
     // readmore
     public getArticleById(data: any): Promise<any> {
@@ -62,15 +49,6 @@ export class ArticleService {
                     console.log(err);
                 });
     }
-
-    // insert logic here
-    // public addArticle(array) {
-    //     let body = JSON.stringify(array);
-    //     let head = new HttpHeaders().set("Content-Type", "application/json");
-    //     console.log(array);
-    //     return this.http.post(this.INSERT_URL, body, { headers: head });
-    // }
-
     // insert logic
     public addArticle(data: any): Promise<any> {
         return this.CommonHttpService.globalPostService(this.INSERT_URL, data)
@@ -92,8 +70,7 @@ export class ArticleService {
         console.log((this.Edit_Fetch_URL + ArticleId));
         return this.http.get(this.Edit_Fetch_URL + ArticleId);
     }
-    public getCategoriesById(value)
-    {
+    public getCategoriesById(value) {
       return this.http.get(this.GETCATEGORIESBYID + value);
     }
 
@@ -101,36 +78,16 @@ export class ArticleService {
         return this.http.get(this.Search_article + value);
     }
 
-    // public getKbArticleById(data) {
-    //     return this.CommonHttpService.globalGetService(this.Edit_Fetch_URL, data)
-    //         .then(data => {
-    //             return data;
-    //         });
-    // }
-
-    public editArticle(updateArr) {
-        let body = JSON.stringify(updateArr);
-        let head = new HttpHeaders().set("Content-Type", "application/json");
-        return this.http.put(this.INSERT_URL, body, { headers: head });
-    }
-
     public getAllKbArticle() {
         return this.http.get(this.GetAllArticles);
     }
 
     public updateArticle(data: any): Promise<any> {
-        return this.CommonHttpService.globalPostService(this.INSERT_URL, data)
-            .then(data => {
-                return data;
+        return this.CommonHttpService.globalPostService(this.INSERT_URL, data).then(data => {
+            return data;
         });
     }
-    public getAdminArticles(){
+    public getAdminArticles() {
         return this.http.get(this.GETADMINARTICLES);
     }
-
-    // public getCategoriesById() {
-    //     console.log();
-    //     return this.http.get(this.CAT_URL);
-    // }
-
 }

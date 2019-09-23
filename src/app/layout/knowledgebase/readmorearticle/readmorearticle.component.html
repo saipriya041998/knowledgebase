@@ -1,31 +1,45 @@
-<div class="tab-pane" id="readarticletabview">
-    <div class="row" style="padding:10px">
-    <div class="col-md-12" style="padding:20px;">
-    <div class="hpanel blog-box">
-    <div class="panel-heading">
-    <div class="media clearfix" >
-    <a class="pull-left" >
-    <img src="/assets/images/read_img.jpg" alt="profile-picture" class="avatar" style=" width:65px; border-radius:50%;float:left;">
+<div class="read">
+    <div class="more">
+
+    <div class="card hpanel" style='margin-top:100px;margin-left:100px;margin-right:100px;width: auto;'>
+    <div class="card-header bg-white">
+    <div class="">
+    <a class="">
+    <img src="/assets/images/read_img.jpg" alt="profile-picture" class="avatar"
+    style=" width:65px; border-radius:50%;float:left;">
     </a>
-    <div class="media-body">
+    <div class="">
     <small>Created By:<span class="font-bold"></span> </small>
     <br>
     <small class="text-muted">{{arr.createdDate}}</small>
-    <br>
+    <!-- <br>
     <small class="text-muted">
-    </small>
+    </small> -->
     </div>
     </div>
     </div>
+    <div class="card-body">
     <div class="panel-body">
-    <strong> <h3 class=" title">{{arr.articleName}}</h3></strong>
+    <strong>
+    <h3 class=" title">{{arr.articleName}}</h3>
+    </strong>
     <hr>
     <div>
-    <h2 >{{arr.previewContent}}</h2>
+    <h2>{{arr.previewContent}}</h2>
     </div>
     </div>
     </div>
+    <div class="inht" [innerHtml]="arr.content"></div>
+    <div class="card-footer text-muted">
+    <div style="float: right;"><button class="fa fa-pencil btn btn-info btn-xs"
+    style="background-color: #3498db;" (click)="onEditArticle(arr)">Edit</button> </div>
     </div>
-    <div [innerHtml]="arr.content"></div>
     </div>
-    <div style="float: right;"><button *ngIf="arr.createdBy==1" class="fa fa-pencil btn btn-info btn-xs" style="background-color: #3498db;" (click)="onEditArticle(arr)">Edit</button> </div>
+    <br>
+    <br>
+    <br>
+
+    </div>
+    </div>
+
+

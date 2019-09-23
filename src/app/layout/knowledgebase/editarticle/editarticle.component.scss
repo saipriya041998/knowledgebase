@@ -93,7 +93,8 @@
 //     padding: 7px 5px;
 //   }
   h4.header {
-    margin-right: 983px;
+    margin-right: 1289px;
+    margin-bottom: 0px;
     color: #887f7feb;
   }
   a.nav-link.active {
@@ -136,4 +137,14 @@ button.btn.btn-warning {
 }
 .container-fluid.second-card {
     width: 62%;
+}
+// rich-text-editor box style
+iframe{
+    height:500px !important ;
+    }
+
+
+.btns {
+    margin-top: 404px;
+    margin-left: 28px;
 }

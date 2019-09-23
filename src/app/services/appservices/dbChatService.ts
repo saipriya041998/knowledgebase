@@ -320,7 +320,7 @@ export class DbGroupService {
     getSingleUnreadMsgCount(): Observable<any> { // obserbe new messages will oberb from subriber component ( inside of OnInit)
         return this.SingleunreadMsgCountSubject.asObservable();
     }
-    
+
     getNewMessages(): Observable<any> { // obserbe new messages will oberb from subriber component ( inside of OnInit)
         return this.Receivemessage.asObservable();
     }
@@ -461,8 +461,8 @@ export class DbGroupService {
         this._hubConnection = new signalR.HubConnectionBuilder()
             .withUrl(this.hubUrl,options)
             .configureLogging(signalR.LogLevel.Information)
-            .build(); 
-        this._hubConnection.serverTimeoutInMilliseconds = 30000; 
+            .build();
+        this._hubConnection.serverTimeoutInMilliseconds = 30000;
     }
     private startConnection(): void {
         this._hubConnection
@@ -492,7 +492,7 @@ export class DbGroupService {
                     this.retryAttempt -=1;
                     setTimeout(() => this.startConnection(), 5000);
                 }
-                
+
             });
     }
 

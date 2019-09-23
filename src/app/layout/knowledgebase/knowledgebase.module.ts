@@ -1,34 +1,33 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
-import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 
-// import { LayoutRoutingModule } from './layout-routing.module';
-// import { LayoutComponent } from './layout.component';
-// import { SidebarComponent } from './components/sidebar/sidebar.component';
-// import { HeaderComponent } from './components/header/header.component';
 import { KnowledgebaseComponent } from './knowledgebase.component';
 import { KnowledgebaseRoutingModule } from './knowledgebase.routing';
 import { AddarticleComponent } from './addarticle/addarticle.component';
-import { ReactiveFormsModule,  FormsModule } from '@angular/forms';
 import { SearcharticleComponent } from './searcharticle/searcharticle.component';
-import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { EditarticleComponent } from './editarticle/editarticle.component';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
+
 // third party plugin
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { TranslateModule } from '@ngx-translate/core';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import {DialogModule} from 'primeng/dialog';
+import { GrowlModule } from 'primeng/growl';
+
 @NgModule({
     imports: [
         CommonModule,
-        // LayoutRoutingModule,
         TranslateModule,
         NgbDropdownModule,
         KnowledgebaseRoutingModule,
         ReactiveFormsModule,
         FormsModule,
         RichTextEditorAllModule,
-        DialogModule
+        DialogModule,
+        GrowlModule
     ],
     declarations: [
         KnowledgebaseComponent,
@@ -37,10 +36,6 @@ import {DialogModule} from 'primeng/dialog';
         EditarticleComponent,
         ReadmorearticleComponent,
         MyarticleComponent,
-
-        // LayoutComponent,
-        // SidebarComponent,
-        // HeaderComponent
     ],
 
 })

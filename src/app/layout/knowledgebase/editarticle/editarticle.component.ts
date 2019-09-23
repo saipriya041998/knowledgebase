@@ -1,18 +1,22 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { KBArticles } from '../../../Models/kbarticles';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { Subscriber, Subscription, observable } from 'rxjs';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ToolbarService, LinkService, ImageService, HtmlEditorService } from '@syncfusion/ej2-angular-richtexteditor';
+import _ from 'lodash';
+import { Subscriber, Subscription, observable, interval } from 'rxjs';
+import { KBArticles } from '../../../Models/kbarticles';
 import { DdlCatogoryName } from '../../../Models/ddlcategory';
 import { ArticleService } from '../../../services/appservices/article.service';
-import _ from 'lodash';
+import { Message } from 'primeng/primeng';
 @Component({
-    selector: "app-editarticle",
-    templateUrl: "./editarticle.component.html",
-    styleUrls: ["./editarticle.component.scss"]
+    selector: 'app-editarticle',
+    templateUrl: './editarticle.component.html',
+    styleUrls: ['./editarticle.component.scss'],
+    providers: [ToolbarService, LinkService, ImageService, HtmlEditorService]
 })
 export class EditarticleComponent implements OnInit, OnDestroy {
     editForm: FormGroup;
+    msg: Message[] = [];
     displayArticle: KBArticles;
     id: number;
     catname: string;
@@ -21,12 +25,13 @@ export class EditarticleComponent implements OnInit, OnDestroy {
     public queryparams: any;
     private _subscriptions = new Subscription();
 
-    constructor(
-        private _data: ArticleService,
-        private fb: FormBuilder,
-        private _act: ActivatedRoute,
-        private _router: Router)
-    {
+    constructor
+       (
+            private _data: ArticleService,
+            private fb: FormBuilder,
+            private _act: ActivatedRoute,
+            private _router: Router
+        ) {
         this._subscriptions.add(
             this._router.routerState.root.queryParams.subscribe(
                 (params: Params) => {
@@ -35,6 +40,20 @@ export class EditarticleComponent implements OnInit, OnDestroy {
             )
         );
     }
+
+
+    public iframe: object = {
+        enable: true,
+        attributes: {
+        // readonly: 'readonly',
+        writeonly: 'writeonly'
+
+        },
+        resources: {
+        // scripts: [''], // script.js
+        styles: ['height:300px'] // css
+        }
+    };
 
     ngOnInit() {
         this.getArticleForEdit();
@@ -58,14 +77,15 @@ export class EditarticleComponent implements OnInit, OnDestroy {
         //       }
         //     }
         //   }, error => {
-
         //   })
-
         // this.id=this._act.snapshot.params["id"];
         this.id = this.queryparams;
         console.log(this.id);
         this._data.getKbArticleById(this.id).subscribe((x: KBArticles) => {
             this.displayArticle = x;
+            // if (this.displayArticle==null) {
+            //     alert('Internal Error');
+            // }
             this.catid = this.displayArticle.categoryId;
             console.log(this.displayArticle);
             this.editForm.patchValue({
@@ -77,9 +97,6 @@ export class EditarticleComponent implements OnInit, OnDestroy {
                 Content: this.displayArticle.content
             });
 
-        },
-        function(err){
-            alert('Internal Server');
         });
         // console.log(this.catid);
         // this._act.params.subscribe(
@@ -122,18 +139,29 @@ export class EditarticleComponent implements OnInit, OnDestroy {
         this._data.updateArticle(req).then(
             res => {
                 if (res) {
-                    alert('Updated');
-                    this._router.navigate(['/knowledge-base']);
+                    this.msg = [];
+                    this.msg.push({ severity: 'success', summary: 'Success', detail: 'Updated' });
+                    // observable.interval(1500)
+                    const secondsCounter = interval(1000);
+                    // Subscribe to begin publishing values
+                    secondsCounter.subscribe(n =>
+                        this._router.navigate(['/knowledge-base']));
                 } else {
-                    console.log('failed');
+                    this.msg = [];
+                    this.msg.push({ severity: 'error', summary: 'Success', detail: 'failed' });
                 }
-            },
-            error => {}
+            }
         );
     }
 
     ngOnDestroy() {
         this._subscriptions.unsubscribe();
     }
+
+    onClickClose() {
+        this._router.navigate(['/knowledge-base']);
+    }
+
+
 }
 

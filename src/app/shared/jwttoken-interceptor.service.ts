@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpInterceptor, HttpHandler, HttpRequest, HttpErrorResponse } from '@angular/common/http';
 // import 'rxjs/add/operator/do';
-import {tap} from "rxjs/operators";
+import {tap} from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { AppConstant } from '../app.constant';
 import { PrimengConstant } from '../app.primeconfig';
@@ -127,7 +127,7 @@ export class JWTTokenInterceptorService {
                             this.messageservice.clear();
                            // this.messageservice.add({ severity: 'error', summary: 'Error ', detail: error.statusText });
                             if (error.status == 401) {
-                                
+
                                 setTimeout(e => {
                                     this.CommonAppService.logOut("");
                                 }, 6000);

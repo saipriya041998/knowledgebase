@@ -30,6 +30,7 @@ import { CommonHttpService } from './shared/common-http.service';
 
 //third party plugin
 import {DialogModule} from 'primeng/dialog';
+import { Interceptor } from './interceptor';
 @NgModule({
     imports: [
         CommonModule,
@@ -46,7 +47,7 @@ import {DialogModule} from 'primeng/dialog';
         RichTextEditorAllModule,
         // DialogModule
     ],
-    declarations: [AppComponent,],
+    declarations: [AppComponent],
     providers: [
         DatePipe,
         {
@@ -57,6 +58,11 @@ import {DialogModule} from 'primeng/dialog';
             provide: HTTP_INTERCEPTORS,
             useClass: JWTTokenInterceptorService,
             multi: true,
+        },
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: Interceptor,
+            multi:true,
         },
         DbGroupService ,
         AuthGuard,  LocalStorageService, MasterService, MessageService, CookieService
