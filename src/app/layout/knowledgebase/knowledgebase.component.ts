@@ -12,6 +12,7 @@ import { Pagerinfo } from '../../Models/pagerInfo';
   templateUrl: './knowledgebase.component.html',
   styleUrls: ['./knowledgebase.component.scss']
 })
+
 export class KnowledgebaseComponent implements OnInit{
     Article_Header:string;
     show = false;
