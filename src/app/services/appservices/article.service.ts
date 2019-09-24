@@ -21,6 +21,8 @@ export class ArticleService {
     GetAllArticles: string;
     GETCATEGORIESBYID:string;
     GETADMINARTICLES:string;
+    PAGINATION:string;
+    Concat:string;
 
     constructor(
         private http: HttpClient, public router: Router,
@@ -35,8 +37,9 @@ export class ArticleService {
         this.INSERT_URL = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.INSERTARTICLE;
         this.Search_article = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.SEARCHARTICLE;
         this.GetAllArticles = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETALLARTICLE;
-        this.GETADMINARTICLES = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETADMINARTICLES;
-        this.GETCATEGORIESBYID = this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETARTICLEBYID;
+        this.GETADMINARTICLES=this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETADMINARTICLES;
+        this.GETCATEGORIESBYID=this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.GETARTICLEBYID;
+        this.PAGINATION=this.appendpoint + AppConstant.API_CONFIG.API_URL.KNOWLEDGE.PAGINATION;
     }
     // readmore
     public getArticleById(data: any): Promise<any> {
@@ -56,6 +59,19 @@ export class ArticleService {
                 return data;
         });
     }
+
+    public getPageByNumber(ArticleId,CatId) {
+      //  console.log((this.Edit_Fetch_URL + ArticleId));
+      if(CatId==0){
+        this.Concat="categ="+"&Page="+ArticleId;
+      console.log("Concat"+this.Concat);
+        return this.http.get(this.PAGINATION + this.Concat);
+        } else{
+            this.Concat="categ="+CatId+"&Page="+ArticleId;
+      alert(CatId);
+        return this.http.get(this.PAGINATION + this.Concat);
+        }
+      }
 
     public getCategory() {
         console.log();
@@ -87,7 +103,8 @@ export class ArticleService {
             return data;
         });
     }
-    public getAdminArticles() {
-        return this.http.get(this.GETADMINARTICLES);
+    public getAdminArticles(page:number){
+        let con="&Page"+page;
+        return this.http.get(this.GETADMINARTICLES+con);
     }
 }

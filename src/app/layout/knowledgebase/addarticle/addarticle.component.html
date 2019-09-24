@@ -14,8 +14,11 @@
     <li class="nav-item">
         <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
     </li>
-</ul>
-<div class="main-contaner">
+    <div class="vertical">
+    </div>
+ </ul>
+ <div class="main-contaner">
+        <p-growl [(value)]="msgs"></p-growl>
     <form [formGroup]="addForm" (ngSubmit)="onAddArticle()">
         <div class="container form-box">
             <br />
@@ -56,6 +59,5 @@
             </div>
         </div>
         <br />
-        <!-- </div> -->
     </form>
 </div>

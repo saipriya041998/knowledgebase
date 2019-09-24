@@ -9,14 +9,17 @@ import { SearcharticleComponent } from './searcharticle/searcharticle.component'
 import { EditarticleComponent } from './editarticle/editarticle.component';
 import { ReadmorearticleComponent } from './readmorearticle/readmorearticle.component';
 import { MyarticleComponent } from './myarticle/myarticle.component';
+//Pagination
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // third party plugin
 import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import {DialogModule} from 'primeng/dialog';
+import { PaginationComponent } from './pagination/pagination.component';
 import { GrowlModule } from 'primeng/growl';
-
 @NgModule({
     imports: [
         CommonModule,
@@ -27,6 +30,8 @@ import { GrowlModule } from 'primeng/growl';
         FormsModule,
         RichTextEditorAllModule,
         DialogModule,
+        NgxPaginationModule,
+        NgbModule,
         GrowlModule
     ],
     declarations: [
@@ -36,6 +41,12 @@ import { GrowlModule } from 'primeng/growl';
         EditarticleComponent,
         ReadmorearticleComponent,
         MyarticleComponent,
+        PaginationComponent,
+
+
+        // LayoutComponent,
+        // SidebarComponent,
+        // HeaderComponent
     ],
 
 })

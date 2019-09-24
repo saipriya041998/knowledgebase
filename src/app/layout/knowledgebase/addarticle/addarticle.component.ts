@@ -61,4 +61,6 @@ export class AddarticleComponent implements OnInit {
   onClickClose() {
     this.route.navigate(['/knowledge-base']);
   }
+
 }
+

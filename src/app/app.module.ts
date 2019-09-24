@@ -47,7 +47,7 @@ import { Interceptor } from './interceptor';
         RichTextEditorAllModule,
         // DialogModule
     ],
-    declarations: [AppComponent],
+    declarations: [AppComponent,],
     providers: [
         DatePipe,
         {

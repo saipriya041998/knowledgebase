@@ -118,8 +118,9 @@ export const AppConstant = Object.freeze({
         INSERTARTICLE: 'InsertUpdateKBAricles',
         SEARCHARTICLE: 'GetArticles?getall=0&categ=&Page=1&SearchString=',
         // SEARCHARTICLE1:'GetArticles?getall=0&categ=&Page=1&SearchString=',
-        GETALLARTICLE: 'GetArticles?getall=0',
-        GETADMINARTICLES: 'GetArticles?getall=1&categ=1',
+        GETALLARTICLE: "GetArticles?getall=0&categ=",
+        GETADMINARTICLES:'GetArticles?getall=1&categ=1',
+        PAGINATION:'GetArticles?getall=0&'
       },
       NOTIFICATION: {
         BASE: "TextEmail"
