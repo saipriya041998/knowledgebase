@@ -15,13 +15,13 @@ import _ from 'lodash';
 export class KnowledgebaseComponent implements OnInit {
 
     constructor(private router: Router, private act: ActivatedRoute, private _data: ArticleService) {}
-    isloading = true;
+    isloading = false;
     Article_Header: string;
     show = true;
     arr: KBArticles[] = [];
     // artcle: KBArticles[];
     // article: KBArticles[];
-    show_add_article = false;
+    // show_add_article = false;
     all_articles: KBArticles[] = [];
 
     ngOnInit() {

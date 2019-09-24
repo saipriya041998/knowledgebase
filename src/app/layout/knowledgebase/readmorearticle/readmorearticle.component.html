@@ -1,45 +1,40 @@
-<div class="read">
-    <div class="more">
 
-    <div class="card hpanel" style='margin-top:100px;margin-left:100px;margin-right:100px;width: auto;'>
-    <div class="card-header bg-white">
-    <div class="">
-    <a class="">
-    <img src="/assets/images/read_img.jpg" alt="profile-picture" class="avatar"
-    style=" width:65px; border-radius:50%;float:left;">
-    </a>
-    <div class="">
-    <small>Created By:<span class="font-bold"></span> </small>
-    <br>
-    <small class="text-muted">{{arr?.createdDate}}</small>
-    <!-- <br>
-    <small class="text-muted">
-    </small> -->
-    </div>
-    </div>
-    </div>
-    <div class="card-body">
-    <div class="panel-body">
-    <strong>
-    <h3 class=" title">{{arr?.articleName}}</h3>
-    </strong>
+<div class="container-fluid">
+    <div class="row">
+        <div class="card hpanel" style='margin-top:100px;margin-left:100px;margin-right:100px;width: auto;'>
+            <div class="card-header bg-white">
+                <div class="">
+                    <a class="">
+                        <img src="/assets/images/read_img.jpg" alt="profile-picture" class="avatar"
+                            style=" width:65px; border-radius:50%;float:left;">
+                    </a>
+                    <div class="">
+                        <small>Created By:<span class="font-bold"></span> </small>
+                        <br>
+                        <small class="text-muted">{{arr?.createdDate}}</small>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="panel-body">
+                    <strong>
+                        <h3 class=" title">{{arr?.articleName}}</h3>
+                    </strong>
 
-    <div>
-    <h2>{{arr?.previewContent}}</h2>
-    </div>
-    </div>
-    </div>
-    <div class="inht" [innerHtml]="arr.content"></div>
-    <div class="card-footer text-muted">
-    <div style="float: right;"><button class="fa fa-pencil btn btn-info btn-xs"
-    style="background-color: #3498db;" (click)="onEditArticle(arr)">Edit</button> </div>
-    </div>
-    </div>
-    <br>
-    <br>
-    <br>
+                    <div>
+                        <h2>{{arr?.previewContent}}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="inht" [innerHtml]="arr?.content"></div>
+            <div class="card-footer text-muted">
+                <div style="float: right;"><button class="fa fa-pencil btn btn-info btn-xs"
+                        style="background-color: #3498db;" (click)="onEditArticle(arr)">Edit</button> </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
 
     </div>
-    </div>
-
-
+</div>

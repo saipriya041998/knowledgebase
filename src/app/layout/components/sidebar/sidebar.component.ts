@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, HostListener, OnChanges, DoCheck } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -7,14 +7,20 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit,DoCheck {
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
     pushRightClass: string;
-
+    subToggleSidebar = false;
+    public innerWidth: any;
     @Output() collapsedEvent = new EventEmitter<boolean>();
-
+    // @HostListener('window:resize', ['$event'])
+    // onResize() {
+    //     this.innerWidth = window.innerWidth;
+    //     console.log(this.innerWidth);
+    //     // alert(window.innerWidth);
+    // }
     constructor(private translate: TranslateService, public router: Router) {
         this.router.events.subscribe(val => {
             if (
@@ -25,14 +31,28 @@ export class SidebarComponent implements OnInit {
                 this.toggleSidebar();
             }
         });
+
+    }
+
+    ngDoCheck() {
+        this.innerWidth = window.innerWidth;
+        if(this.innerWidth<768) {
+            // alert(this.innerWidth);
+            this.subToggleSidebar = true;
+        } else {
+            this.subToggleSidebar = false;
+        }
     }
 
     ngOnInit() {
+        this.innerWidth = window.innerWidth;
+        // alert(this.innerWidth);
         this.isActive = false;
         this.collapsed = false;
         this.showMenu = '';
         this.pushRightClass = 'push-right';
     }
+
 
 
     eventCalled() {
@@ -44,6 +64,7 @@ export class SidebarComponent implements OnInit {
             this.showMenu = '0';
         } else {
             this.showMenu = element;
+            // alert(this.showMenu);
         }
     }
 
