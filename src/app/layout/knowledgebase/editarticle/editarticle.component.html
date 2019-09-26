@@ -1,49 +1,46 @@
 <p-growl [(value)]='msg'></p-growl>
-<ul class="nav justify-content-end">
-    <h4 class="header">Edit Articles</h4>
-    <li class="nav-item">
-        <a class="nav-link active" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><span
-                class='fa fa-group'></span> Dashboard</a>
-    </li>
-    <div class="vertical">
-
+<!-- navbar-menu -->
+<nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse">
+        <a class="navbar-brand">Edit Article</a>
+        <ul class="navbar-nav ml-auto nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"
+                    [routerLinkActiveOptions]={exact:true}><span class='fa fa-group'></span>My Dash board</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/knowledge-base']" routerLinkActive="active"
+                    [routerLinkActiveOptions]={exact:true}><span class='fa fa-list'></span>My Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="active"
+                    [routerLinkActiveOptions]={exact:true}><span class='fa fa-plus-circle'></span>Add Article</a>
+            </li>
+        </ul>
     </div>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/knowledge-base/myarticle']" routerLinkActive="router-link-active"><span
-                class='fa fa-list'></span>My Articles</a>
-    </li>
-    <div class="vertical">
+</nav>
+<!--navbar-menu end-->
 
-    </div>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span
-                class='fa fa-book'></span>Add Articles</a>
-    </li>
-    <div class="vertical">
-
-    </div>
-</ul>
-
-<div class="main-content">
-    <div class="container-fluid second-card">
+<div style='background-color: #f1f3f6;min-height: 907px'>
+    <div class="container pull-left">
         <form [formGroup]="editForm" (ngSubmit)="onEditArticle()">
             <div class="container">
                 <br />
-                <table class="table table-bordered " style="margin-left: 0px !important;">
+                <table class="table table-bordered">
                     <tbody>
                         <tr>
-                            <td style="width:150px;"> Article Name<span style="color:red">*</span></td>
-                            <td><input type="text" formControlName="ArticleName"></td>
+                            <td>Article Name<span style="color:red">*</span></td>
+                            <td><input type="text" class="form-control col-6 col-sm-8 col-md-4 col-lg-6"
+                                    formControlName="ArticleName"></td>
                         </tr>
                         <tr>
-                            <td>category</td>
-                            <!-- [compareWith]="compareFn" [formControl]="selectedCountriesControl" -->
+                            <td>Category</td>
                             <td>
-                                <select formControlName="CategoryId" class="custom-select">
-                                    <option value="">Choose your category
-                                    </option>
-                                    <option *ngFor="let item of arr" [value]="item.categoryId">{{item.categoryName}}
-                                    </option>
+                                <select formControlName="CategoryId"
+                                    class="custom-select col-6 col-sm-8 col-md-4 col-lg-6">
+                                    <option style="font-size: 12px;">Choose your category</option>
+                                    <option *ngFor="let item of arr" style="font-size:12px;" [value]="item.categoryId">
+                                        {{item.categoryName}}</option>
                                 </select>
                             </td>
                         </tr>
@@ -56,15 +53,11 @@
                 </ejs-richtexteditor>
                 <br>
             </div>
-            <div class='btns'>
-                <button class="btn btn-primary">Save</button>&nbsp;&nbsp;
-                <button class="btn btn-warning" (click)='onClickClose()'>Close</button>
+            <div class="container">
+                <button type="submit" class="btn btn-secondary">Save</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-warning" (click)='onClickClose()'>Close</button> <br />
             </div>
             <br />
-            <!-- </div> -->
         </form>
-    </div>
-    <div class="vertical-line">
-
     </div>
 </div>

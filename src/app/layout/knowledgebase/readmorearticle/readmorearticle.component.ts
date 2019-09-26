@@ -27,9 +27,10 @@ export class ReadmorearticleComponent implements OnInit, OnDestroy {
     arr: KBArticles;
     read_more: any;
     isAdmin = false;
-
+    spinner=false;
 
     ngOnInit() {
+        this.spinner=true;
      this.getByArticleId();
     }
 
@@ -40,10 +41,10 @@ export class ReadmorearticleComponent implements OnInit, OnDestroy {
       console.log(req);
       this._data.getArticleById(req)
         .then(res => {
-            console.log(this.arr);
-          if (res) {
-            if (!_.isEmpty(res)) {
-              this.arr = res;
+            if (res) {
+                if (!_.isEmpty(res)) {
+                    this.arr = res;
+                    console.log(this.arr);
               // this.read_more = this.arr["kbArticles"];
               // this.artcle = _.toArray(this.arr);
               // console.log('arrar 1' + this.artcle[1]);

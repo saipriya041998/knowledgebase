@@ -62,39 +62,44 @@
             <i class="fa fa-file-o"></i>&nbsp;
             <span>{{ 'Blank Page' | translate }}</span>
         </a>
-        <!-- knowledge base menu -->
-        <div class="header-fields" *ngIf="subToggleSidebar">
-            <div class="nested-menu">
 
-                <a  class="list-group-item" (click)="addExpandClass('knowledgebase')">
+        <div class="submenu">
+            <a [routerLink]="['/knowledge-base']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+                <i class="fa fa-book"></i>&nbsp;
+                <span>{{ 'Knowledge Base' | translate }}</span>
+            </a>
+        </div>
+        <!-- knowledge base menu -->
+        <div class="header-fields">
+            <div class="nested-menu">
+                <a  class="list-group-item dropdown-toggle" (click)="addExpandClass('knowledgebase')">
                     <i class="fa fa-book"></i>&nbsp;
-                    <span>{{ 'Knowledge Base Menu' | translate }}</span>
+                    <span>{{ 'Knowledge Base' | translate }}</span>
                 </a>
                 <li class="nested" [class.expand]="showMenu === 'knowledgebase'">
                     <ul class="submenu">
+                            <li class="nav-item">
+                                    <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active" [routerLinkActiveOptions]={exact:true}><span
+                                            class='fa fa-group'></span>{{'My Dashboard' |translate}}</a>
+                                </li>
                         <li class="nav-item">
-                            <a class="nav-link active link-db" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><span class='fa fa-group'></span> Dashboard</a>
+                            <a class="nav-link" [routerLink]="['/knowledge-base/']" routerLinkActive="router-link-active" [routerLinkActiveOptions]={exact:true}><span class='fa fa-list'></span>{{'My Articles' | translate}}</a>
                         </li>
-                        <div class="vertical">
-                        </div>
                         <li class="nav-item">
-                            <a class="nav-link" [routerLink]="['/knowledge-base/']" routerLinkActive="router-link-active" [routerLinkActiveOptions]={exact:true}><span class='fa fa-list'></span>My Articles</a>
-                        </li>
-                        <div class="vertical">
-                        </div>
+                            <a [routerLink]="['/knowledge-base']" [routerLinkActive]="['router-link-active']" class="list-group-item" [routerLinkActiveOptions]={exact:true}>
+                                <i class="fa fa-book"></i>&nbsp;
+                                <span>{{ 'Knowledge Base' | translate }}</span>
+                            </a>
+                            </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
+                            <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active" [routerLinkActiveOptions]={exact:true}><span class='fa fa-plus-circle'></span>{{'Add Article' | translate}}</a>
                         </li>
                     </ul>
                 </li>
             </div>
         </div>
         <!-- Ends Here -->
-
-        <a [routerLink]="['/knowledge-base']" [routerLinkActive]="['router-link-active']" class="list-group-item" *ngIf="!subToggleSidebar">
-            <i class="fa fa-book"></i>&nbsp;
-            <span>{{ 'Knowledge Base' | translate }}</span>
-        </a>
 
         <div class="header-fields">
             <a (click)="rltAndLtr()" class="list-group-item">

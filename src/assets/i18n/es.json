@@ -1,6 +1,9 @@
 {
     "Dashboard": "Principal",
     "Knowledge Base":"base de conocimientos",
+    "My Articles":"Mis Artículos",
+    "My Dashboard":"Mi Tablero",
+    "Add Article":"Añadir Un Artículo",
     "Charts": "Caracteres",
     "Tables": "Tablas",
     "Forms": "Formularios",

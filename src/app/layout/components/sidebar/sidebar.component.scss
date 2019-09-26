@@ -146,6 +146,12 @@ $topnav-background-color: #222;
     }
 }
 
+@media screen and (max-width: 992px) {
+    .submenu {
+        display: none;
+    }
+}
+
 ::-webkit-scrollbar {
     width: 8px;
 }

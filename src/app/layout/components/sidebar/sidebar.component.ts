@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: './sidebar.component.html',
     styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit,DoCheck {
+export class SidebarComponent implements OnInit {
     isActive: boolean;
     collapsed: boolean;
     showMenu: string;
@@ -32,16 +32,6 @@ export class SidebarComponent implements OnInit,DoCheck {
             }
         });
 
-    }
-
-    ngDoCheck() {
-        this.innerWidth = window.innerWidth;
-        if(this.innerWidth<768) {
-            // alert(this.innerWidth);
-            this.subToggleSidebar = true;
-        } else {
-            this.subToggleSidebar = false;
-        }
     }
 
     ngOnInit() {

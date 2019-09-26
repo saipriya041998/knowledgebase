@@ -58,6 +58,7 @@ export class EditarticleComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.getArticleForEdit();
+        // window.scroll(0, 0);
     }
     getArticleForEdit() {
         // var req = {

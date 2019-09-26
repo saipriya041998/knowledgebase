@@ -1,63 +1,70 @@
 <p-growl [(value)]="toastMsg"></p-growl>
-<ul class="nav justify-content-end">
-    <h4 class="header header-lg header-md">Add Articles</h4>
-    <li class="nav-item">
-        <a class="nav-link active link-db" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"><span class='fa fa-group'></span> Dashboard</a>
-    </li>
-    <div class="vertical">
-    </div>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/knowledge-base/']" routerLinkActive="router-link-active"><span class='fa fa-list'></span>My Articles</a>
-    </li>
-    <div class="vertical">
-    </div>
-    <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="router-link-active"><span class='fa fa-book'></span>Add Articles</a>
-    </li>
-    <div class="vertical">
-    </div>
- </ul>
- <div class="main-contaner">
-        <p-growl [(value)]="msgs"></p-growl>
-    <form [formGroup]="addForm" (ngSubmit)="onAddArticle()">
-        <div class="container form-box">
-            <br />
-            <table class="table table-bordered ">
-                <tbody>
-                    <tr>
-                        <td>category</td>
-                        <td>
-                            <select formControlName="category_id" class="custom-select">
-                                <!-- <option value="">Choose your category</option> -->
-                                <option *ngFor="let item of cat" [value]="item.categoryId">{{item.categoryName}}
-                                </option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="width:150px;">Name<span style="color:red">*</span></td>
-                        <td><input type="text" formControlName="article_name"></td>
-                    </tr>
-                    <tr>
-                        <td>Description</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class='col-md-10' style="padding-left: 0px">
-                <ejs-richtexteditor formControlName="content" class="box"></ejs-richtexteditor>
 
-            </div>
-            <br>
-        </div>
-        <div class="container form-box">
-            <div class="row custom-wrapper">
-                <div class="col-md-12 btn-box">
-                    <button type="submit" class="btn btn-primary btn-sm-2 text-white btn-save">Save</button>&nbsp;&nbsp;
-                    <button type="button" class="btn btn-danger btn-sm-2 text-white btn-cancel"
-                        (click)='onClickClose()'>Close</button> <br />
+<!-- navbar-menu -->
+<nav class="navbar navbar-expand-lg">
+    <div class="collapse navbar-collapse">
+        <a class="navbar-brand">Add Article</a>
+        <ul class="navbar-nav ml-auto nav-pills">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive="router-link-active"
+                    [routerLinkActiveOptions]={exact:true}><span class='fa fa-group'></span>My Dash board</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/knowledge-base']" routerLinkActive="active"
+                    [routerLinkActiveOptions]={exact:true}><span class='fa fa-list'></span>My Articles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/knowledge-base/add']" routerLinkActive="active"
+                    [routerLinkActiveOptions]={exact:true}><span class='fa fa-plus-circle'></span>Add Article</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!-- navbar-menu ends -->
+<div style='background-color: #f1f3f6;min-height: 907px' class="container-fluid">
+    <div class="row second-div">
+        <div class="col-md-8">
+            <form class="form-horizontal" [formGroup]="addForm" (ngSubmit)="onAddArticle()">
+                <table class="table table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>Category</td>
+                            <td class="form-group">
+                                <select formControlName="category_id"
+                                    class="custom-select form-control col-6 col-sm-8 col-md-4 col-lg-6">
+                                    <option *ngFor="let item of cat" [value]="item.categoryId">{{item.categoryName}}
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label">Name<span style="color:red">*</span></td>
+                            <td class="form-group">
+                                <input type="text" formControlName="article_name"
+                                    class="form-control col-6 col-sm-8 col-md-4 col-lg-6"><br>
+                                <label class="alert alert-danger col-5 col-sm-6 col-md-6 col-lg-5"
+                                    *ngIf="addForm.get('article_name').hasError('required') && addForm.get('article_name').touched">Article
+                                    name is required.</label>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>Description</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ejs-richtexteditor formControlName="content" class="">
+
+                </ejs-richtexteditor>
+                <br>
+                <div class="container">
+                    <div>
+                        <button type="submit" class="btn btn-secondary">Save</button>&nbsp;&nbsp;
+                        <button type="button" class="btn btn-warning" (click)='onClickClose()'>Close</button> <br />
+                    </div>
                 </div>
-            </div>
+                <br/>
+            </form>
         </div>
-        <br />
-    </form>
+    </div>
 </div>

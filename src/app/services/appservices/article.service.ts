@@ -105,6 +105,8 @@ export class ArticleService {
     }
     public getAdminArticles(page:number){
         let con="&Page"+page;
+        // alert(con);
+        console.log(con);
         return this.http.get(this.GETADMINARTICLES+con);
     }
 }
